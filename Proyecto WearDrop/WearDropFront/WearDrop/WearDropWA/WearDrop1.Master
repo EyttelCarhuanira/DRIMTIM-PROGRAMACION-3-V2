@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="WearDrop1.Master.cs"
+    Inherits="WearDropWA.WearDrop1" %>
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" />WearDrop</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+    <style>
+      :root{ --sidebar-width:260px; }
+      body{ background:#f6f6f6; }
+      .top-strip{ height:28px;background:#efefef;font-size:.9rem;color:#9aa0a6;display:flex;align-items:center;padding:0 12px;}
+      .layout{ display:flex; min-height:calc(100vh - 28px); }
+      .sidebar{ width:var(--sidebar-width); background:#fff; border-right:1px solid #eee; }
+      .brand{ display:flex; gap:.6rem; align-items:center; padding:16px 18px; font-weight:600; font-size:1.15rem;}
+      .menu .item{ display:flex; align-items:center; gap:12px; padding:14px 18px; color:#2d3136; text-decoration:none;}
+      .menu .item:hover{ background:#f5f8ff; }
+      .menu .item i{ font-size:1.25rem; width:22px; text-align:center;}
+      .content{ flex:1; background:#fafafa; }
+      .topbar{ height:56px; background:#fff; border-bottom:1px solid #eee; display:flex; align-items:center; justify-content:flex-end; padding:0 18px; position:sticky; top:0; z-index:10;}
+      .avatar{ width:28px; height:28px; border-radius:50%; background:#d0d0d0; display:inline-block; margin-right:6px;}
+      .welcome-card{ max-width:920px; margin:24px auto; background:#fff; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.04); padding:18px 22px;}
+    </style>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form id="formMaster" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager> 
+        <div class="layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="brand">
+                     <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Images/logo.png" 
+                         AlternateText="WearDrop" Width="40" Height="35" 
+                             CssClass="me-2" />
+                     <span>WearDrop</span>
+                </div>
+                <nav class="menu">
+                    <a class="item" href="/GestionarPrendas.aspx"><i class="fa-solid fa-shirt"m></i><span>Gestionar Prendas</span></a>
+                    <a class="item" runat="server" href="~/Almacen/ListarAlmacenes.aspx"><i class="fa-solid fa-warehouse"></i><span>Gestionar Almacenes</span></a>
+                    <a class="item" href="/GestionarPromociones.aspx"><i class="fa-solid fa-basket-shopping"></i><span>Gestionar Promociones</span></a>
+                    <a class="item" href="/GestionarDescuentos.aspx"><i class="fa-solid fa-percent"></i><span>Gestionar Descuentos</span></a>
+                    <a class="item" href="/GestionarComprobantes.aspx"><i class="fa-solid fa-file-invoice"></i><span>Gestionar Comprobantes</span></a>
+                    <a class="item" href="/GestionarPersonas.aspx"><i class="fa-solid fa-user-group"></i><span>Gestionar Personas</span></a>
+      <a class="item" href="GestionarVentas.aspx"><i class="fa-solid fa-cart-shopping"></i><span>Gestionar Ventas</span></a>
+                    <a class="item" href="GestionarProveedores.aspx"><i class="fa-solid fa-shop"></i><span>Gestionar Proveedores</span></a>
+                    
+                    <a class="item" href="/GestionarOrdenesDeCompra.aspx"><i class="fa-regular fa-file-lines"></i><span>Gestionar Ordenes de Compra</span></a>
+                </nav>
+            </aside>
+
+            <main class="content w-100">
+                <div class="topbar">
+                    <span class="avatar"></span>
+                    <i class="fa-solid fa-chevron-down text-primary"></i>
+                </div>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </main>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <asp:ContentPlaceHolder ID="ScriptsContent" runat="server" />
+    </form>
+</body>
+</html>
