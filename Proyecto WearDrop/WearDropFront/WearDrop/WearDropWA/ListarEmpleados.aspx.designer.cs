@@ -15,22 +15,22 @@ namespace WearDropWA
     {
 
         /// <summary>
-        /// Control lkRegistrarEmpleado.
+        /// Control lkRegistrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkRegistrarEmpleado;
+        protected global::System.Web.UI.WebControls.LinkButton lkRegistrar;
 
         /// <summary>
-        /// Control lkFiltrarEmpleado.
+        /// Control lkFiltrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkFiltrarEmpleado;
+        protected global::System.Web.UI.WebControls.LinkButton lkFiltrar;
 
         /// <summary>
         /// Control gvEmpleados.
