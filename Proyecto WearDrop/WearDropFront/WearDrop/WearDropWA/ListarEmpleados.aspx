@@ -21,7 +21,23 @@
         .custom-grid tr:nth-child(even) { background:#F5F5F5 }
         .custom-grid tr:hover { background:#E8F4E5 }
 
-        .btn-wd { background:#73866D; color:#fff; border:none; padding:8px 18px; border-radius:8px; cursor:pointer; display:inline-block; transition:.15s; box-shadow:0 1px 2px rgba(0,0,0,.08) }
+        /* 🔹 Quita subrayado de todos los LinkButton */
+        a, a:visited, a:hover, a:active,
+        .btn-wd, .btn-wd:hover, .btn-wd:focus, .btn-wd:active {
+            text-decoration: none !important;
+        }
+
+        .btn-wd {
+            background:#73866D; 
+            color:#fff; 
+            border:none; 
+            padding:8px 18px; 
+            border-radius:8px; 
+            cursor:pointer; 
+            display:inline-block; 
+            transition:.15s; 
+            box-shadow:0 1px 2px rgba(0,0,0,.08)
+        }
         .btn-wd:hover { filter:brightness(.95) }
         .btn-wd:active { transform:translateY(1px) }
 
@@ -55,7 +71,6 @@
         </div>
 
         <div class="container row mt-3">
-            <!-- Estructura sin datos: muestra cabeceras y estilos correctos -->
             <asp:GridView ID="gvEmpleados" runat="server" AutoGenerateColumns="false" ShowHeaderWhenEmpty="True"
                 CssClass="table table-hover table-striped custom-grid" GridLines="None">
                 <Columns>
@@ -93,7 +108,6 @@
                                     <i class="fa fa-trash"></i>
                                 </asp:LinkButton>
 
-                                
                             </div>
                         </ItemTemplate>
                     </asp:TemplateField>
