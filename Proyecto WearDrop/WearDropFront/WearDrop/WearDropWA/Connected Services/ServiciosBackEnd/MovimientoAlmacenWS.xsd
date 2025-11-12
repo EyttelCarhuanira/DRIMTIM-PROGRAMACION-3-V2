@@ -12,14 +12,9 @@
   <xs:element name="modificarMovimientoAlmacenResponse" type="tns:modificarMovimientoAlmacenResponse" />
   <xs:element name="obtenerMovimientoPorId" type="tns:obtenerMovimientoPorId" />
   <xs:element name="obtenerMovimientoPorIdResponse" type="tns:obtenerMovimientoPorIdResponse" />
-  <xs:complexType name="obtenerMovimientoPorId">
+  <xs:complexType name="modificarMovimientoAlmacen">
     <xs:sequence>
-      <xs:element name="idMovimiento" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="obtenerMovimientoPorIdResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:movimientoAlmacen" />
+      <xs:element minOccurs="0" name="datMovimiento" type="tns:movimientoAlmacen" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="movimientoAlmacen">
@@ -43,14 +38,19 @@
       <xs:element minOccurs="0" name="ubicacion" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="modificarMovimientoAlmacen">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="datMovimiento" type="tns:movimientoAlmacen" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="modificarMovimientoAlmacenResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerMovimientoPorId">
+    <xs:sequence>
+      <xs:element name="idMovimiento" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerMovimientoPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:movimientoAlmacen" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarMovAlmacen">
