@@ -22,15 +22,27 @@
     <MetadataSource Address="http://localhost:8080/WearDropWS/referenciasWearDrop.disco" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MovimientoAlmacenXLoteWS.wsdl" MetadataType="Wsdl" ID="419479cf-c36a-4b11-af14-14fe38cab32d" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/MovimientoAlmacenXLoteWS?WSDL" />
+    <MetadataFile FileName="EmpleadoWS.xsd" MetadataType="Schema" ID="8da18c58-ea79-4906-8a70-629c6f26f590" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/EmpleadoWS?xsd=1" />
     <MetadataFile FileName="MovimientoAlmacenXLoteWS.xsd" MetadataType="Schema" ID="66523ad3-3b7d-4681-ac92-038ecd614849" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/MovimientoAlmacenXLoteWS?xsd=1" />
+    <MetadataFile FileName="ClienteWS.wsdl" MetadataType="Wsdl" ID="ab5b7afd-132d-403f-9a1d-84b168736881" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/ClienteWS?WSDL" />
+    <MetadataFile FileName="TipoCuentaWS.xsd" MetadataType="Schema" ID="09ab1f5b-1d01-496b-a1fc-f749c874baa5" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/TipoCuentaWS?xsd=1" />
     <MetadataFile FileName="LoteWS.wsdl" MetadataType="Wsdl" ID="f5bd439f-c0ae-48d8-bf5a-04fa44349d11" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/LoteWS?WSDL" />
-    <MetadataFile FileName="LoteWS.xsd" MetadataType="Schema" ID="09f40ffb-c041-4b8e-859b-71360b48b90c" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/LoteWS?xsd=1" />
-    <MetadataFile FileName="referenciasWearDrop.disco" MetadataType="Disco" ID="da77e725-ef64-4669-9962-d39657bf2e30" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/referenciasWearDrop.disco" />
-    <MetadataFile FileName="MovimientoAlmacenWS.wsdl" MetadataType="Wsdl" ID="17de1864-c6d7-437d-aa55-2c40ad1b371f" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/MovimientoAlmacenWS?WSDL" />
     <MetadataFile FileName="MovimientoAlmacenWS.xsd" MetadataType="Schema" ID="de72c3f9-f436-46be-9efe-425bfaa41541" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/MovimientoAlmacenWS?xsd=1" />
-    <MetadataFile FileName="AlmacenWS.xsd" MetadataType="Schema" ID="5cd1b9c0-c807-4afd-be91-33c33df9f86c" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/AlmacenWS?xsd=1" />
+    <MetadataFile FileName="ClienteWS.xsd" MetadataType="Schema" ID="47697c44-0320-40e2-be6f-753b5a2a67eb" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/ClienteWS?xsd=1" />
+    <MetadataFile FileName="CuentaUsuarioWS.xsd" MetadataType="Schema" ID="44a47ef4-cadf-4261-ba38-1bc0a9c6455d" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/CuentaUsuarioWS?xsd=1" />
+    <MetadataFile FileName="CargoWS.xsd" MetadataType="Schema" ID="5551983f-b471-44ff-9631-cec401e2ca05" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/CargoWS?xsd=1" />
+    <MetadataFile FileName="referenciasWearDrop.disco" MetadataType="Disco" ID="da77e725-ef64-4669-9962-d39657bf2e30" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/referenciasWearDrop.disco" />
     <MetadataFile FileName="AlmacenWS.wsdl" MetadataType="Wsdl" ID="9fbf2f35-9256-477d-8ab9-62d28f2d571a" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/AlmacenWS?WSDL" />
+    <MetadataFile FileName="MovimientoAlmacenXLoteWS.wsdl" MetadataType="Wsdl" ID="419479cf-c36a-4b11-af14-14fe38cab32d" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/MovimientoAlmacenXLoteWS?WSDL" />
+    <MetadataFile FileName="AlmacenWS.xsd" MetadataType="Schema" ID="5cd1b9c0-c807-4afd-be91-33c33df9f86c" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/AlmacenWS?xsd=1" />
+    <MetadataFile FileName="EmpleadoWS.wsdl" MetadataType="Wsdl" ID="ce374b1c-2c79-4dd8-97eb-f49f6fda134b" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/EmpleadoWS?WSDL" />
+    <MetadataFile FileName="LoteWS.xsd" MetadataType="Schema" ID="09f40ffb-c041-4b8e-859b-71360b48b90c" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/LoteWS?xsd=1" />
+    <MetadataFile FileName="MovimientoAlmacenWS.wsdl" MetadataType="Wsdl" ID="17de1864-c6d7-437d-aa55-2c40ad1b371f" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/MovimientoAlmacenWS?WSDL" />
+    <MetadataFile FileName="CargoWS.wsdl" MetadataType="Wsdl" ID="84951181-0019-4f9d-898f-0b9209d0fad2" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/CargoWS?WSDL" />
+    <MetadataFile FileName="CuentaUsuarioWS.wsdl" MetadataType="Wsdl" ID="2d49c305-9e16-4e26-956a-0506bffd058a" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/CuentaUsuarioWS?WSDL" />
+    <MetadataFile FileName="TipoCuentaWS.wsdl" MetadataType="Wsdl" ID="939afcff-2bdb-4172-9998-95f09a30e239" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/TipoCuentaWS?WSDL" />
+    <MetadataFile FileName="VentaWS.xsd" MetadataType="Schema" ID="3a0a0212-366a-4ce1-a507-bc38a1dead49" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/VentaWS?xsd=1" />
+    <MetadataFile FileName="VentaWS.wsdl" MetadataType="Wsdl" ID="27681d5f-571a-4c7e-9f5d-95a74a46d864" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/VentaWS?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

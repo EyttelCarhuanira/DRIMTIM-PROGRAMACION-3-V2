@@ -5,17 +5,23 @@
       <xsd:import schemaLocation="http://localhost:8080/WearDropWS/AlmacenWS?xsd=1" namespace="http://almacen.services.weardrop.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="listarAlmacenesActivos">
-    <part name="parameters" element="tns:listarAlmacenesActivos" />
+  <message name="modificarAlmacen">
+    <part name="parameters" element="tns:modificarAlmacen" />
   </message>
-  <message name="listarAlmacenesActivosResponse">
-    <part name="parameters" element="tns:listarAlmacenesActivosResponse" />
+  <message name="modificarAlmacenResponse">
+    <part name="parameters" element="tns:modificarAlmacenResponse" />
   </message>
   <message name="eliminarAlmacen">
     <part name="parameters" element="tns:eliminarAlmacen" />
   </message>
   <message name="eliminarAlmacenResponse">
     <part name="parameters" element="tns:eliminarAlmacenResponse" />
+  </message>
+  <message name="listarAlmacenesActivos">
+    <part name="parameters" element="tns:listarAlmacenesActivos" />
+  </message>
+  <message name="listarAlmacenesActivosResponse">
+    <part name="parameters" element="tns:listarAlmacenesActivosResponse" />
   </message>
   <message name="insertarAlmacen">
     <part name="parameters" element="tns:insertarAlmacen" />
@@ -29,20 +35,18 @@
   <message name="obtenerPorIdResponse">
     <part name="parameters" element="tns:obtenerPorIdResponse" />
   </message>
-  <message name="modificarAlmacen">
-    <part name="parameters" element="tns:modificarAlmacen" />
-  </message>
-  <message name="modificarAlmacenResponse">
-    <part name="parameters" element="tns:modificarAlmacenResponse" />
-  </message>
   <portType name="AlmacenWS">
-    <operation name="listarAlmacenesActivos">
-      <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/listarAlmacenesActivosRequest" message="tns:listarAlmacenesActivos" />
-      <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/listarAlmacenesActivosResponse" message="tns:listarAlmacenesActivosResponse" />
+    <operation name="modificarAlmacen">
+      <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/modificarAlmacenRequest" message="tns:modificarAlmacen" />
+      <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/modificarAlmacenResponse" message="tns:modificarAlmacenResponse" />
     </operation>
     <operation name="eliminarAlmacen">
       <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/eliminarAlmacenRequest" message="tns:eliminarAlmacen" />
       <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/eliminarAlmacenResponse" message="tns:eliminarAlmacenResponse" />
+    </operation>
+    <operation name="listarAlmacenesActivos">
+      <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/listarAlmacenesActivosRequest" message="tns:listarAlmacenesActivos" />
+      <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/listarAlmacenesActivosResponse" message="tns:listarAlmacenesActivosResponse" />
     </operation>
     <operation name="insertarAlmacen">
       <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/insertarAlmacenRequest" message="tns:insertarAlmacen" />
@@ -52,14 +56,10 @@
       <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/obtenerPorIdRequest" message="tns:obtenerPorId" />
       <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/obtenerPorIdResponse" message="tns:obtenerPorIdResponse" />
     </operation>
-    <operation name="modificarAlmacen">
-      <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/modificarAlmacenRequest" message="tns:modificarAlmacen" />
-      <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/AlmacenWS/modificarAlmacenResponse" message="tns:modificarAlmacenResponse" />
-    </operation>
   </portType>
   <binding name="AlmacenWSPortBinding" type="tns:AlmacenWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarAlmacenesActivos">
+    <operation name="modificarAlmacen">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -69,6 +69,15 @@
       </output>
     </operation>
     <operation name="eliminarAlmacen">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarAlmacenesActivos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -87,15 +96,6 @@
       </output>
     </operation>
     <operation name="obtenerPorId">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarAlmacen">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
