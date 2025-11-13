@@ -21,7 +21,7 @@ namespace WearDropWA
 
         protected void btnClientes_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("ListarClientes.aspx");
+            Response.Redirect("ListarClientes.aspx");
         }
 
         protected void btnCuentas_Click(object sender, EventArgs e)

@@ -14,7 +14,7 @@ namespace WearDropWA
         {
             //Prueba de DataTable para ver el formato en el GridView
             DataTable dt = new DataTable();
-            dt.Columns.Add("ID");
+            dt.Columns.Add("IdDescuento");
             dt.Columns.Add("Nombre");
             dt.Columns.Add("Porcentaje Liquidacion");
             dt.Columns.Add("Condicion Stock Min");
@@ -23,7 +23,7 @@ namespace WearDropWA
             dt.Rows.Add("1", "Descuento Por Polo", "50", "100");
             dt.Rows.Add("2", "Descuento Por  Jean", "80", "85");
             dt.Rows.Add("3", "Descuento Por  Falda", "100", "120");
- 
+
             gvLiquidaciones.DataSource = dt;
             gvLiquidaciones.DataBind();
         }

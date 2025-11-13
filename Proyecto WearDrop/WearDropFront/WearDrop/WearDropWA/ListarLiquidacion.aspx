@@ -73,6 +73,41 @@
         text-decoration: none;
         margin: 0 5px;
     }
+    a, a:visited, a:hover, a:active, .btn-wd { text-decoration:none !important; color:inherit }
+
+.btn-wd {
+    background:var(--btn); color:#fff; border:none; padding:8px 18px;
+    border-radius:8px; cursor:pointer; display:inline-block; transition:.15s;
+    box-shadow:0 1px 2px rgba(0,0,0,.08)
+}
+.btn-outline-success i {
+    color: #28a745; /* Verde */
+}
+
+.btn-outline-primary i {
+    color: #007bff; /* Azul */
+}
+
+.btn-outline-danger i {
+    color: #dc3545; /* Rojo */
+}
+.btn-wd:hover { filter:brightness(.95) }
+.btn-wd:active { transform:translateY(1px) }
+
+/* ===== Tonos ===== */
+
+
+.theme-scope .bar-1 { background:var(--tone-1); }
+.theme-scope .bar-2 { background:var(--tone-2); }
+.theme-scope .custom-grid th { background:var(--tone-2) !important; color:#333; }
+.theme-scope .btn-wd { background:var(--tone-3); color:#fff; }
+.theme-scope .btn-wd:hover { filter:brightness(.95); }
+.theme-scope .top-accent { background:linear-gradient(90deg,var(--tone-1),var(--tone-2),var(--tone-3)); }
+
+/* ===== Botones de acción estilo Bootstrap ===== */
+.action-btns i { font-size:1.1em; }
+.btn-sm { padding:4px 8px !important; margin-right:4px; }
+                
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
@@ -110,13 +145,13 @@
                 GridLines="None">
                 
                 <Columns>
-                    <asp:BoundField HeaderText="ID" DataField="ID"/>
+                    <asp:BoundField HeaderText="IdDescuento" DataField="IdDescuento"/>
                     <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
                     <asp:BoundField HeaderText="Porcentaje Liquidacion" DataField="Porcentaje Liquidacion"/>
                     <asp:BoundField HeaderText="Condicion Stock Min" DataField="Condicion Stock Min"/>
-                    <asp:TemplateField>
+                    <asp:TemplateField HeaderText="Acciones">
                         <ItemTemplate>
-                            <asp:LinkButton ID="btnModificar" runat="server" Style="margin-right: 25px;" OnClick="btnModificar_Click" CommandArgument='<%# Eval("ID") %>'>
+                           <%-- <asp:LinkButton ID="btnModificar" runat="server" Style="margin-right: 25px;" OnClick="btnModificar_Click" CommandArgument='<%# Eval("ID") %>'>
                                 <i class='fa-solid fa-pencil'></i>
                             </asp:LinkButton>
 
@@ -129,7 +164,33 @@
 
                             <asp:LinkButton ID="btnVisualizar" runat="server" OnClick="btnVisualizar_Click" CommandArgument='<%# Eval("Id") %>'>
                                 <i class='fa-solid fa-eye'></i>
-                            </asp:LinkButton>
+                            </asp:LinkButton>--%>
+                            <div class="action-btns">
+    <asp:LinkButton ID="btnVisualizar" runat="server"
+        CssClass="btn btn-sm btn-outline-success"
+        CommandArgument='<%# Eval("IdDescuento") %>'
+        OnClick="btnVisualizar_Click"
+        ToolTip="Visualizar">
+        <i class="fa fa-eye"></i>
+    </asp:LinkButton>
+
+    <asp:LinkButton ID="btnModificar" runat="server"
+        CssClass="btn btn-sm btn-outline-primary"
+        CommandArgument='<%# Eval("IdDescuento") %>'
+        OnClick="btnModificar_Click"
+        ToolTip="Editar">
+        <i class="fa fa-pencil"></i>
+    </asp:LinkButton>
+
+    <asp:LinkButton ID="btnEliminar" runat="server"
+        CssClass="btn btn-sm btn-outline-danger"
+        CommandArgument='<%# Eval("IdDescuento") %>'
+        OnClick="btnEliminar_Click"
+        OnClientClick="return showConfirm(this);"
+        ToolTip="Eliminar">
+        <i class="fa fa-trash"></i>
+    </asp:LinkButton>
+</div>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

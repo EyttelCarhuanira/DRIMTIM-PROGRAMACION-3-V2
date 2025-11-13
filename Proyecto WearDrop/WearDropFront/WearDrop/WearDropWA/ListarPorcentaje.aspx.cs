@@ -14,7 +14,7 @@ namespace WearDropWA
         {
             //Prueba de DataTable para ver el formato en el GridView
             DataTable dt = new DataTable();
-            dt.Columns.Add("ID");
+            dt.Columns.Add("IdDescuento");
             dt.Columns.Add("Nombre");
             dt.Columns.Add("Porcentaje Promocion");
             // Agrega filas de prueba para ver el formato

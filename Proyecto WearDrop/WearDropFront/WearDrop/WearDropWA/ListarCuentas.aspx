@@ -145,6 +145,13 @@
                     <asp:TemplateField HeaderText="Acciones">
                         <ItemTemplate>
                             <div class="action-btns">
+
+                                <asp:LinkButton ID="btnVisualizar" runat="server"
+                                    CssClass="btn btn-sm btn-outline-success"
+                                    CommandArgument='<%# Eval("IdCuenta") %>'
+                                    OnClick="btnVisualizar_Click" ToolTip="Ver"> 
+                                    <i class="fa fa-eye"></i>
+                                </asp:LinkButton>
                                 <asp:LinkButton ID="btnModificar" runat="server"
                                     CssClass="btn btn-sm btn-outline-primary"
                                     CommandArgument='<%# Eval("IdCuenta") %>'
@@ -160,12 +167,7 @@
                                     <i class="fa fa-trash"></i>
                                 </asp:LinkButton>
 
-                                <asp:LinkButton ID="btnVisualizar" runat="server"
-                                    CssClass="btn btn-sm btn-outline-success"
-                                    CommandArgument='<%# Eval("IdCuenta") %>'
-                                    OnClick="btnVisualizar_Click" ToolTip="Ver">
-                                    <i class="fa fa-eye"></i>
-                                </asp:LinkButton>
+                                
                             </div>
                         </ItemTemplate>
                     </asp:TemplateField>

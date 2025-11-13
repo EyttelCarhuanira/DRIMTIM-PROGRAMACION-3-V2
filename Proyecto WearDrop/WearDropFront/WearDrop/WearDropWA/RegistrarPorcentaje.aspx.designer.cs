@@ -11,44 +11,26 @@ namespace WearDropWA
 {
 
 
-    public partial class RegistrarPorcentaje
+    public partial class RegistrarLiquidacion
     {
 
         /// <summary>
-        /// Control lblNombre.
+        /// Control btnRegistrarVigencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombre;
+        protected global::System.Web.UI.WebControls.Button btnRegistrarVigencia;
 
         /// <summary>
-        /// Control txtNombre.
+        /// Control btnAñadirPrenda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
-
-        /// <summary>
-        /// Control lblPorcentajePromocion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPorcentajePromocion;
-
-        /// <summary>
-        /// Control txtPorcentajePromocion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPorcentajePromocion;
+        protected global::System.Web.UI.WebControls.Button btnAñadirPrenda;
 
         /// <summary>
         /// Control btnCancelar.

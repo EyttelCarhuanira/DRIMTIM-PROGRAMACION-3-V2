@@ -14,7 +14,7 @@ namespace WearDropWA
         {
             //Prueba de DataTable para ver el formato en el GridView
             DataTable dt = new DataTable();
-            dt.Columns.Add("ID");
+            dt.Columns.Add("IdPromocion");
             dt.Columns.Add("Nombre");
             dt.Columns.Add("Cantidad Gratis");
             dt.Columns.Add("Cantidad Requerida");

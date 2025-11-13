@@ -195,8 +195,10 @@
 
             <!-- Botón Registrar -->
             <div class="form-button-container">
-                <button class="btn-cancelar">Cancelar</button>
-                <button class="btn-registrar">Registrar</button>
+                 <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn-cancelar" OnClick="btnCancelar_Click"/>
+                 <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn-registrar" OnClick="btnRegistrar_Click" OnClientClick="return confirm('Descuento Registrado Correctamente.');"/>
+               <%-- <button class="btn-cancelar">Cancelar</button>
+                <button class="btn-registrar">Registrar</button>--%>
             </div>
         </div>
     </div>

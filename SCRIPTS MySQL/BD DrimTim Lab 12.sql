@@ -5249,6 +5249,22 @@ END$$
 
 DELIMITER ;
 
+DROP PROCEDURE IF EXISTS mostrar_proveedores_activos ;
+
+DELIMITER $
+CREATE PROCEDURE mostrar_proveedores_activos()
+BEGIN
+    SELECT 
+        idProveedor,
+        RUC,
+        nombre,
+        telefono,
+        direccion,
+        activo
+    FROM Proveedor
+    WHERE activo = 1;
+END$
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

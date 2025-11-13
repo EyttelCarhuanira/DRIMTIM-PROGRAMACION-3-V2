@@ -15,13 +15,22 @@ namespace WearDropWA
     {
 
         /// <summary>
-        /// Control lkFiltrarTop.
+        /// Control lkRegresar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkFiltrarTop;
+        protected global::System.Web.UI.WebControls.LinkButton lkRegresar;
+
+        /// <summary>
+        /// Control lkFiltrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkFiltrar;
 
         /// <summary>
         /// Control txtFiltroId.
@@ -42,12 +51,12 @@ namespace WearDropWA
         protected global::System.Web.UI.WebControls.TextBox txtFiltroNombre;
 
         /// <summary>
-        /// Control gvEmpleadosDocs.
+        /// Control gvVentas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvEmpleadosDocs;
+        protected global::System.Web.UI.WebControls.GridView gvVentas;
     }
 }

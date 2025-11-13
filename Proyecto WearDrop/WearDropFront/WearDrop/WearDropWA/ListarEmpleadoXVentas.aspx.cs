@@ -14,7 +14,7 @@ namespace WearDropWA
         {
             //Prueba de DataTable para ver el formato en el GridView
             DataTable dt = new DataTable();
-            dt.Columns.Add("Id");
+            dt.Columns.Add("IdVenta");
             dt.Columns.Add("Fecha");
             dt.Columns.Add("Monto");
             dt.Columns.Add("Comprobante");
@@ -25,13 +25,23 @@ namespace WearDropWA
             dt.Rows.Add("2", "25/10/2025", "234.00", "1234567", "Cueva");
             dt.Rows.Add("3", "25/10/2025", "234.00", "1234567", "Tupia");
 
-            gvEmpleadosDocs.DataSource = dt;
-            gvEmpleadosDocs.DataBind();
+            gvVentas.DataSource = dt;
+            gvVentas.DataBind();
         }
 
-        protected void lkFiltrarTop_Click(object sender, EventArgs e)
+        protected void lkFiltrar_Click(object sender, EventArgs e)
         {
             Response.Redirect("ListarEmpleadoXVentas.aspx");
+        }
+
+        protected void lkRegresar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnVisualizar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

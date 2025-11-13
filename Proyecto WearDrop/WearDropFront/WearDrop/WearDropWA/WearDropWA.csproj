@@ -75,14 +75,23 @@
     <Content Include="Almacen\Movimiento\RegistrarMovimiento.aspx" />
     <Content Include="AnnadirLineaDeLaCompra.aspx" />
     <Content Include="AnnadirProductoVenta.aspx" />
-    <None Include="Connected Services\ServiciosBackEnd\AlmacenWS.wsdl" />
     <None Include="Connected Services\ServiciosBackEnd\AlmacenWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiciosBackEnd\MovimientoAlmacenWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\BlusaWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\CargoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosBackEnd\CasacaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosBackEnd\EmpleadoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiciosBackEnd\MovimientoAlmacenWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiciosBackEnd\PantalonWS.wsdl" />
     <None Include="Connected Services\ServiciosBackEnd\referenciasWearDrop.disco" />
     <None Include="Connected Services\ServiciosBackEnd\configuration91.svcinfo" />
     <None Include="Connected Services\ServiciosBackEnd\configuration.svcinfo" />
@@ -145,6 +154,8 @@
     <Content Include="Almacen\ListarAlmacenes.aspx" />
     <Content Include="Almacen\ModificarAlmacen.aspx" />
     <Content Include="Almacen\RegistrarAlmacen.aspx" />
+    <Content Include="ListarClientes.aspx" />
+    <Content Include="ListarClientexCompras.aspx" />
     <Content Include="ListarCombo.aspx" />
     <Content Include="ListarConjunto.aspx" />
     <Content Include="ListarCuentas.aspx" />
@@ -161,6 +172,7 @@
     <Content Include="ModificarMonto.aspx" />
     <Content Include="ModificarPorcentaje.aspx" />
     <Content Include="RegistarVentas.aspx" />
+    <Content Include="RegistrarClientes.aspx" />
     <Content Include="RegistrarCombo.aspx" />
     <Content Include="RegistrarComprobantes.aspx" />
     <Content Include="RegistrarCondicion.aspx" />
@@ -203,80 +215,57 @@
     <Content Include="Fonts\webfonts\fa-thin-100.woff2" />
     <Content Include="Fonts\webfonts\fa-v4compatibility.ttf" />
     <Content Include="Fonts\webfonts\fa-v4compatibility.woff2" />
+    <None Include="Connected Services\ServiciosBackEnd\AlmacenWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\BlusaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosBackEnd\CargoWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\CasacaWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\ClienteWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\ClienteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosBackEnd\CuentaUsuarioWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\CuentaUsuarioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosBackEnd\EmpleadoWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\FaldaWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\FaldaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosBackEnd\GorroWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\GorroWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiciosBackEnd\LoteWS.wsdl" />
     <None Include="Connected Services\ServiciosBackEnd\LoteWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiciosBackEnd\MovimientoAlmacenWS.wsdl" />
     <None Include="Connected Services\ServiciosBackEnd\MovimientoAlmacenXLoteWS.wsdl" />
     <None Include="Connected Services\ServiciosBackEnd\MovimientoAlmacenXLoteWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.almacen.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.eliminarAlmacenResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.eliminarLoteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.eliminarMovimientoAlmacenResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.eliminarMovXLoteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.insertarAlmacenResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.insertarLoteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.insertarMovAlmacenResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.insertarMovXLoteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.listarAlmacenesActivosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.listarLotesActivosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.listarMovimientosActivosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.lote.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.modificarAlmacenResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.modificarLoteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.modificarMovXLoteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.movimientoAlmacen.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.movimientoAlmacenXLote.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.obtenerLotePorIDResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.obtenerMovimientoPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.obtenerMovXLotePorIDResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiciosBackEnd\WearDropWA.ServiciosBackEnd.obtenerPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    <None Include="Connected Services\ServiciosBackEnd\PantalonWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosBackEnd\PoloWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\PoloWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosBackEnd\TipoCuentaWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\TipoCuentaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosBackEnd\VentaWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\VentaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosBackEnd\VestidoWS.wsdl" />
+    <None Include="Connected Services\ServiciosBackEnd\VestidoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -288,6 +277,7 @@
     <Content Include="SeleccionarPrendaLiquidacion.aspx" />
     <Content Include="SeleccionarPrendaMonto.aspx" />
     <Content Include="SeleccionarPrendaPorcentaje.aspx" />
+    <Content Include="VerCliente.aspx" />
     <Content Include="VerEmpleado.aspx" />
     <Content Include="VerItemsVenta.aspx" />
     <Content Include="VerPrendaSeleccionadaparaVenta.aspx" />
@@ -441,6 +431,20 @@
     <Compile Include="Almacen\ModificarAlmacen.aspx.designer.cs">
       <DependentUpon>ModificarAlmacen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListarClientes.aspx.cs">
+      <DependentUpon>ListarClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarClientes.aspx.designer.cs">
+      <DependentUpon>ListarClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarClientexCompras.aspx.cs">
+      <DependentUpon>ListarClientexCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarClientexCompras.aspx.designer.cs">
+      <DependentUpon>ListarClientexCompras.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListarCombo.aspx.cs">
       <DependentUpon>ListarCombo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -560,6 +564,13 @@
     </Compile>
     <Compile Include="RegistarVentas.aspx.designer.cs">
       <DependentUpon>RegistarVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarClientes.aspx.cs">
+      <DependentUpon>RegistrarClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarClientes.aspx.designer.cs">
+      <DependentUpon>RegistrarClientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="RegistrarCombo.aspx.cs">
       <DependentUpon>RegistrarCombo.aspx</DependentUpon>
@@ -714,6 +725,13 @@
     </Compile>
     <Compile Include="SeleccionarPrendaPorcentaje.aspx.designer.cs">
       <DependentUpon>SeleccionarPrendaPorcentaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerCliente.aspx.cs">
+      <DependentUpon>VerCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerCliente.aspx.designer.cs">
+      <DependentUpon>VerCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerEmpleado.aspx.cs">
       <DependentUpon>VerEmpleado.aspx</DependentUpon>
