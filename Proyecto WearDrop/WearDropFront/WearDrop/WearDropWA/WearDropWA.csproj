@@ -73,62 +73,13 @@
     <Content Include="Almacen\MovimientoXLote\RegistrarMovimientoXLote.aspx" />
     <Content Include="Almacen\Movimiento\ModificarMovimiento.aspx" />
     <Content Include="Almacen\Movimiento\RegistrarMovimiento.aspx" />
+    <Content Include="Almacen\PrendaLote\RegistrarPrendaLote.aspx" />
     <Content Include="AnnadirLineaDeLaCompra.aspx" />
     <Content Include="AnnadirProductoVenta.aspx" />
-    <None Include="Connected Services\BlusaWS\BlusaWS.wsdl" />
-    <None Include="Connected Services\BlusaWS\BlusaWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Connected Services\BlusaWS\WearDropWA.BlusaWS.blusa.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\BlusaWS\WearDropWA.BlusaWS.eliminarBlusaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\BlusaWS\WearDropWA.BlusaWS.filtrarBlusasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\BlusaWS\WearDropWA.BlusaWS.insertarBlusaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\BlusaWS\WearDropWA.BlusaWS.listarBlusasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\BlusaWS\WearDropWA.BlusaWS.modificarBlusaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\BlusaWS\WearDropWA.BlusaWS.obtenerBlusaPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\CargoWS\CargoWS.wsdl" />
     <None Include="Connected Services\CargoWS\CargoWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\CasacaWS\CasacaWS.wsdl" />
-    <None Include="Connected Services\CasacaWS\CasacaWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Connected Services\CasacaWS\WearDropWA.CasacaWS.casaca.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CasacaWS\WearDropWA.CasacaWS.eliminarCasacaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CasacaWS\WearDropWA.CasacaWS.filtrarCasacasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CasacaWS\WearDropWA.CasacaWS.insertarCasacaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CasacaWS\WearDropWA.CasacaWS.listarCasacasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CasacaWS\WearDropWA.CasacaWS.modificarCasacaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CasacaWS\WearDropWA.CasacaWS.obtenerCasacaPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\ClienteWS\ClienteWS.wsdl" />
     <None Include="Connected Services\ClienteWS\ClienteWS.xsd">
       <SubType>Designer</SubType>
@@ -153,68 +104,12 @@
     <None Include="Connected Services\EmpleadoWS\EmpleadoWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\FaldaWS\FaldaWS.wsdl" />
-    <None Include="Connected Services\FaldaWS\FaldaWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\CasacaWS\configuration91.svcinfo" />
-    <None Include="Connected Services\CasacaWS\configuration.svcinfo" />
-    <None Include="Connected Services\CasacaWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\ClienteWS\configuration91.svcinfo" />
     <None Include="Connected Services\ClienteWS\configuration.svcinfo" />
     <None Include="Connected Services\ClienteWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Connected Services\FaldaWS\WearDropWA.FaldaWS.eliminarFaldaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\FaldaWS\WearDropWA.FaldaWS.falda.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\FaldaWS\WearDropWA.FaldaWS.filtrarFaldasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\FaldaWS\WearDropWA.FaldaWS.insertarFaldaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\FaldaWS\WearDropWA.FaldaWS.listarFaldasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\FaldaWS\WearDropWA.FaldaWS.modificarFaldaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\FaldaWS\WearDropWA.FaldaWS.obtenerFaldaPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\GorroWS\GorroWS.wsdl" />
-    <None Include="Connected Services\GorroWS\GorroWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Connected Services\GorroWS\WearDropWA.GorroWS.eliminarGorroResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\GorroWS\WearDropWA.GorroWS.filtrarGorrosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\GorroWS\WearDropWA.GorroWS.gorro.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\GorroWS\WearDropWA.GorroWS.insertarGorroResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\GorroWS\WearDropWA.GorroWS.listarGorrosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\GorroWS\WearDropWA.GorroWS.modificarGorroResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\GorroWS\WearDropWA.GorroWS.obtenerGorroPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\PackageAlmacen\AlmacenWS.wsdl" />
     <None Include="Connected Services\PackageAlmacen\AlmacenWS.xsd">
       <SubType>Designer</SubType>
@@ -231,16 +126,129 @@
     <None Include="Connected Services\PackageAlmacen\MovimientoAlmacenXLoteWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\PantalonWS\PantalonWS.wsdl" />
-    <None Include="Connected Services\PantalonWS\PantalonWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GorroWS\configuration91.svcinfo" />
-    <None Include="Connected Services\GorroWS\configuration.svcinfo" />
-    <None Include="Connected Services\GorroWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.almacen.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.buscarPrendaPorAtributosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.buscarPrendaPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.eliminarAlmacenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.eliminarLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.eliminarMovimientoAlmacenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.eliminarMovXLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.eliminarPrendaLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.existePrendaTallaEnLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.insertarAlmacenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.insertarLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.insertarMovAlmacenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.insertarMovXLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.insertarPrendaLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.listarAlmacenesActivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.listarColoresDistintosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.listarLotesActivosPorAlmacenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.listarLotesActivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.listarMaterialesDistintosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.listarMovimientosActivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.listarMovimientosPorAlmacenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.listarMovimientoXLotesActivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.listarNombresDistintosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.listarPrendasPorLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.listarTodasPrendasLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.lote.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.modificarAlmacenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.modificarLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.modificarMovimientoAlmacenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.modificarMovXLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.modificarPrendaLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.movimientoAlmacen.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.movimientoAlmacenXLote.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.obtenerLotePorIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.obtenerMovimientoPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.obtenerMovXLotePorIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.obtenerPrendaLotePorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.obtenerStockPorTallaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.prenda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackageAlmacen\WearDropWA.PackageAlmacen.prendaLote.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\PackageAlmacen\referenciasWearDrop.disco" />
     <None Include="Connected Services\PackageAlmacen\configuration91.svcinfo" />
     <None Include="Connected Services\PackageAlmacen\configuration.svcinfo" />
@@ -248,73 +256,48 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Connected Services\PantalonWS\WearDropWA.PantalonWS.eliminarPantalonResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PantalonWS\WearDropWA.PantalonWS.filtrarPantalonesResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PantalonWS\WearDropWA.PantalonWS.insertarPantalonResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PantalonWS\WearDropWA.PantalonWS.listarPantalonesResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PantalonWS\WearDropWA.PantalonWS.modificarPantalonResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PantalonWS\WearDropWA.PantalonWS.obtenerPantalonPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PantalonWS\WearDropWA.PantalonWS.pantalon.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\PoloWS\PoloWS.wsdl" />
-    <None Include="Connected Services\PoloWS\PoloWS.xsd">
+    <None Include="Connected Services\PackagePrendas\BlusaWS.wsdl" />
+    <None Include="Connected Services\PackagePrendas\BlusaWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BlusaWS\configuration91.svcinfo" />
-    <None Include="Connected Services\BlusaWS\configuration.svcinfo" />
-    <None Include="Connected Services\BlusaWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
+    <None Include="Connected Services\PackagePrendas\CasacaWS.wsdl" />
+    <None Include="Connected Services\PackagePrendas\CasacaWS.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\FaldaWS\configuration91.svcinfo" />
-    <None Include="Connected Services\FaldaWS\configuration.svcinfo" />
-    <None Include="Connected Services\FaldaWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
+    <None Include="Connected Services\PackagePrendas\FaldaWS.wsdl" />
+    <None Include="Connected Services\PackagePrendas\FaldaWS.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\PantalonWS\configuration91.svcinfo" />
-    <None Include="Connected Services\PantalonWS\configuration.svcinfo" />
-    <None Include="Connected Services\PantalonWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
+    <None Include="Connected Services\PackagePrendas\GorroWS.wsdl" />
+    <None Include="Connected Services\PackagePrendas\GorroWS.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <Content Include="Connected Services\PoloWS\WearDropWA.PoloWS.eliminarPoloResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PoloWS\WearDropWA.PoloWS.filtrarPolosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PoloWS\WearDropWA.PoloWS.insertarPoloResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PoloWS\WearDropWA.PoloWS.listarPolosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PoloWS\WearDropWA.PoloWS.modificarPoloResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PoloWS\WearDropWA.PoloWS.obtenerPoloPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PoloWS\WearDropWA.PoloWS.polo.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    <None Include="Connected Services\PackagePrendas\PantalonWS.wsdl" />
+    <None Include="Connected Services\PackagePrendas\PantalonWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PackagePrendas\PoloWS.wsdl" />
+    <None Include="Connected Services\PackagePrendas\PoloWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PackagePrendas\PrendaLoteWS.wsdl" />
+    <None Include="Connected Services\PackagePrendas\PrendaLoteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PackagePrendas\VestidoWS.wsdl" />
+    <None Include="Connected Services\PackagePrendas\VestidoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\PromocionComboWS\PromocionComboWS.wsdl" />
     <None Include="Connected Services\PromocionComboWS\PromocionComboWS.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PackagePrendas\referenciasPrendas.disco" />
+    <None Include="Connected Services\PackagePrendas\configuration91.svcinfo" />
+    <None Include="Connected Services\PackagePrendas\configuration.svcinfo" />
+    <None Include="Connected Services\PackagePrendas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Connected Services\PromocionComboWS\WearDropWA.PromocionComboWS.eliminarPromocionComboResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -395,21 +378,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\PoloWS\configuration91.svcinfo" />
-    <None Include="Connected Services\PoloWS\configuration.svcinfo" />
-    <None Include="Connected Services\PoloWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\VentaWS\VentaWS.wsdl" />
     <None Include="Connected Services\VentaWS\VentaWS.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\VestidoWS\configuration91.svcinfo" />
-    <None Include="Connected Services\VestidoWS\configuration.svcinfo" />
-    <None Include="Connected Services\VestidoWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Connected Services\PromocionComboWS\configuration91.svcinfo" />
     <None Include="Connected Services\PromocionComboWS\configuration.svcinfo" />
@@ -559,31 +530,6 @@
     <None Include="Connected Services\TipoCuentaWS\TipoCuentaWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\VestidoWS\VestidoWS.wsdl" />
-    <None Include="Connected Services\VestidoWS\VestidoWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Connected Services\VestidoWS\WearDropWA.VestidoWS.eliminarVestidoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\VestidoWS\WearDropWA.VestidoWS.filtrarVestidosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\VestidoWS\WearDropWA.VestidoWS.insertarVestidoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\VestidoWS\WearDropWA.VestidoWS.listarVestidosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\VestidoWS\WearDropWA.VestidoWS.modificarVestidoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\VestidoWS\WearDropWA.VestidoWS.obtenerVestidoPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\VestidoWS\WearDropWA.VestidoWS.vestido.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\VigenciaWS\VigenciaWS.wsdl" />
     <None Include="Connected Services\VigenciaWS\VigenciaWS.xsd">
       <SubType>Designer</SubType>
@@ -658,6 +604,13 @@
     <Compile Include="Almacen\Movimiento\RegistrarMovimiento.aspx.designer.cs">
       <DependentUpon>RegistrarMovimiento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Almacen\PrendaLote\RegistrarPrendaLote.aspx.cs">
+      <DependentUpon>RegistrarPrendaLote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Almacen\PrendaLote\RegistrarPrendaLote.aspx.designer.cs">
+      <DependentUpon>RegistrarPrendaLote.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AnnadirLineaDeLaCompra.aspx.cs">
       <DependentUpon>AnnadirLineaDeLaCompra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -672,17 +625,7 @@
     <Compile Include="AnnadirProductoVenta.aspx.designer.cs">
       <DependentUpon>AnnadirProductoVenta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\BlusaWS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Connected Services\CargoWS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\CasacaWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -717,27 +660,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\FaldaWS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\GorroWS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Connected Services\PackageAlmacen\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\PantalonWS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\PoloWS\Reference.cs">
+    <Compile Include="Connected Services\PackagePrendas\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -763,11 +691,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\VentaWS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\VestidoWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -1240,26 +1163,20 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\BlusaWS\" />
     <WCFMetadataStorage Include="Connected Services\CargoWS\" />
-    <WCFMetadataStorage Include="Connected Services\CasacaWS\" />
     <WCFMetadataStorage Include="Connected Services\ClienteWS\" />
     <WCFMetadataStorage Include="Connected Services\CuentaUsuarioWS\" />
     <WCFMetadataStorage Include="Connected Services\DescuentoLiquidacionWS\" />
     <WCFMetadataStorage Include="Connected Services\DescuentoMontoWS\" />
     <WCFMetadataStorage Include="Connected Services\DescuentoPorcentajeWS\" />
     <WCFMetadataStorage Include="Connected Services\EmpleadoWS\" />
-    <WCFMetadataStorage Include="Connected Services\FaldaWS\" />
-    <WCFMetadataStorage Include="Connected Services\GorroWS\" />
     <WCFMetadataStorage Include="Connected Services\PackageAlmacen\" />
-    <WCFMetadataStorage Include="Connected Services\PantalonWS\" />
-    <WCFMetadataStorage Include="Connected Services\PoloWS\" />
+    <WCFMetadataStorage Include="Connected Services\PackagePrendas\" />
     <WCFMetadataStorage Include="Connected Services\PromocionComboWS\" />
     <WCFMetadataStorage Include="Connected Services\PromocionConjunto\" />
     <WCFMetadataStorage Include="Connected Services\ProveedorWS\" />
     <WCFMetadataStorage Include="Connected Services\TipoCuentaWS\" />
     <WCFMetadataStorage Include="Connected Services\VentaWS\" />
-    <WCFMetadataStorage Include="Connected Services\VestidoWS\" />
     <WCFMetadataStorage Include="Connected Services\VigenciaWS\" />
   </ItemGroup>
   <PropertyGroup>

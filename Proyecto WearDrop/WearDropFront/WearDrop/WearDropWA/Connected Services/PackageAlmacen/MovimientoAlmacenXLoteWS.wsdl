@@ -17,18 +17,6 @@
   <message name="listarMovimientoXLotesActivosResponse">
     <part name="parameters" element="tns:listarMovimientoXLotesActivosResponse" />
   </message>
-  <message name="insertarMovXLote">
-    <part name="parameters" element="tns:insertarMovXLote" />
-  </message>
-  <message name="insertarMovXLoteResponse">
-    <part name="parameters" element="tns:insertarMovXLoteResponse" />
-  </message>
-  <message name="eliminarMovXLote">
-    <part name="parameters" element="tns:eliminarMovXLote" />
-  </message>
-  <message name="eliminarMovXLoteResponse">
-    <part name="parameters" element="tns:eliminarMovXLoteResponse" />
-  </message>
   <message name="modificarMovXLote">
     <part name="parameters" element="tns:modificarMovXLote" />
   </message>
@@ -41,6 +29,18 @@
   <message name="obtenerMovXLotePorIDResponse">
     <part name="parameters" element="tns:obtenerMovXLotePorIDResponse" />
   </message>
+  <message name="insertarMovXLote">
+    <part name="parameters" element="tns:insertarMovXLote" />
+  </message>
+  <message name="insertarMovXLoteResponse">
+    <part name="parameters" element="tns:insertarMovXLoteResponse" />
+  </message>
+  <message name="eliminarMovXLote">
+    <part name="parameters" element="tns:eliminarMovXLote" />
+  </message>
+  <message name="eliminarMovXLoteResponse">
+    <part name="parameters" element="tns:eliminarMovXLoteResponse" />
+  </message>
   <portType name="MovimientoAlmacenXLoteWS">
     <operation name="listarMovXLoteActivosPorAlmacen">
       <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/listarMovXLoteActivosPorAlmacenRequest" message="tns:listarMovXLoteActivosPorAlmacen" />
@@ -50,14 +50,6 @@
       <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/listarMovimientoXLotesActivosRequest" message="tns:listarMovimientoXLotesActivos" />
       <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/listarMovimientoXLotesActivosResponse" message="tns:listarMovimientoXLotesActivosResponse" />
     </operation>
-    <operation name="insertarMovXLote">
-      <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/insertarMovXLoteRequest" message="tns:insertarMovXLote" />
-      <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/insertarMovXLoteResponse" message="tns:insertarMovXLoteResponse" />
-    </operation>
-    <operation name="eliminarMovXLote">
-      <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/eliminarMovXLoteRequest" message="tns:eliminarMovXLote" />
-      <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/eliminarMovXLoteResponse" message="tns:eliminarMovXLoteResponse" />
-    </operation>
     <operation name="modificarMovXLote">
       <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/modificarMovXLoteRequest" message="tns:modificarMovXLote" />
       <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/modificarMovXLoteResponse" message="tns:modificarMovXLoteResponse" />
@@ -65,6 +57,14 @@
     <operation name="obtenerMovXLotePorID">
       <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/obtenerMovXLotePorIDRequest" message="tns:obtenerMovXLotePorID" />
       <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/obtenerMovXLotePorIDResponse" message="tns:obtenerMovXLotePorIDResponse" />
+    </operation>
+    <operation name="insertarMovXLote">
+      <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/insertarMovXLoteRequest" message="tns:insertarMovXLote" />
+      <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/insertarMovXLoteResponse" message="tns:insertarMovXLoteResponse" />
+    </operation>
+    <operation name="eliminarMovXLote">
+      <input wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/eliminarMovXLoteRequest" message="tns:eliminarMovXLote" />
+      <output wsam:Action="http://almacen.services.weardrop.pucp.edu.pe/MovimientoAlmacenXLoteWS/eliminarMovXLoteResponse" message="tns:eliminarMovXLoteResponse" />
     </operation>
   </portType>
   <binding name="MovimientoAlmacenXLoteWSPortBinding" type="tns:MovimientoAlmacenXLoteWS">
@@ -87,24 +87,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarMovXLote">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarMovXLote">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="modificarMovXLote">
       <soap:operation soapAction="" />
       <input>
@@ -115,6 +97,24 @@
       </output>
     </operation>
     <operation name="obtenerMovXLotePorID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarMovXLote">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarMovXLote">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

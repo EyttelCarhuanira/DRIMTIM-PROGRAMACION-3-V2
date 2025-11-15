@@ -3,7 +3,7 @@ using System.ComponentModel; // BindingList
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using WearDropWA.PackagePrendas;
 
 namespace WearDropWA
 {
@@ -24,50 +24,50 @@ namespace WearDropWA
             {
                 case "blusas":
                     {
-                        var cli = new global::WearDropWA.BlusaWS.BlusaWSClient();
-                        var data = cli.listarBlusas() ?? Array.Empty<global::WearDropWA.BlusaWS.blusa>();
+                        var cli = new global::WearDropWA.PackagePrendas.BlusaWSClient();
+                        var data = cli.listarBlusas() ?? Array.Empty<global::WearDropWA.PackagePrendas.blusa>();
                         prendas = new BindingList<object>(data.Cast<object>().ToList());
                         break;
                     }
                 case "polos":
                     {
-                        var cli = new global::WearDropWA.PoloWS.PoloWSClient();
-                        var data = cli.listarPolos() ?? Array.Empty<global::WearDropWA.PoloWS.polo>();
+                        var cli = new global::WearDropWA.PackagePrendas.PoloWSClient();
+                        var data = cli.listarPolos() ?? Array.Empty<global::WearDropWA.PackagePrendas.polo>();
                         prendas = new BindingList<object>(data.Cast<object>().ToList());
                         break;
                     }
                 case "vestidos":
                     {
-                        var cli = new global::WearDropWA.VestidoWS.VestidoWSClient();
-                        var data = cli.listarVestidos() ?? Array.Empty<global::WearDropWA.VestidoWS.vestido>();
+                        var cli = new global::WearDropWA.PackagePrendas.VestidoWSClient();
+                        var data = cli.listarVestidos() ?? Array.Empty<global::WearDropWA.PackagePrendas.vestido>();
                         prendas = new BindingList<object>(data.Cast<object>().ToList());
                         break;
                     }
                 case "pantalones":
                     {
-                        var cli = new global::WearDropWA.PantalonWS.PantalonWSClient();
-                        var data = cli.listarPantalones() ?? Array.Empty<global::WearDropWA.PantalonWS.pantalon>();
+                        var cli = new global::WearDropWA.PackagePrendas.PantalonWSClient();
+                        var data = cli.listarPantalones() ?? Array.Empty<global::WearDropWA.PackagePrendas.pantalon>();
                         prendas = new BindingList<object>(data.Cast<object>().ToList());
                         break;
                     }
                 case "casacas":
                     {
-                        var cli = new global::WearDropWA.CasacaWS.CasacaWSClient();
-                        var data = cli.listarCasacas() ?? Array.Empty<global::WearDropWA.CasacaWS.casaca>();
+                        var cli = new global::WearDropWA.PackagePrendas.CasacaWSClient();
+                        var data = cli.listarCasacas() ?? Array.Empty<global::WearDropWA.PackagePrendas.casaca>();
                         prendas = new BindingList<object>(data.Cast<object>().ToList());
                         break;
                     }
                 case "gorros":
                     {
-                        var cli = new global::WearDropWA.GorroWS.GorroWSClient();
-                        var data = cli.listarGorros() ?? Array.Empty<global::WearDropWA.GorroWS.gorro>();
+                        var cli = new global::WearDropWA.PackagePrendas.GorroWSClient();
+                        var data = cli.listarGorros() ?? Array.Empty<global::WearDropWA.PackagePrendas.gorro>();
                         prendas = new BindingList<object>(data.Cast<object>().ToList());
                         break;
                     }
                 case "faldas":
                     {
-                        var cli = new global::WearDropWA.FaldaWS.FaldaWSClient();
-                        var data = cli.listarFaldas() ?? Array.Empty<global::WearDropWA.FaldaWS.falda>();
+                        var cli = new global::WearDropWA.PackagePrendas.FaldaWSClient();
+                        var data = cli.listarFaldas() ?? Array.Empty<global::WearDropWA.PackagePrendas.falda>();
                         prendas = new BindingList<object>(data.Cast<object>().ToList());
                         break;
                     }
@@ -151,31 +151,31 @@ namespace WearDropWA
                 {
                     case "polos":
                     case "polo":
-                        new global::WearDropWA.PoloWS.PoloWSClient().eliminarPolo(id);
+                        new global::WearDropWA.PackagePrendas.PoloWSClient().eliminarPolo(id);
                         break;
                     case "blusas":
                     case "blusa":
-                        new global::WearDropWA.BlusaWS.BlusaWSClient().eliminarBlusa(id);
+                        new global::WearDropWA.PackagePrendas.BlusaWSClient().eliminarBlusa(id);
                         break;
                     case "vestidos":
                     case "vestido":
-                        new global::WearDropWA.VestidoWS.VestidoWSClient().eliminarVestido(id);
+                        new global::WearDropWA.PackagePrendas.VestidoWSClient().eliminarVestido(id);
                         break;
                     case "pantalones":
                     case "pantalon":
-                        new global::WearDropWA.PantalonWS.PantalonWSClient().eliminarPantalon(id);
+                        new global::WearDropWA.PackagePrendas.PantalonWSClient().eliminarPantalon(id);
                         break;
                     case "casacas":
                     case "casaca":
-                        new global::WearDropWA.CasacaWS.CasacaWSClient().eliminarCasaca(id);
+                        new global::WearDropWA.PackagePrendas.CasacaWSClient().eliminarCasaca(id);
                         break;
                     case "gorros":
                     case "gorro":
-                        new global::WearDropWA.GorroWS.GorroWSClient().eliminarGorro(id);
+                        new global::WearDropWA.PackagePrendas.GorroWSClient().eliminarGorro(id);
                         break;
                     case "faldas":
                     case "falda":
-                        new global::WearDropWA.FaldaWS.FaldaWSClient().eliminarFalda(id);
+                        new global::WearDropWA.PackagePrendas.FaldaWSClient().eliminarFalda(id);
                         break;
                     default:
                         throw new InvalidOperationException("Tipo no reconocido.");

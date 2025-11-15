@@ -1,15 +1,7 @@
 ﻿using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
-// Aliases que apuntan al namespace generado real (uno solo)
-using RefPolo   = global::WearDropWA.PoloWS;
-using RefBlusa  = global::WearDropWA.BlusaWS;
-using RefVest   = global::WearDropWA.VestidoWS;
-using RefFalda  = global::WearDropWA.FaldaWS;
-using RefPant   = global::WearDropWA.PantalonWS;
-using RefCasaca = global::WearDropWA.CasacaWS;
-using RefGorro  = global::WearDropWA.GorroWS;
+using WearDropWA.PackagePrendas;
 
 namespace WearDropWA
 {
@@ -26,7 +18,6 @@ namespace WearDropWA
         {
             string accion = (Request.QueryString["accion"] ?? "").Trim().ToLower();
 
-            // --- REGLA DE ESTADO ---
             if (accion == "ver") estado = Estado.Ver;
             else if (accion == "modificar") estado = Estado.Modificar;
             else estado = Estado.Nuevo;
@@ -35,7 +26,6 @@ namespace WearDropWA
 
             ConfigurarCabecera();
             MostrarPanelPorTipo();
-
             CargarCombosGenerales();
             CargarCombosEspecificosPorTipo();
 
@@ -102,9 +92,8 @@ namespace WearDropWA
             SetVisible(spanReqTipoGorra, !ocultar);
             SetVisible(spanReqTallaAjustable, !ocultar);
             SetVisible(spanReqImpermeable, !ocultar);
-            SetVisible(spanReqMangaV, !ocultar);  // <--- nuevo
+            SetVisible(spanReqMangaV, !ocultar);
             SetVisible(spanReqCintura, !ocultar);
-
         }
 
         private void MostrarPanelPorTipo()
@@ -160,6 +149,7 @@ namespace WearDropWA
             ddlTipoPantalon.Enabled = false;
             txtLargoPierna.Enabled = false;
             txtCintura.Enabled = false;
+
             ddlTipoCasaca.Enabled = false;
             ddlConCapucha.Enabled = false;
 
@@ -175,9 +165,11 @@ namespace WearDropWA
         {
             ddlMaterial.Items.Clear();
             ddlMaterial.Items.Add(new ListItem("-- Seleccione --", ""));
-            foreach (RefPolo.material it in Enum.GetValues(typeof(RefPolo.material)))
+
+            // ✅ Usar material del PackagePrendas
+            foreach (material it in Enum.GetValues(typeof(material)))
             {
-                string name = Enum.GetName(typeof(RefPolo.material), it);
+                string name = Enum.GetName(typeof(material), it);
                 ddlMaterial.Items.Add(new ListItem(name.Replace('_', ' '), name));
             }
         }
@@ -187,60 +179,60 @@ namespace WearDropWA
             // Polo
             ddlTipoManga.Items.Clear();
             ddlTipoManga.Items.Add(new ListItem("-- Seleccione --", ""));
-            foreach (RefPolo.tipoManga it in Enum.GetValues(typeof(RefPolo.tipoManga)))
+            foreach (tipoManga it in Enum.GetValues(typeof(tipoManga)))
             {
-                string name = Enum.GetName(typeof(RefPolo.tipoManga), it);
+                string name = Enum.GetName(typeof(tipoManga), it);
                 ddlTipoManga.Items.Add(new ListItem(name.Replace('_', ' '), name));
             }
 
             ddlTipoCuello.Items.Clear();
             ddlTipoCuello.Items.Add(new ListItem("-- Seleccione --", ""));
-            foreach (RefPolo.tipoCuello it in Enum.GetValues(typeof(RefPolo.tipoCuello)))
+            foreach (tipoCuello it in Enum.GetValues(typeof(tipoCuello)))
             {
-                string name = Enum.GetName(typeof(RefPolo.tipoCuello), it);
+                string name = Enum.GetName(typeof(tipoCuello), it);
                 ddlTipoCuello.Items.Add(new ListItem(name.Replace('_', ' '), name));
             }
 
             // Blusa
             ddlTipoBlusa.Items.Clear();
             ddlTipoBlusa.Items.Add(new ListItem("-- Seleccione --", ""));
-            foreach (RefBlusa.tipoBlusa it in Enum.GetValues(typeof(RefBlusa.tipoBlusa)))
+            foreach (tipoBlusa it in Enum.GetValues(typeof(tipoBlusa)))
             {
-                string name = Enum.GetName(typeof(RefBlusa.tipoBlusa), it);
+                string name = Enum.GetName(typeof(tipoBlusa), it);
                 ddlTipoBlusa.Items.Add(new ListItem(name.Replace('_', ' '), name));
             }
 
             ddlTipoMangaB.Items.Clear();
             ddlTipoMangaB.Items.Add(new ListItem("-- Seleccione --", ""));
-            foreach (RefBlusa.tipoManga it in Enum.GetValues(typeof(RefBlusa.tipoManga)))
+            foreach (tipoManga it in Enum.GetValues(typeof(tipoManga)))
             {
-                string name = Enum.GetName(typeof(RefBlusa.tipoManga), it);
+                string name = Enum.GetName(typeof(tipoManga), it);
                 ddlTipoMangaB.Items.Add(new ListItem(name.Replace('_', ' '), name));
             }
 
             // Vestido
             ddlTipoVestido.Items.Clear();
             ddlTipoVestido.Items.Add(new ListItem("-- Seleccione --", ""));
-            foreach (RefVest.tipoVestido it in Enum.GetValues(typeof(RefVest.tipoVestido)))
+            foreach (tipoVestido it in Enum.GetValues(typeof(tipoVestido)))
             {
-                string name = Enum.GetName(typeof(RefVest.tipoVestido), it);
+                string name = Enum.GetName(typeof(tipoVestido), it);
                 ddlTipoVestido.Items.Add(new ListItem(name.Replace('_', ' '), name));
             }
 
             ddlTipoMangaV.Items.Clear();
             ddlTipoMangaV.Items.Add(new ListItem("-- Seleccione --", ""));
-            foreach (RefVest.tipoManga it in Enum.GetValues(typeof(RefVest.tipoManga)))
+            foreach (tipoManga it in Enum.GetValues(typeof(tipoManga)))
             {
-                string name = Enum.GetName(typeof(RefVest.tipoManga), it);
+                string name = Enum.GetName(typeof(tipoManga), it);
                 ddlTipoMangaV.Items.Add(new ListItem(name.Replace('_', ' '), name));
             }
 
             // Falda
             ddlTipoFalda.Items.Clear();
             ddlTipoFalda.Items.Add(new ListItem("-- Seleccione --", ""));
-            foreach (RefFalda.tipoFalda it in Enum.GetValues(typeof(RefFalda.tipoFalda)))
+            foreach (tipoFalda it in Enum.GetValues(typeof(tipoFalda)))
             {
-                string name = Enum.GetName(typeof(RefFalda.tipoFalda), it);
+                string name = Enum.GetName(typeof(tipoFalda), it);
                 ddlTipoFalda.Items.Add(new ListItem(name.Replace('_', ' '), name));
             }
 
@@ -252,18 +244,18 @@ namespace WearDropWA
             // Pantalón
             ddlTipoPantalon.Items.Clear();
             ddlTipoPantalon.Items.Add(new ListItem("-- Seleccione --", ""));
-            foreach (RefPant.tipoPantalon it in Enum.GetValues(typeof(RefPant.tipoPantalon)))
+            foreach (tipoPantalon it in Enum.GetValues(typeof(tipoPantalon)))
             {
-                string name = Enum.GetName(typeof(RefPant.tipoPantalon), it);
+                string name = Enum.GetName(typeof(tipoPantalon), it);
                 ddlTipoPantalon.Items.Add(new ListItem(name.Replace('_', ' '), name));
             }
 
             // Casaca
             ddlTipoCasaca.Items.Clear();
             ddlTipoCasaca.Items.Add(new ListItem("-- Seleccione --", ""));
-            foreach (RefCasaca.tipoCasaca it in Enum.GetValues(typeof(RefCasaca.tipoCasaca)))
+            foreach (tipoCasaca it in Enum.GetValues(typeof(tipoCasaca)))
             {
-                string name = Enum.GetName(typeof(RefCasaca.tipoCasaca), it);
+                string name = Enum.GetName(typeof(tipoCasaca), it);
                 ddlTipoCasaca.Items.Add(new ListItem(name.Replace('_', ' '), name));
             }
 
@@ -275,9 +267,9 @@ namespace WearDropWA
             // Gorro
             ddlTipoGorra.Items.Clear();
             ddlTipoGorra.Items.Add(new ListItem("-- Seleccione --", ""));
-            foreach (RefGorro.tipoGorra it in Enum.GetValues(typeof(RefGorro.tipoGorra)))
+            foreach (tipoGorra it in Enum.GetValues(typeof(tipoGorra)))
             {
-                string name = Enum.GetName(typeof(RefGorro.tipoGorra), it);
+                string name = Enum.GetName(typeof(tipoGorra), it);
                 ddlTipoGorra.Items.Add(new ListItem(name.Replace('_', ' '), name));
             }
 
@@ -302,7 +294,7 @@ namespace WearDropWA
                 case "polo":
                 case "polos":
                     {
-                        var ws = new RefPolo.PoloWSClient();
+                        var ws = new PoloWSClient();
                         var p = ws.obtenerPoloPorId(Id);
                         if (p == null) throw new Exception("No se encontró el Polo.");
                         MapGeneralFromEntity(p.nombre, p.color, p.alertaMinStock, p.precioUnidad, p.precioMayor, p.precioDocena);
@@ -315,7 +307,7 @@ namespace WearDropWA
                 case "blusa":
                 case "blusas":
                     {
-                        var ws = new RefBlusa.BlusaWSClient();
+                        var ws = new BlusaWSClient();
                         var p = ws.obtenerBlusaPorId(Id);
                         if (p == null) throw new Exception("No se encontró la Blusa.");
                         MapGeneralFromEntity(p.nombre, p.color, p.alertaMinStock, p.precioUnidad, p.precioMayor, p.precioDocena);
@@ -327,20 +319,20 @@ namespace WearDropWA
                 case "vestido":
                 case "vestidos":
                     {
-                        var ws = new RefVest.VestidoWSClient();
+                        var ws = new VestidoWSClient();
                         var p = ws.obtenerVestidoPorId(Id);
                         if (p == null) throw new Exception("No se encontró el Vestido.");
                         MapGeneralFromEntity(p.nombre, p.color, p.alertaMinStock, p.precioUnidad, p.precioMayor, p.precioDocena);
-                        SetSelected(ddlTipoMangaV, p.tipoManga.ToString());
                         SetSelected(ddlMaterial, p.material.ToString());
                         SetSelected(ddlTipoVestido, p.tipoVestido.ToString());
+                        SetSelected(ddlTipoMangaV, p.tipoManga.ToString());
                         txtLargoVestido.Text = p.largo.ToString("0.##");
                         break;
                     }
                 case "falda":
                 case "faldas":
                     {
-                        var ws = new RefFalda.FaldaWSClient();
+                        var ws = new FaldaWSClient();
                         var p = ws.obtenerFaldaPorId(Id);
                         if (p == null) throw new Exception("No se encontró la Falda.");
                         MapGeneralFromEntity(p.nombre, p.color, p.alertaMinStock, p.precioUnidad, p.precioMayor, p.precioDocena);
@@ -353,7 +345,7 @@ namespace WearDropWA
                 case "pantalon":
                 case "pantalones":
                     {
-                        var ws = new RefPant.PantalonWSClient();
+                        var ws = new PantalonWSClient();
                         var p = ws.obtenerPantalonPorId(Id);
                         if (p == null) throw new Exception("No se encontró el Pantalón.");
                         MapGeneralFromEntity(p.nombre, p.color, p.alertaMinStock, p.precioUnidad, p.precioMayor, p.precioDocena);
@@ -366,7 +358,7 @@ namespace WearDropWA
                 case "casaca":
                 case "casacas":
                     {
-                        var ws = new RefCasaca.CasacaWSClient();
+                        var ws = new CasacaWSClient();
                         var p = ws.obtenerCasacaPorId(Id);
                         if (p == null) throw new Exception("No se encontró la Casaca.");
                         MapGeneralFromEntity(p.nombre, p.color, p.alertaMinStock, p.precioUnidad, p.precioMayor, p.precioDocena);
@@ -378,7 +370,7 @@ namespace WearDropWA
                 case "gorro":
                 case "gorros":
                     {
-                        var ws = new RefGorro.GorroWSClient();
+                        var ws = new GorroWSClient();
                         var p = ws.obtenerGorroPorId(Id);
                         if (p == null) throw new Exception("No se encontró el Gorro.");
                         MapGeneralFromEntity(p.nombre, p.color, p.alertaMinStock, p.precioUnidad, p.precioMayor, p.precioDocena);
@@ -442,8 +434,8 @@ namespace WearDropWA
         // ========= GUARDAR POR TIPO =========
         private void GuardarPolo()
         {
-            var ws = new RefPolo.PoloWSClient();
-            var p = new RefPolo.polo
+            var ws = new PoloWSClient();
+            var p = new polo
             {
                 nombre = txtNombre.Text,
                 color = txtColor.Text,
@@ -451,12 +443,9 @@ namespace WearDropWA
                 precioUnidad = ParseDouble(txtPU.Text, "Precio Unidad"),
                 precioMayor = ParseDouble(txtPM.Text, "Precio Mayor"),
                 precioDocena = ParseDouble(txtPD.Text, "Precio Docena"),
-                material = (RefPolo.material)Enum.Parse(typeof(RefPolo.material), ddlMaterial.SelectedValue, true),
-                materialSpecified = true,
-                tipoManga = (RefPolo.tipoManga)Enum.Parse(typeof(RefPolo.tipoManga), ddlTipoManga.SelectedValue, true),
-                tipoMangaSpecified = true,
-                tipoCuello = (RefPolo.tipoCuello)Enum.Parse(typeof(RefPolo.tipoCuello), ddlTipoCuello.SelectedValue, true),
-                tipoCuelloSpecified = true,
+                material = (material)Enum.Parse(typeof(material), ddlMaterial.SelectedValue, true),
+                tipoManga = (tipoManga)Enum.Parse(typeof(tipoManga), ddlTipoManga.SelectedValue, true),
+                tipoCuello = (tipoCuello)Enum.Parse(typeof(tipoCuello), ddlTipoCuello.SelectedValue, true),
                 estampado = txtEstampado.Text
             };
 
@@ -466,8 +455,8 @@ namespace WearDropWA
 
         private void GuardarBlusa()
         {
-            var ws = new RefBlusa.BlusaWSClient();
-            var p = new RefBlusa.blusa
+            var ws = new BlusaWSClient();
+            var p = new blusa
             {
                 nombre = txtNombre.Text,
                 color = txtColor.Text,
@@ -475,12 +464,9 @@ namespace WearDropWA
                 precioUnidad = ParseDouble(txtPU.Text, "Precio Unidad"),
                 precioMayor = ParseDouble(txtPM.Text, "Precio Mayor"),
                 precioDocena = ParseDouble(txtPD.Text, "Precio Docena"),
-                material = (RefBlusa.material)Enum.Parse(typeof(RefBlusa.material), ddlMaterial.SelectedValue, true),
-                materialSpecified = true,
-                tipoBlusa = (RefBlusa.tipoBlusa)Enum.Parse(typeof(RefBlusa.tipoBlusa), ddlTipoBlusa.SelectedValue, true),
-                tipoBlusaSpecified = true,
-                tipoManga = (RefBlusa.tipoManga)Enum.Parse(typeof(RefBlusa.tipoManga), ddlTipoMangaB.SelectedValue, true),
-                tipoMangaSpecified = true
+                material = (material)Enum.Parse(typeof(material), ddlMaterial.SelectedValue, true),
+                tipoBlusa = (tipoBlusa)Enum.Parse(typeof(tipoBlusa), ddlTipoBlusa.SelectedValue, true),
+                tipoManga = (tipoManga)Enum.Parse(typeof(tipoManga), ddlTipoMangaB.SelectedValue, true)
             };
 
             if (estado == Estado.Modificar) { p.idPrenda = Id; ws.modificarBlusa(p); }
@@ -489,8 +475,8 @@ namespace WearDropWA
 
         private void GuardarVestido()
         {
-            var ws = new RefVest.VestidoWSClient();
-            var p = new RefVest.vestido
+            var ws = new VestidoWSClient();
+            var p = new vestido
             {
                 nombre = txtNombre.Text,
                 color = txtColor.Text,
@@ -498,16 +484,10 @@ namespace WearDropWA
                 precioUnidad = ParseDouble(txtPU.Text, "Precio Unidad"),
                 precioMayor = ParseDouble(txtPM.Text, "Precio Mayor"),
                 precioDocena = ParseDouble(txtPD.Text, "Precio Docena"),
-                material = (RefVest.material)Enum.Parse(typeof(RefVest.material), ddlMaterial.SelectedValue, true),
-                materialSpecified = true,
-                tipoVestido = (RefVest.tipoVestido)Enum.Parse(typeof(RefVest.tipoVestido), ddlTipoVestido.SelectedValue, true),
-                tipoVestidoSpecified = true,
-                tipoManga = (RefVest.tipoManga)Enum.Parse(typeof(RefVest.tipoManga), ddlTipoMangaV.SelectedValue, true),
-                tipoMangaSpecified = true,
-                // CORREGIDO: largo es double -> ParseDouble
+                material = (material)Enum.Parse(typeof(material), ddlMaterial.SelectedValue, true),
+                tipoVestido = (tipoVestido)Enum.Parse(typeof(tipoVestido), ddlTipoVestido.SelectedValue, true),
+                tipoManga = (tipoManga)Enum.Parse(typeof(tipoManga), ddlTipoMangaV.SelectedValue, true),
                 largo = ParseInt(txtLargoVestido.Text, "Largo (cm)")
-
-
             };
 
             if (estado == Estado.Modificar) { p.idPrenda = Id; ws.modificarVestido(p); }
@@ -516,8 +496,8 @@ namespace WearDropWA
 
         private void GuardarFalda()
         {
-            var ws = new RefFalda.FaldaWSClient();
-            var p = new RefFalda.falda
+            var ws = new FaldaWSClient();
+            var p = new falda
             {
                 nombre = txtNombre.Text,
                 color = txtColor.Text,
@@ -525,10 +505,8 @@ namespace WearDropWA
                 precioUnidad = ParseDouble(txtPU.Text, "Precio Unidad"),
                 precioMayor = ParseDouble(txtPM.Text, "Precio Mayor"),
                 precioDocena = ParseDouble(txtPD.Text, "Precio Docena"),
-                material = (RefFalda.material)Enum.Parse(typeof(RefFalda.material), ddlMaterial.SelectedValue, true),
-                materialSpecified = true,
-                tipoFalda = (RefFalda.tipoFalda)Enum.Parse(typeof(RefFalda.tipoFalda), ddlTipoFalda.SelectedValue, true),
-                tipoFaldaSpecified = true,
+                material = (material)Enum.Parse(typeof(material), ddlMaterial.SelectedValue, true),
+                tipoFalda = (tipoFalda)Enum.Parse(typeof(tipoFalda), ddlTipoFalda.SelectedValue, true),
                 largo = ParseDouble(txtLargoFalda.Text, "Largo (cm)"),
                 conVolantes = IsTrue10(ddlConVolantes.SelectedValue)
             };
@@ -539,8 +517,8 @@ namespace WearDropWA
 
         private void GuardarPantalon()
         {
-            var ws = new RefPant.PantalonWSClient();
-            var p = new RefPant.pantalon
+            var ws = new PantalonWSClient();
+            var p = new pantalon
             {
                 nombre = txtNombre.Text,
                 color = txtColor.Text,
@@ -548,10 +526,8 @@ namespace WearDropWA
                 precioUnidad = ParseDouble(txtPU.Text, "Precio Unidad"),
                 precioMayor = ParseDouble(txtPM.Text, "Precio Mayor"),
                 precioDocena = ParseDouble(txtPD.Text, "Precio Docena"),
-                material = (RefPant.material)Enum.Parse(typeof(RefPant.material), ddlMaterial.SelectedValue, true),
-                materialSpecified = true,
-                tipoPantalon = (RefPant.tipoPantalon)Enum.Parse(typeof(RefPant.tipoPantalon), ddlTipoPantalon.SelectedValue, true),
-                tipoPantalonSpecified = true,
+                material = (material)Enum.Parse(typeof(material), ddlMaterial.SelectedValue, true),
+                tipoPantalon = (tipoPantalon)Enum.Parse(typeof(tipoPantalon), ddlTipoPantalon.SelectedValue, true),
                 largoPierna = ParseDouble(txtLargoPierna.Text, "Largo pierna (cm)"),
                 cintura = ParseDouble(txtCintura.Text, "Cintura (cm)")
             };
@@ -562,8 +538,8 @@ namespace WearDropWA
 
         private void GuardarCasaca()
         {
-            var ws = new RefCasaca.CasacaWSClient();
-            var p = new RefCasaca.casaca
+            var ws = new CasacaWSClient();
+            var p = new casaca
             {
                 nombre = txtNombre.Text,
                 color = txtColor.Text,
@@ -571,10 +547,8 @@ namespace WearDropWA
                 precioUnidad = ParseDouble(txtPU.Text, "Precio Unidad"),
                 precioMayor = ParseDouble(txtPM.Text, "Precio Mayor"),
                 precioDocena = ParseDouble(txtPD.Text, "Precio Docena"),
-                material = (RefCasaca.material)Enum.Parse(typeof(RefCasaca.material), ddlMaterial.SelectedValue, true),
-                materialSpecified = true,
-                tipoCasaca = (RefCasaca.tipoCasaca)Enum.Parse(typeof(RefCasaca.tipoCasaca), ddlTipoCasaca.SelectedValue, true),
-                tipoCasacaSpecified = true,
+                material = (material)Enum.Parse(typeof(material), ddlMaterial.SelectedValue, true),
+                tipoCasaca = (tipoCasaca)Enum.Parse(typeof(tipoCasaca), ddlTipoCasaca.SelectedValue, true),
                 conCapucha = IsTrue10(ddlConCapucha.SelectedValue)
             };
 
@@ -584,8 +558,8 @@ namespace WearDropWA
 
         private void GuardarGorro()
         {
-            var ws = new RefGorro.GorroWSClient();
-            var p = new RefGorro.gorro
+            var ws = new GorroWSClient();
+            var p = new gorro
             {
                 nombre = txtNombre.Text,
                 color = txtColor.Text,
@@ -593,10 +567,8 @@ namespace WearDropWA
                 precioUnidad = ParseDouble(txtPU.Text, "Precio Unidad"),
                 precioMayor = ParseDouble(txtPM.Text, "Precio Mayor"),
                 precioDocena = ParseDouble(txtPD.Text, "Precio Docena"),
-                material = (RefGorro.material)Enum.Parse(typeof(RefGorro.material), ddlMaterial.SelectedValue, true),
-                materialSpecified = true,
-                tipoGorra = (RefGorro.tipoGorra)Enum.Parse(typeof(RefGorro.tipoGorra), ddlTipoGorra.SelectedValue, true),
-                tipoGorraSpecified = true,
+                material = (material)Enum.Parse(typeof(material), ddlMaterial.SelectedValue, true),
+                tipoGorra = (tipoGorra)Enum.Parse(typeof(tipoGorra), ddlTipoGorra.SelectedValue, true),
                 tallaAjustable = IsTrue10(ddlTallaAjustable.SelectedValue),
                 impermeable = IsTrue10(ddlImpermeable.SelectedValue)
             };

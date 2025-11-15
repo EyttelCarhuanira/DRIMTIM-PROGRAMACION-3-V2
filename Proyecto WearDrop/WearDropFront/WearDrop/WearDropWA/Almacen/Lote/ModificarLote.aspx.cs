@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WearDropWA.PackageAlmacen;
+using WearDropWA.PackagePrendas;
 
 namespace WearDropWA
 {
@@ -12,13 +14,15 @@ namespace WearDropWA
         private int idAlmacen;
         private int idLote;
         private LoteWSClient boLote;
-        private AlmacenWSClient boAlmacen; // 🔹 Añadido
-        private lote datLote;
+        private AlmacenWSClient boAlmacen;
+        private PrendaLoteWSClient wsPrendaLote; // ✅ Cliente WS para prendas
+        private PackageAlmacen.lote datLote;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             boLote = new LoteWSClient();
-            boAlmacen = new AlmacenWSClient(); // 🔹 Inicializar servicio de almacén
+            boAlmacen = new AlmacenWSClient();
+            wsPrendaLote = new PrendaLoteWSClient(); // ✅ Inicializar
 
             if (!IsPostBack)
             {
@@ -30,9 +34,9 @@ namespace WearDropWA
                     ViewState["IdLote"] = idLote;
                     ViewState["IdAlmacen"] = idAlmacen;
 
-                    CargarDatosAlmacen(); // 🔹 Cargar nombre del almacén
-                    CargarDatosLote();     // 🔹 Cargar datos del lote
-                    CargarPrendas();
+                    CargarDatosAlmacen();
+                    CargarDatosLote();
+                    CargarPrendas(); // ✅ Cargar prendas desde BD
                 }
                 else
                 {
@@ -46,12 +50,11 @@ namespace WearDropWA
             }
         }
 
-        // 🔹 Método para cargar el nombre del almacén desde el servicio
         private void CargarDatosAlmacen()
         {
             try
             {
-                almacen datAlmacen = boAlmacen.obtenerPorId(idAlmacen);
+                PackageAlmacen.almacen datAlmacen = boAlmacen.obtenerPorId(idAlmacen);
 
                 if (datAlmacen != null)
                 {
@@ -70,20 +73,15 @@ namespace WearDropWA
             }
         }
 
-        // 🔹 Método modificado para cargar los datos del lote desde el servicio
         private void CargarDatosLote()
         {
             try
             {
-                // Obtener el lote del servicio
                 datLote = boLote.obtenerLotePorID(idLote);
 
                 if (datLote != null)
                 {
-                    // 🔹 Cargar la descripción en el TextBox
                     txtDescripcionLote.Text = datLote.descripcion ?? "";
-
-                    // 🔹 Guardar el lote completo en ViewState para usarlo después
                     ViewState["DatLote"] = datLote;
                 }
                 else
@@ -100,30 +98,49 @@ namespace WearDropWA
             }
         }
 
+        // ✅ CARGAR PRENDAS DESDE BD
         private void CargarPrendas()
         {
-            // Datos de prueba - prendas del lote
-            var prendasTest = new List<dynamic>
+            try
             {
-                new { IdPrenda = 1, NombrePrenda = "Camiseta Básica Blanca", Color = "Blanco", Material = "Algodón", Stock = 50, Talla = "M" },
-                new { IdPrenda = 2, NombrePrenda = "Camiseta Básica Negra", Color = "Negro", Material = "Algodón", Stock = 45, Talla = "M" },
-                new { IdPrenda = 3, NombrePrenda = "Camiseta Básica Azul", Color = "Azul", Material = "Algodón", Stock = 40, Talla = "L" },
-                new { IdPrenda = 4, NombrePrenda = "Camiseta Básica Roja", Color = "Rojo", Material = "Algodón", Stock = 35, Talla = "S" },
-                new { IdPrenda = 5, NombrePrenda = "Camiseta Básica Verde", Color = "Verde", Material = "Algodón", Stock = 30, Talla = "M" },
-                new { IdPrenda = 6, NombrePrenda = "Camiseta Básica Gris", Color = "Gris", Material = "Algodón", Stock = 25, Talla = "L" },
-                new { IdPrenda = 7, NombrePrenda = "Camiseta Básica Amarilla", Color = "Amarillo", Material = "Algodón", Stock = 20, Talla = "XL" }
-            };
+                prendaLote[] prendasLote = wsPrendaLote.listarPrendasPorLote(idLote);
 
-            gvPrendas.DataSource = prendasTest;
+                if (prendasLote != null && prendasLote.Length > 0)
+                {
+                    var prendasFormateadas = prendasLote.Select(pl => new
+                    {
+                        IdPrendaLote = pl.idPrendaLote,
+                        IdPrenda = pl.idPrenda,
+                        Talla = pl.talla.ToString() ?? "-",
+                        Stock = pl.stock
+                    }).ToList();
+
+                    gvPrendas.DataSource = prendasFormateadas;
+                    gvPrendas.DataBind();
+                }
+                else
+                {
+                    CargarPrendasVacio();
+                }
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                    $"alert('Error al cargar prendas: {ex.Message}');", true);
+                CargarPrendasVacio();
+            }
+        }
+
+        private void CargarPrendasVacio()
+        {
+            gvPrendas.DataSource = null;
             gvPrendas.DataBind();
         }
 
-        // Método para generar la paginación personalizada
         protected string GenerarPaginacion(int currentPage, int totalPages)
         {
             StringBuilder sb = new StringBuilder();
 
-            // Mostrar solo 3 páginas alrededor de la actual
             int startPage = Math.Max(2, currentPage);
             int endPage = Math.Min(totalPages - 1, currentPage + 2);
 
@@ -149,43 +166,63 @@ namespace WearDropWA
             CargarPrendas();
         }
 
+        // ✅ AÑADIR PRENDA - REDIRIGIR A RegistrarPrendaLote
         protected void btnAñadirPrenda_Click(object sender, EventArgs e)
         {
-            // Redirigir a página para añadir prenda al lote (Todavia no implementado)
-            //Response.Redirect($"~/Almacen/Lote/AgregarPrenda.aspx?idLote={idLote}&idAlmacen={idAlmacen}");
+            Response.Redirect($"~/Almacen/PrendaLote/RegistrarPrendaLote.aspx?idAlmacen={idAlmacen}&idLote={idLote}");
         }
 
         protected void btnFiltrarPrenda_Click(object sender, EventArgs e)
         {
-            // Implementar lógica de filtro
+            // Implementar filtro si es necesario
         }
 
+        // ✅ MODIFICAR PRENDA (Si tienes una página para eso)
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             LinkButton btn = (LinkButton)sender;
-            int idPrenda = int.Parse(btn.CommandArgument);
+            int idPrendaLote = int.Parse(btn.CommandArgument);
 
-            // Redirigir a modificar prenda (Todavia no Implementado)
-            Response.Redirect($"~/Prenda/ModificarPrenda.aspx?id={idPrenda}&idLote={idLote}");
+            // Redirigir a modificar prenda del lote (si existe la página)
+            Response.Redirect($"~/Almacen/PrendaLote/ModificarPrendaLote.aspx?id={idPrendaLote}&idLote={idLote}&idAlmacen={idAlmacen}");
         }
 
+        // ✅ ELIMINAR PRENDA DEL LOTE
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            LinkButton btn = (LinkButton)sender;
-            int idPrenda = int.Parse(btn.CommandArgument);
+            try
+            {
+                LinkButton btn = (LinkButton)sender;
+                int idPrendaLote = int.Parse(btn.CommandArgument);
 
-            // Lógica para eliminar prenda del lote
-            CargarPrendas();
+                int resultado = wsPrendaLote.eliminarPrendaLote(idPrendaLote);
+
+                if (resultado > 0)
+                {
+                    CargarPrendas();
+                    ScriptManager.RegisterStartupScript(this, GetType(), "info",
+                        "alert('Prenda removida del lote');", true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "alert",
+                        "alert('Error al eliminar prenda');", true);
+                }
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                    $"alert('Error: {ex.Message}');", true);
+            }
         }
 
+        // ✅ GUARDAR MODIFICACIONES DEL LOTE
         protected void lkGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                // 🔹 Obtener la descripción del TextBox
                 string descripcion = txtDescripcionLote.Text.Trim();
 
-                // 🔹 Validar que no esté vacía
                 if (string.IsNullOrEmpty(descripcion))
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "alert",
@@ -193,22 +230,18 @@ namespace WearDropWA
                     return;
                 }
 
-                // 🔹 Recuperar el lote guardado en ViewState
-                datLote = (lote)ViewState["DatLote"];
+                datLote = (PackageAlmacen.lote)ViewState["DatLote"];
 
-                // 🔹 Si no existe en ViewState, crear uno nuevo (aunque no debería pasar)
                 if (datLote == null)
                 {
-                    datLote = new lote();
-                    datLote.datAlmacen = new almacen();
+                    datLote = new PackageAlmacen.lote();
+                    datLote.datAlmacen = new PackageAlmacen.almacen();
                     datLote.datAlmacen.id = idAlmacen;
                 }
 
-                // 🔹 Actualizar los campos que se pueden modificar
                 datLote.idLote = idLote;
                 datLote.descripcion = descripcion;
 
-                // 🔹 Llamar al servicio para modificar
                 int resultado = boLote.modificarLote(datLote);
 
                 if (resultado > 0)
