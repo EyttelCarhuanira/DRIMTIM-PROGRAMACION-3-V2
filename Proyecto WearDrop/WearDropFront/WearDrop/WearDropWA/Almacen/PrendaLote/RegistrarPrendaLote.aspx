@@ -541,6 +541,8 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     
     <script type="text/javascript">
+        var preventClear = false; // Variable global para controlar si se debe limpiar
+
         $(document).ready(function () {
             // Inicializar Select2 en Nombre
             $('#<%= ddlNombrePrenda.ClientID %>').select2({
@@ -591,18 +593,20 @@
                 }
             });
 
-            // Limpiar los otros campos cuando se escribe en ID
+            // Limpiar los otros campos cuando se escribe en ID (solo si es manual)
             $('#<%= txtIdPrenda.ClientID %>').on('input', function () {
-                if ($(this).val().trim() !== '') {
+                // Solo limpiar si el usuario está escribiendo manualmente
+                if ($(this).val().trim() !== '' && !preventClear) {
                     $('#<%= ddlNombrePrenda.ClientID %>').val('').trigger('change');
                     $('#<%= ddlColorPrenda.ClientID %>').val('').trigger('change');
                     $('#<%= ddlMaterialPrenda.ClientID %>').val('').trigger('change');
                 }
             });
 
-            // Limpiar ID cuando se selecciona algún otro campo
-            $('#<%= ddlNombrePrenda.ClientID %>, #<%= ddlColorPrenda.ClientID %>, #<%= ddlMaterialPrenda.ClientID %>').on('change', function () {
-                if ($(this).val() !== '') {
+            // Limpiar ID cuando se selecciona algún otro campo (solo si es manual)
+            $('#<%= ddlNombrePrenda.ClientID %>, #<%= ddlColorPrenda.ClientID %>, #<%= ddlMaterialPrenda.ClientID %>').on('select2:select', function () {
+                // Solo limpiar si no estamos en medio de una actualización automática
+                if (!preventClear) {
                     $('#<%= txtIdPrenda.ClientID %>').val('');
                 }
             });

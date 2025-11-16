@@ -404,23 +404,24 @@
                                 <div class="action-btns">
                                     <asp:LinkButton ID="btnModificar" runat="server"
                                         CssClass="btn btn-sm btn-outline-primary"
-                                        CommandArgument='<%# Eval("IdPrenda") %>'
+                                        CommandArgument='<%# Eval("IdPrendaLote") %>'
                                         OnClick="btnModificar_Click"
                                         ToolTip="Modificar">
-                                        <i class="fa fa-pencil"></i>
+                <i class="fa fa-pencil"></i>
                                     </asp:LinkButton>
 
                                     <asp:LinkButton ID="btnEliminar" runat="server"
                                         CssClass="btn btn-sm btn-outline-danger"
-                                        CommandArgument='<%# Eval("IdPrenda") %>'
+                                        CommandArgument='<%# Eval("IdPrendaLote") %>'
                                         OnClick="btnEliminar_Click"
                                         OnClientClick="return confirm('¿Está seguro de eliminar esta prenda del lote?');"
                                         ToolTip="Eliminar">
-                                        <i class="fa fa-trash"></i>
+                <i class="fa fa-trash"></i>
                                     </asp:LinkButton>
                                 </div>
                             </ItemTemplate>
                         </asp:TemplateField>
+
                     </Columns>
                     <PagerSettings Mode="NumericFirstLast" FirstPageText="Primera" LastPageText="Última" />
                     <PagerStyle CssClass="pager-row" HorizontalAlign="Center" />

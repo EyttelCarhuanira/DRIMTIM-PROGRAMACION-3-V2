@@ -11,29 +11,17 @@
   <message name="modificarVestidoResponse">
     <part name="parameters" element="tns:modificarVestidoResponse" />
   </message>
-  <message name="eliminarVestido">
-    <part name="parameters" element="tns:eliminarVestido" />
-  </message>
-  <message name="eliminarVestidoResponse">
-    <part name="parameters" element="tns:eliminarVestidoResponse" />
-  </message>
-  <message name="obtenerVestidoPorId">
-    <part name="parameters" element="tns:obtenerVestidoPorId" />
-  </message>
-  <message name="obtenerVestidoPorIdResponse">
-    <part name="parameters" element="tns:obtenerVestidoPorIdResponse" />
-  </message>
-  <message name="listarVestidos">
-    <part name="parameters" element="tns:listarVestidos" />
-  </message>
-  <message name="listarVestidosResponse">
-    <part name="parameters" element="tns:listarVestidosResponse" />
-  </message>
   <message name="insertarVestido">
     <part name="parameters" element="tns:insertarVestido" />
   </message>
   <message name="insertarVestidoResponse">
     <part name="parameters" element="tns:insertarVestidoResponse" />
+  </message>
+  <message name="eliminarVestido">
+    <part name="parameters" element="tns:eliminarVestido" />
+  </message>
+  <message name="eliminarVestidoResponse">
+    <part name="parameters" element="tns:eliminarVestidoResponse" />
   </message>
   <message name="filtrarVestidos">
     <part name="parameters" element="tns:filtrarVestidos" />
@@ -41,30 +29,42 @@
   <message name="filtrarVestidosResponse">
     <part name="parameters" element="tns:filtrarVestidosResponse" />
   </message>
+  <message name="listarVestidos">
+    <part name="parameters" element="tns:listarVestidos" />
+  </message>
+  <message name="listarVestidosResponse">
+    <part name="parameters" element="tns:listarVestidosResponse" />
+  </message>
+  <message name="obtenerVestidoPorId">
+    <part name="parameters" element="tns:obtenerVestidoPorId" />
+  </message>
+  <message name="obtenerVestidoPorIdResponse">
+    <part name="parameters" element="tns:obtenerVestidoPorIdResponse" />
+  </message>
   <portType name="VestidoWS">
     <operation name="modificarVestido">
       <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/modificarVestidoRequest" message="tns:modificarVestido" />
       <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/modificarVestidoResponse" message="tns:modificarVestidoResponse" />
     </operation>
+    <operation name="insertarVestido">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/insertarVestidoRequest" message="tns:insertarVestido" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/insertarVestidoResponse" message="tns:insertarVestidoResponse" />
+    </operation>
     <operation name="eliminarVestido">
       <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/eliminarVestidoRequest" message="tns:eliminarVestido" />
       <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/eliminarVestidoResponse" message="tns:eliminarVestidoResponse" />
     </operation>
-    <operation name="obtenerVestidoPorId">
-      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/obtenerVestidoPorIdRequest" message="tns:obtenerVestidoPorId" />
-      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/obtenerVestidoPorIdResponse" message="tns:obtenerVestidoPorIdResponse" />
+    <operation name="filtrarVestidos">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/filtrarVestidosRequest" message="tns:filtrarVestidos" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/filtrarVestidosResponse" message="tns:filtrarVestidosResponse" />
     </operation>
     <operation name="listarVestidos">
       <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/listarVestidosRequest" message="tns:listarVestidos" />
       <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/listarVestidosResponse" message="tns:listarVestidosResponse" />
     </operation>
-    <operation name="insertarVestido">
-      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/insertarVestidoRequest" message="tns:insertarVestido" />
-      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/insertarVestidoResponse" message="tns:insertarVestidoResponse" />
-    </operation>
-    <operation name="filtrarVestidos">
-      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/filtrarVestidosRequest" message="tns:filtrarVestidos" />
-      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/filtrarVestidosResponse" message="tns:filtrarVestidosResponse" />
+    <operation name="obtenerVestidoPorId">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/obtenerVestidoPorIdRequest" message="tns:obtenerVestidoPorId" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/obtenerVestidoPorIdResponse" message="tns:obtenerVestidoPorIdResponse" />
     </operation>
   </portType>
   <binding name="VestidoWSPortBinding" type="tns:VestidoWS">
@@ -78,6 +78,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="insertarVestido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarVestido">
       <soap:operation soapAction="" />
       <input>
@@ -87,7 +96,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerVestidoPorId">
+    <operation name="filtrarVestidos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,16 +114,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarVestido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="filtrarVestidos">
+    <operation name="obtenerVestidoPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

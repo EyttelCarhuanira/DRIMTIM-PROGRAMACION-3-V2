@@ -107,16 +107,6 @@
       <xs:element minOccurs="0" name="vigencia" type="tns:vigencia" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="obtenerPantalonPorId">
-    <xs:sequence>
-      <xs:element name="idPantalon" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="obtenerPantalonPorIdResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:pantalon" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="insertarPantalon">
     <xs:sequence>
       <xs:element minOccurs="0" name="pantalon" type="tns:pantalon" />
@@ -125,6 +115,16 @@
   <xs:complexType name="insertarPantalonResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPantalonPorId">
+    <xs:sequence>
+      <xs:element name="idPantalon" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPantalonPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:pantalon" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarPantalon">
@@ -137,14 +137,6 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarPantalones">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarPantalonesResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pantalon" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="eliminarPantalon">
     <xs:sequence>
       <xs:element name="idPantalon" type="xs:int" />
@@ -153,6 +145,14 @@
   <xs:complexType name="eliminarPantalonResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPantalones">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarPantalonesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pantalon" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="tipoPantalon">

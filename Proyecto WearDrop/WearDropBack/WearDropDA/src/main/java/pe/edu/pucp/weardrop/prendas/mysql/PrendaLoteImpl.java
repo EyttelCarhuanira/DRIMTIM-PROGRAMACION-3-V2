@@ -44,6 +44,8 @@ public class PrendaLoteImpl implements PrendaLoteDAO {
         in.put(1, dat.getIdPrendaLote());
         in.put(2, dat.getStock());
         in.put(3, dat.isActivo() ? 1 : 0);
+        String tallaString = dat.getTalla() != null ? dat.getTalla().toString() : null;
+        in.put(4, tallaString);
 
         int res = DBManager.getInstance().ejecutarProcedimiento("modificar_prenda_lote", in, null);
         System.out.println("Se ha modificado PrendaLote id=" + dat.getIdPrendaLote());
@@ -73,8 +75,8 @@ public class PrendaLoteImpl implements PrendaLoteDAO {
             if (rs.next()) {
                 pl = new PrendaLote();
                 pl.setIdPrendaLote(rs.getInt("idPrendaLote"));
-                pl.setIdPrenda(rs.getInt("Prenda_idPrenda"));
-                pl.setIdLote(rs.getInt("Lote_idLote"));
+                pl.setIdPrenda(rs.getInt("idPrenda"));
+                pl.setIdLote(rs.getInt("idLote"));
                 pl.setTalla(Talla.valueOf(rs.getString("talla")));
                 pl.setStock(rs.getInt("stock"));
                 pl.setActivo(rs.getBoolean("activo"));
@@ -98,8 +100,8 @@ public class PrendaLoteImpl implements PrendaLoteDAO {
                 PrendaLote pl = new PrendaLote();
 
                 pl.setIdPrendaLote(rs.getInt("idPrendaLote"));
-                pl.setIdPrenda(rs.getInt("Prenda_idPrenda"));
-                pl.setIdLote(rs.getInt("Lote_idLote"));
+                pl.setIdPrenda(rs.getInt("idPrenda"));
+                pl.setIdLote(rs.getInt("idLote"));
                 pl.setTalla(Talla.valueOf(rs.getString("talla")));
                 pl.setStock(rs.getInt("stock"));
                 pl.setActivo(rs.getBoolean("activo"));
@@ -149,8 +151,8 @@ public class PrendaLoteImpl implements PrendaLoteDAO {
                 PrendaLote pl = new PrendaLote();
 
                 pl.setIdPrendaLote(rs.getInt("idPrendaLote"));
-                pl.setIdPrenda(rs.getInt("Prenda_idPrenda"));
-                pl.setIdLote(rs.getInt("Lote_idLote"));
+                pl.setIdPrenda(rs.getInt("idPrenda"));
+                pl.setIdLote(rs.getInt("idLote"));
                 pl.setTalla(Talla.valueOf(rs.getString("talla")));
                 pl.setStock(rs.getInt("stock"));
                 pl.setActivo(rs.getBoolean("activo"));

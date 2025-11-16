@@ -95,16 +95,6 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="obtenerVestidoPorId">
-    <xs:sequence>
-      <xs:element name="idVestido" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="obtenerVestidoPorIdResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:vestido" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="insertarVestido">
     <xs:sequence>
       <xs:element minOccurs="0" name="vestido" type="tns:vestido" />
@@ -113,6 +103,16 @@
   <xs:complexType name="insertarVestidoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerVestidoPorId">
+    <xs:sequence>
+      <xs:element name="idVestido" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerVestidoPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:vestido" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarVestidos">

@@ -24,15 +24,27 @@ public class PrendaLoteWS {
     // ========================================
     
     @WebMethod(operationName = "insertarPrendaLote")
-    public int insertarPrendaLote(@WebParam(name = "prendaLote") PrendaLote prendaLote) {
-        try {
-            return prendaLoteBO.insertar(prendaLote);
-        } catch (Exception ex) {
-            System.out.println("ERROR en WS insertarPrendaLote: " + ex.getMessage());
-            ex.printStackTrace();
-            return -1;
+public int insertarPrendaLote(@WebParam(name = "prendaLote") PrendaLote prendaLote) {
+    try {
+        // ✅ VERIFICAR QUÉ LLEGA
+        System.out.println("=== INSERTANDO PRENDA LOTE ===");
+        System.out.println("ID Prenda: " + prendaLote.getIdPrenda());
+        System.out.println("ID Lote: " + prendaLote.getIdLote());
+        System.out.println("Talla: " + prendaLote.getTalla()); // <-- VER QUÉ SALE AQUÍ
+        System.out.println("Stock: " + prendaLote.getStock());
+        
+        if (prendaLote.getTalla() == null) {
+            System.out.println("❌ TALLA ES NULL");
+            throw new Exception("Debe seleccionar una talla");
         }
+        
+        return prendaLoteBO.insertar(prendaLote);
+    } catch (Exception ex) {
+        System.out.println("ERROR en WS insertarPrendaLote: " + ex.getMessage());
+        throw new RuntimeException(ex.getMessage());
     }
+}
+
     
     @WebMethod(operationName = "modificarPrendaLote")
     public int modificarPrendaLote(@WebParam(name = "prendaLote") PrendaLote prendaLote) {
@@ -79,15 +91,26 @@ public class PrendaLoteWS {
     }
     
     @WebMethod(operationName = "listarPrendasPorLote")
-    public ArrayList<PrendaLote> listarPrendasPorLote(@WebParam(name = "idLote") int idLote) {
-        try {
-            return prendaLoteBO.listarPorLote(idLote);
-        } catch (Exception ex) {
-            System.out.println("ERROR en WS listarPrendasPorLote: " + ex.getMessage());
-            ex.printStackTrace();
-            return new ArrayList<>();
+public ArrayList<PrendaLote> listarPrendasPorLote(@WebParam(name = "idLote") int idLote) {
+    try {
+        System.out.println("=== WS: listarPrendasPorLote - idLote: " + idLote + " ===");
+        
+        ArrayList<PrendaLote> lista = prendaLoteBO.listarPorLote(idLote);
+        
+        if (lista != null) {
+            System.out.println("WS retornando " + lista.size() + " prendas");
+        } else {
+            System.out.println(" WS retornando null");
         }
+        
+        return lista;
+    } catch (Exception ex) {
+        System.out.println("ERROR en WS listarPrendasPorLote: " + ex.getMessage());
+        ex.printStackTrace();
+        return new ArrayList<>();
     }
+}
+
     
     @WebMethod(operationName = "existePrendaTallaEnLote")
     public boolean existePrendaTallaEnLote(

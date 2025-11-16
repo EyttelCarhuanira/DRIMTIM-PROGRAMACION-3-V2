@@ -3,7 +3,6 @@ using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Script.Serialization;
-using WearDropWA.PackageAlmacen;
 using WearDropWA.PackagePrendas;
 
 namespace WearDropWA
@@ -36,20 +35,30 @@ namespace WearDropWA
                 }
 
                 CargarCombos();
+                CargarTallas();
                 pnlSearchError.CssClass = "search-error";
             }
             else
             {
                 idAlmacen = (int)ViewState["IdAlmacen"];
                 id_Lote = (int)ViewState["IdLote"];
-                // RESTAURAR EL ID DE LA PRENDA SI EXISTE
                 if (ViewState["IdPrendaEncontrada"] != null)
                 {
                     txtIdPrenda.Text = ViewState["IdPrendaEncontrada"].ToString();
                 }
             }
         }
-
+        private void CargarTallas()
+        {
+            ddlTalla.Items.Clear();
+            ddlTalla.Items.Add(new ListItem("-- Seleccione talla --", ""));
+            ddlTalla.Items.Add(new ListItem("XS", "XS"));
+            ddlTalla.Items.Add(new ListItem("S", "S"));
+            ddlTalla.Items.Add(new ListItem("M", "M"));
+            ddlTalla.Items.Add(new ListItem("L", "L"));
+            ddlTalla.Items.Add(new ListItem("XL", "XL"));
+            ddlTalla.Items.Add(new ListItem("XXL", "XXL"));
+        }
         private void CargarCombos()
         {
             CargarNombres();
@@ -188,10 +197,16 @@ namespace WearDropWA
                 encontrado = BuscarPorCampos(nombre, color, material);
             }
 
+            // Solo mostrar error si NO se encontró
             if (!encontrado)
             {
                 lblSearchError.Text = "No se encontró ninguna prenda con los criterios especificados";
                 pnlSearchError.CssClass = "search-error show";
+            }
+            else
+            {
+                // OCULTAR el mensaje si se encontró la prenda
+                pnlSearchError.CssClass = "search-error";
             }
         }
 
@@ -219,7 +234,7 @@ namespace WearDropWA
                     });
 
                     ScriptManager.RegisterStartupScript(this, GetType(), "debugPolo",
-                        $"console.log('✅ Prenda encontrada:', {poloData});", true);
+                        $"console.log('Prenda encontrada:', {poloData});", true);
 
                     // GUARDAR EN VIEWSTATE
                     ViewState["IdPrendaEncontrada"] = prendaEncontrada.idPrenda;
@@ -235,7 +250,7 @@ namespace WearDropWA
                 else
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "debugNull",
-                        "console.log('❌ Prenda no encontrada en ningún tipo');", true);
+                        "console.log('Prenda no encontrada en ningún tipo');", true);
                     return false;
                 }
             }
@@ -260,7 +275,7 @@ namespace WearDropWA
                 if (p != null)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "debugTipo",
-                        "console.log('✅ Encontrado como Polo');", true);
+                        "console.log('Encontrado como Polo');", true);
                     return p;
                 }
             }
@@ -280,7 +295,7 @@ namespace WearDropWA
                 if (b != null)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "debugTipo",
-                        "console.log('✅ Encontrado como Blusa');", true);
+                        "console.log('Encontrado como Blusa');", true);
 
                     // Convertir a polo (como contenedor genérico)
                     return new polo
@@ -314,7 +329,7 @@ namespace WearDropWA
                 if (v != null)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "debugTipo",
-                        "console.log('✅ Encontrado como Vestido');", true);
+                        "console.log('Encontrado como Vestido');", true);
 
                     return new polo
                     {
@@ -347,7 +362,7 @@ namespace WearDropWA
                 if (f != null)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "debugTipo",
-                        "console.log('✅ Encontrado como Falda');", true);
+                        "console.log('Encontrado como Falda');", true);
 
                     return new polo
                     {
@@ -380,7 +395,7 @@ namespace WearDropWA
                 if (p != null)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "debugTipo",
-                        "console.log('✅ Encontrado como Pantalon');", true);
+                        "console.log('Encontrado como Pantalon');", true);
 
                     return new polo
                     {
@@ -413,7 +428,7 @@ namespace WearDropWA
                 if (c != null)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "debugTipo",
-                        "console.log('✅ Encontrado como Casaca');", true);
+                        "console.log('Encontrado como Casaca');", true);
 
                     return new polo
                     {
@@ -480,6 +495,7 @@ namespace WearDropWA
             string colorJson = jsSerializer.Serialize(ddlColorPrenda.SelectedValue ?? "");
             string materialJson = jsSerializer.Serialize(ddlMaterialPrenda.SelectedValue ?? "");
 
+            //Debug
             string script = $@"
                 setTimeout(function() {{
                     try {{
@@ -489,9 +505,9 @@ namespace WearDropWA
                         $('#{ddlColorPrenda.ClientID}').val({colorJson}).trigger('change');
                         $('#{ddlMaterialPrenda.ClientID}').val({materialJson}).trigger('change');
                         
-                        console.log('✅ Select2 actualizado');
+                        console.log('Select2 actualizado');
                     }} catch(e) {{
-                        console.error('❌ Error:', e);
+                        console.error('Error:', e);
                     }}
                 }}, 200);
             ";
@@ -539,7 +555,7 @@ namespace WearDropWA
                     });
 
                     ScriptManager.RegisterStartupScript(this, GetType(), "debugCampos",
-                        $"console.log('✅ Prenda encontrada por campos:', {poloData});", true);
+                        $"console.log('Prenda encontrada por campos:', {poloData});", true);
 
                     ViewState["IdPrendaEncontrada"] = prendaEncontrada.idPrenda;
 
@@ -562,7 +578,7 @@ namespace WearDropWA
             {
                 string errorMsg = jsSerializer.Serialize(ex.Message);
                 ScriptManager.RegisterStartupScript(this, GetType(), "debugErrorCampos",
-                    $"console.error('❌ Error buscando por campos:', {errorMsg});", true);
+                    $"console.error('Error buscando por campos:', {errorMsg});", true);
                 return false;
             }
         }
@@ -590,7 +606,7 @@ namespace WearDropWA
                     if (encontrado != null)
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "debugTipoCampos",
-                            "console.log('✅ Encontrado como Polo');", true);
+                            "console.log('Encontrado como Polo');", true);
                         return encontrado;
                     }
                 }
@@ -661,7 +677,7 @@ namespace WearDropWA
                     if (encontrado != null)
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "debugTipoCampos",
-                            "console.log('✅ Encontrado como Vestido');", true);
+                            "console.log('Encontrado como Vestido');", true);
 
                         return new polo
                         {
@@ -703,7 +719,7 @@ namespace WearDropWA
                     if (encontrado != null)
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "debugTipoCampos",
-                            "console.log('✅ Encontrado como Falda');", true);
+                            "console.log('Encontrado como Falda');", true);
 
                         return new polo
                         {
@@ -745,7 +761,7 @@ namespace WearDropWA
                     if (encontrado != null)
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "debugTipoCampos",
-                            "console.log('✅ Encontrado como Pantalon');", true);
+                            "console.log('Encontrado como Pantalon');", true);
 
                         return new polo
                         {
@@ -787,7 +803,7 @@ namespace WearDropWA
                     if (encontrado != null)
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "debugTipoCampos",
-                            "console.log('✅ Encontrado como Casaca');", true);
+                            "console.log('Encontrado como Casaca');", true);
 
                         return new polo
                         {
@@ -829,7 +845,7 @@ namespace WearDropWA
                     if (encontrado != null)
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "debugTipoCampos",
-                            "console.log('✅ Encontrado como Gorro');", true);
+                            "console.log('Encontrado como Gorro');", true);
 
                         return new polo
                         {
@@ -886,7 +902,6 @@ namespace WearDropWA
                 string tallaStr = ddlTalla.SelectedValue;
                 int stock = Convert.ToInt32(txtStock.Text);
 
-                // ✅ BUSCAR CON EL NUEVO MÉTODO
                 polo prendaEncontrada = BuscarPorAtributosEnTodosLosTipos(nombre, color, materialStr);
 
                 if (prendaEncontrada == null || !prendaEncontrada.activo)
@@ -918,6 +933,7 @@ namespace WearDropWA
                     idPrenda = prendaEncontrada.idPrenda,
                     idLote = id_Lote,
                     talla = tallaEnum,
+                    tallaSpecified = true,
                     stock = stock,
                     activo = true
                 };
@@ -926,9 +942,8 @@ namespace WearDropWA
 
                 if (resultado > 0)
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "success",
-                        "alert('✅ Prenda guardada exitosamente');", true);
-                    LimpiarFormulario();
+                    // REDIRIGIR A MODIFICAR LOTE
+                    Response.Redirect($"~/Almacen/Lote/ModificarLote.aspx?id={id_Lote}&idAlmacen={idAlmacen}&msg=prendaAgregada");
                 }
                 else
                 {
@@ -944,30 +959,11 @@ namespace WearDropWA
         }
 
 
+
+
         protected void lkCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect($"~/Almacen/Lote/ModificarLote.aspx?idAlmacen={idAlmacen}&idLote={id_Lote}");
-        }
-
-        private void LimpiarFormulario()
-        {
-            txtIdPrenda.Text = "";
-            ddlNombrePrenda.SelectedIndex = 0;
-            ddlColorPrenda.SelectedIndex = 0;
-            ddlMaterialPrenda.SelectedIndex = 0;
-            ddlTalla.SelectedIndex = 0;
-            txtStock.Text = "";
-            pnlSearchError.CssClass = "search-error";
-
-            string script = $@"
-                $(document).ready(function() {{
-                    $('#{ddlNombrePrenda.ClientID}').val('').trigger('change');
-                    $('#{ddlMaterialPrenda.ClientID}').val('').trigger('change');
-                    $('#{ddlColorPrenda.ClientID}').val('').trigger('change');
-                    $('#{ddlTalla.ClientID}').val('').trigger('change');
-                }});
-            ";
-            ScriptManager.RegisterStartupScript(this, GetType(), "ClearSelect2", script, true);
+            Response.Redirect($"~/Almacen/Lote/ModificarLote.aspx?id={id_Lote}&idAlmacen={idAlmacen}");
         }
 
         protected override void OnUnload(EventArgs e)

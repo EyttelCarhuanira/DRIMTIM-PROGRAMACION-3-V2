@@ -73,6 +73,7 @@
     <Content Include="Almacen\MovimientoXLote\RegistrarMovimientoXLote.aspx" />
     <Content Include="Almacen\Movimiento\ModificarMovimiento.aspx" />
     <Content Include="Almacen\Movimiento\RegistrarMovimiento.aspx" />
+    <Content Include="Almacen\PrendaLote\ModificarPrendaLote.aspx" />
     <Content Include="Almacen\PrendaLote\RegistrarPrendaLote.aspx" />
     <Content Include="AnnadirLineaDeLaCompra.aspx" />
     <Content Include="AnnadirProductoVenta.aspx" />
@@ -288,6 +289,198 @@
     <None Include="Connected Services\PackagePrendas\VestidoWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.blusa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.buscarPrendaPorAtributosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.buscarPrendaPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.casaca.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.eliminarBlusaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.eliminarCasacaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.eliminarFaldaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.eliminarGorroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.eliminarPantalonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.eliminarPoloResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.eliminarPrendaLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.eliminarVestidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.falda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.filtrarBlusasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.filtrarCasacasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.filtrarFaldasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.filtrarGorrosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.filtrarPantalonesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.filtrarPolosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.filtrarVestidosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.gorro.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.insertarBlusaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.insertarCasacaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.insertarFaldaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.insertarGorroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.insertarPantalonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.insertarPoloResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.insertarPrendaLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.insertarVestidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.listarBlusasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.listarCasacasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.listarColoresDistintosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.listarFaldasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.listarGorrosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.listarMaterialesDistintosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.listarNombresDistintosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.listarPantalonesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.listarPolosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.listarPrendasPorLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.listarVestidosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.modificarBlusaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.modificarCasacaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.modificarFaldaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.modificarGorroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.modificarPantalonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.modificarPoloResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.modificarPrendaLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.modificarVestidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.obtenerBlusaPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.obtenerCasacaPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.obtenerGorroPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.obtenerPoloPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.obtenerPrendaLotePorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.obtenerStockPorTallaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.obtenerVestidoPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.pantalon.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.polo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.prenda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.prendaLote.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PackagePrendas\WearDropWA.PackagePrendas.vestido.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\PromocionComboWS\PromocionComboWS.wsdl" />
     <None Include="Connected Services\PromocionComboWS\PromocionComboWS.xsd">
       <SubType>Designer</SubType>
@@ -603,6 +796,13 @@
     </Compile>
     <Compile Include="Almacen\Movimiento\RegistrarMovimiento.aspx.designer.cs">
       <DependentUpon>RegistrarMovimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Almacen\PrendaLote\ModificarPrendaLote.aspx.cs">
+      <DependentUpon>ModificarPrendaLote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Almacen\PrendaLote\ModificarPrendaLote.aspx.designer.cs">
+      <DependentUpon>ModificarPrendaLote.aspx</DependentUpon>
     </Compile>
     <Compile Include="Almacen\PrendaLote\RegistrarPrendaLote.aspx.cs">
       <DependentUpon>RegistrarPrendaLote.aspx</DependentUpon>

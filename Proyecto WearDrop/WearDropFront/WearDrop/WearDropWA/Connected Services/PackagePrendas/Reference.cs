@@ -16,24 +16,6 @@ namespace WearDropWA.PackagePrendas {
     public interface GorroWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/insertarGorroRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/insertarGorroResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.insertarGorroResponse insertarGorro(WearDropWA.PackagePrendas.insertarGorroRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/insertarGorroRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/insertarGorroResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarGorroResponse> insertarGorroAsync(WearDropWA.PackagePrendas.insertarGorroRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/obtenerGorroPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/obtenerGorroPorIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.obtenerGorroPorIdResponse obtenerGorroPorId(WearDropWA.PackagePrendas.obtenerGorroPorIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/obtenerGorroPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/obtenerGorroPorIdResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerGorroPorIdResponse> obtenerGorroPorIdAsync(WearDropWA.PackagePrendas.obtenerGorroPorIdRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/filtrarGorrosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/filtrarGorrosResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -52,15 +34,6 @@ namespace WearDropWA.PackagePrendas {
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarGorroResponse> modificarGorroAsync(WearDropWA.PackagePrendas.modificarGorroRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/listarGorrosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/listarGorrosResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.listarGorrosResponse listarGorros(WearDropWA.PackagePrendas.listarGorrosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/listarGorrosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/listarGorrosResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarGorrosResponse> listarGorrosAsync(WearDropWA.PackagePrendas.listarGorrosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/eliminarGorroRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/eliminarGorroResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -68,6 +41,33 @@ namespace WearDropWA.PackagePrendas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/eliminarGorroRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/eliminarGorroResponse")]
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarGorroResponse> eliminarGorroAsync(WearDropWA.PackagePrendas.eliminarGorroRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/obtenerGorroPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/obtenerGorroPorIdResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.obtenerGorroPorIdResponse obtenerGorroPorId(WearDropWA.PackagePrendas.obtenerGorroPorIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/obtenerGorroPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/obtenerGorroPorIdResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerGorroPorIdResponse> obtenerGorroPorIdAsync(WearDropWA.PackagePrendas.obtenerGorroPorIdRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/insertarGorroRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/insertarGorroResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.insertarGorroResponse insertarGorro(WearDropWA.PackagePrendas.insertarGorroRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/insertarGorroRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/insertarGorroResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarGorroResponse> insertarGorroAsync(WearDropWA.PackagePrendas.insertarGorroRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/listarGorrosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/listarGorrosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.listarGorrosResponse listarGorros(WearDropWA.PackagePrendas.listarGorrosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/listarGorrosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/GorroWS/listarGorrosResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarGorrosResponse> listarGorrosAsync(WearDropWA.PackagePrendas.listarGorrosRequest request);
     }
     
     /// <remarks/>
@@ -1685,78 +1685,6 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarGorro", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarGorroRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.gorro gorro;
-        
-        public insertarGorroRequest() {
-        }
-        
-        public insertarGorroRequest(WearDropWA.PackagePrendas.gorro gorro) {
-            this.gorro = gorro;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarGorroResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarGorroResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarGorroResponse() {
-        }
-        
-        public insertarGorroResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerGorroPorId", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class obtenerGorroPorIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idGorro;
-        
-        public obtenerGorroPorIdRequest() {
-        }
-        
-        public obtenerGorroPorIdRequest(int idGorro) {
-            this.idGorro = idGorro;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerGorroPorIdResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class obtenerGorroPorIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.gorro @return;
-        
-        public obtenerGorroPorIdResponse() {
-        }
-        
-        public obtenerGorroPorIdResponse(WearDropWA.PackagePrendas.gorro @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="filtrarGorros", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
     public partial class filtrarGorrosRequest {
         
@@ -1869,34 +1797,6 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarGorros", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarGorrosRequest {
-        
-        public listarGorrosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarGorrosResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarGorrosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.gorro[] @return;
-        
-        public listarGorrosResponse() {
-        }
-        
-        public listarGorrosResponse(WearDropWA.PackagePrendas.gorro[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarGorro", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
     public partial class eliminarGorroRequest {
         
@@ -1930,6 +1830,106 @@ namespace WearDropWA.PackagePrendas {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerGorroPorId", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerGorroPorIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idGorro;
+        
+        public obtenerGorroPorIdRequest() {
+        }
+        
+        public obtenerGorroPorIdRequest(int idGorro) {
+            this.idGorro = idGorro;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerGorroPorIdResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerGorroPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.gorro @return;
+        
+        public obtenerGorroPorIdResponse() {
+        }
+        
+        public obtenerGorroPorIdResponse(WearDropWA.PackagePrendas.gorro @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarGorro", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarGorroRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.gorro gorro;
+        
+        public insertarGorroRequest() {
+        }
+        
+        public insertarGorroRequest(WearDropWA.PackagePrendas.gorro gorro) {
+            this.gorro = gorro;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarGorroResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarGorroResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarGorroResponse() {
+        }
+        
+        public insertarGorroResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarGorros", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarGorrosRequest {
+        
+        public listarGorrosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarGorrosResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarGorrosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.gorro[] @return;
+        
+        public listarGorrosResponse() {
+        }
+        
+        public listarGorrosResponse(WearDropWA.PackagePrendas.gorro[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface GorroWSChannel : WearDropWA.PackagePrendas.GorroWS, System.ServiceModel.IClientChannel {
     }
@@ -1955,52 +1955,6 @@ namespace WearDropWA.PackagePrendas {
         
         public GorroWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.insertarGorroResponse WearDropWA.PackagePrendas.GorroWS.insertarGorro(WearDropWA.PackagePrendas.insertarGorroRequest request) {
-            return base.Channel.insertarGorro(request);
-        }
-        
-        public int insertarGorro(WearDropWA.PackagePrendas.gorro gorro) {
-            WearDropWA.PackagePrendas.insertarGorroRequest inValue = new WearDropWA.PackagePrendas.insertarGorroRequest();
-            inValue.gorro = gorro;
-            WearDropWA.PackagePrendas.insertarGorroResponse retVal = ((WearDropWA.PackagePrendas.GorroWS)(this)).insertarGorro(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarGorroResponse> WearDropWA.PackagePrendas.GorroWS.insertarGorroAsync(WearDropWA.PackagePrendas.insertarGorroRequest request) {
-            return base.Channel.insertarGorroAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarGorroResponse> insertarGorroAsync(WearDropWA.PackagePrendas.gorro gorro) {
-            WearDropWA.PackagePrendas.insertarGorroRequest inValue = new WearDropWA.PackagePrendas.insertarGorroRequest();
-            inValue.gorro = gorro;
-            return ((WearDropWA.PackagePrendas.GorroWS)(this)).insertarGorroAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.obtenerGorroPorIdResponse WearDropWA.PackagePrendas.GorroWS.obtenerGorroPorId(WearDropWA.PackagePrendas.obtenerGorroPorIdRequest request) {
-            return base.Channel.obtenerGorroPorId(request);
-        }
-        
-        public WearDropWA.PackagePrendas.gorro obtenerGorroPorId(int idGorro) {
-            WearDropWA.PackagePrendas.obtenerGorroPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerGorroPorIdRequest();
-            inValue.idGorro = idGorro;
-            WearDropWA.PackagePrendas.obtenerGorroPorIdResponse retVal = ((WearDropWA.PackagePrendas.GorroWS)(this)).obtenerGorroPorId(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerGorroPorIdResponse> WearDropWA.PackagePrendas.GorroWS.obtenerGorroPorIdAsync(WearDropWA.PackagePrendas.obtenerGorroPorIdRequest request) {
-            return base.Channel.obtenerGorroPorIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerGorroPorIdResponse> obtenerGorroPorIdAsync(int idGorro) {
-            WearDropWA.PackagePrendas.obtenerGorroPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerGorroPorIdRequest();
-            inValue.idGorro = idGorro;
-            return ((WearDropWA.PackagePrendas.GorroWS)(this)).obtenerGorroPorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2066,27 +2020,6 @@ namespace WearDropWA.PackagePrendas {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.listarGorrosResponse WearDropWA.PackagePrendas.GorroWS.listarGorros(WearDropWA.PackagePrendas.listarGorrosRequest request) {
-            return base.Channel.listarGorros(request);
-        }
-        
-        public WearDropWA.PackagePrendas.gorro[] listarGorros() {
-            WearDropWA.PackagePrendas.listarGorrosRequest inValue = new WearDropWA.PackagePrendas.listarGorrosRequest();
-            WearDropWA.PackagePrendas.listarGorrosResponse retVal = ((WearDropWA.PackagePrendas.GorroWS)(this)).listarGorros(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarGorrosResponse> WearDropWA.PackagePrendas.GorroWS.listarGorrosAsync(WearDropWA.PackagePrendas.listarGorrosRequest request) {
-            return base.Channel.listarGorrosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarGorrosResponse> listarGorrosAsync() {
-            WearDropWA.PackagePrendas.listarGorrosRequest inValue = new WearDropWA.PackagePrendas.listarGorrosRequest();
-            return ((WearDropWA.PackagePrendas.GorroWS)(this)).listarGorrosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WearDropWA.PackagePrendas.eliminarGorroResponse WearDropWA.PackagePrendas.GorroWS.eliminarGorro(WearDropWA.PackagePrendas.eliminarGorroRequest request) {
             return base.Channel.eliminarGorro(request);
         }
@@ -2108,6 +2041,73 @@ namespace WearDropWA.PackagePrendas {
             inValue.idGorro = idGorro;
             return ((WearDropWA.PackagePrendas.GorroWS)(this)).eliminarGorroAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.obtenerGorroPorIdResponse WearDropWA.PackagePrendas.GorroWS.obtenerGorroPorId(WearDropWA.PackagePrendas.obtenerGorroPorIdRequest request) {
+            return base.Channel.obtenerGorroPorId(request);
+        }
+        
+        public WearDropWA.PackagePrendas.gorro obtenerGorroPorId(int idGorro) {
+            WearDropWA.PackagePrendas.obtenerGorroPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerGorroPorIdRequest();
+            inValue.idGorro = idGorro;
+            WearDropWA.PackagePrendas.obtenerGorroPorIdResponse retVal = ((WearDropWA.PackagePrendas.GorroWS)(this)).obtenerGorroPorId(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerGorroPorIdResponse> WearDropWA.PackagePrendas.GorroWS.obtenerGorroPorIdAsync(WearDropWA.PackagePrendas.obtenerGorroPorIdRequest request) {
+            return base.Channel.obtenerGorroPorIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerGorroPorIdResponse> obtenerGorroPorIdAsync(int idGorro) {
+            WearDropWA.PackagePrendas.obtenerGorroPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerGorroPorIdRequest();
+            inValue.idGorro = idGorro;
+            return ((WearDropWA.PackagePrendas.GorroWS)(this)).obtenerGorroPorIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.insertarGorroResponse WearDropWA.PackagePrendas.GorroWS.insertarGorro(WearDropWA.PackagePrendas.insertarGorroRequest request) {
+            return base.Channel.insertarGorro(request);
+        }
+        
+        public int insertarGorro(WearDropWA.PackagePrendas.gorro gorro) {
+            WearDropWA.PackagePrendas.insertarGorroRequest inValue = new WearDropWA.PackagePrendas.insertarGorroRequest();
+            inValue.gorro = gorro;
+            WearDropWA.PackagePrendas.insertarGorroResponse retVal = ((WearDropWA.PackagePrendas.GorroWS)(this)).insertarGorro(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarGorroResponse> WearDropWA.PackagePrendas.GorroWS.insertarGorroAsync(WearDropWA.PackagePrendas.insertarGorroRequest request) {
+            return base.Channel.insertarGorroAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarGorroResponse> insertarGorroAsync(WearDropWA.PackagePrendas.gorro gorro) {
+            WearDropWA.PackagePrendas.insertarGorroRequest inValue = new WearDropWA.PackagePrendas.insertarGorroRequest();
+            inValue.gorro = gorro;
+            return ((WearDropWA.PackagePrendas.GorroWS)(this)).insertarGorroAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.listarGorrosResponse WearDropWA.PackagePrendas.GorroWS.listarGorros(WearDropWA.PackagePrendas.listarGorrosRequest request) {
+            return base.Channel.listarGorros(request);
+        }
+        
+        public WearDropWA.PackagePrendas.gorro[] listarGorros() {
+            WearDropWA.PackagePrendas.listarGorrosRequest inValue = new WearDropWA.PackagePrendas.listarGorrosRequest();
+            WearDropWA.PackagePrendas.listarGorrosResponse retVal = ((WearDropWA.PackagePrendas.GorroWS)(this)).listarGorros(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarGorrosResponse> WearDropWA.PackagePrendas.GorroWS.listarGorrosAsync(WearDropWA.PackagePrendas.listarGorrosRequest request) {
+            return base.Channel.listarGorrosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarGorrosResponse> listarGorrosAsync() {
+            WearDropWA.PackagePrendas.listarGorrosRequest inValue = new WearDropWA.PackagePrendas.listarGorrosRequest();
+            return ((WearDropWA.PackagePrendas.GorroWS)(this)).listarGorrosAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2124,6 +2124,15 @@ namespace WearDropWA.PackagePrendas {
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarVestidoResponse> modificarVestidoAsync(WearDropWA.PackagePrendas.modificarVestidoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/insertarVestidoRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/insertarVestidoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.insertarVestidoResponse insertarVestido(WearDropWA.PackagePrendas.insertarVestidoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/insertarVestidoRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/insertarVestidoResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarVestidoResponse> insertarVestidoAsync(WearDropWA.PackagePrendas.insertarVestidoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/eliminarVestidoRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/eliminarVestidoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -2131,6 +2140,24 @@ namespace WearDropWA.PackagePrendas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/eliminarVestidoRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/eliminarVestidoResponse")]
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarVestidoResponse> eliminarVestidoAsync(WearDropWA.PackagePrendas.eliminarVestidoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/filtrarVestidosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/filtrarVestidosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.filtrarVestidosResponse filtrarVestidos(WearDropWA.PackagePrendas.filtrarVestidosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/filtrarVestidosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/filtrarVestidosResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.filtrarVestidosResponse> filtrarVestidosAsync(WearDropWA.PackagePrendas.filtrarVestidosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/listarVestidosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/listarVestidosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.listarVestidosResponse listarVestidos(WearDropWA.PackagePrendas.listarVestidosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/listarVestidosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/listarVestidosResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarVestidosResponse> listarVestidosAsync(WearDropWA.PackagePrendas.listarVestidosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/obtenerVestidoPorIdRequest" +
@@ -2144,33 +2171,6 @@ namespace WearDropWA.PackagePrendas {
             "", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/obtenerVestidoPorIdRespons" +
             "e")]
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerVestidoPorIdResponse> obtenerVestidoPorIdAsync(WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/listarVestidosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/listarVestidosResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.listarVestidosResponse listarVestidos(WearDropWA.PackagePrendas.listarVestidosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/listarVestidosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/listarVestidosResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarVestidosResponse> listarVestidosAsync(WearDropWA.PackagePrendas.listarVestidosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/insertarVestidoRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/insertarVestidoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.insertarVestidoResponse insertarVestido(WearDropWA.PackagePrendas.insertarVestidoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/insertarVestidoRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/insertarVestidoResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarVestidoResponse> insertarVestidoAsync(WearDropWA.PackagePrendas.insertarVestidoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/filtrarVestidosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/filtrarVestidosResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.filtrarVestidosResponse filtrarVestidos(WearDropWA.PackagePrendas.filtrarVestidosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/filtrarVestidosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/VestidoWS/filtrarVestidosResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.filtrarVestidosResponse> filtrarVestidosAsync(WearDropWA.PackagePrendas.filtrarVestidosRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2212,106 +2212,6 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarVestido", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarVestidoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idVestido;
-        
-        public eliminarVestidoRequest() {
-        }
-        
-        public eliminarVestidoRequest(int idVestido) {
-            this.idVestido = idVestido;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarVestidoResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarVestidoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarVestidoResponse() {
-        }
-        
-        public eliminarVestidoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerVestidoPorId", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class obtenerVestidoPorIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idVestido;
-        
-        public obtenerVestidoPorIdRequest() {
-        }
-        
-        public obtenerVestidoPorIdRequest(int idVestido) {
-            this.idVestido = idVestido;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerVestidoPorIdResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class obtenerVestidoPorIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.vestido @return;
-        
-        public obtenerVestidoPorIdResponse() {
-        }
-        
-        public obtenerVestidoPorIdResponse(WearDropWA.PackagePrendas.vestido @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarVestidos", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarVestidosRequest {
-        
-        public listarVestidosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarVestidosResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarVestidosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.vestido[] @return;
-        
-        public listarVestidosResponse() {
-        }
-        
-        public listarVestidosResponse(WearDropWA.PackagePrendas.vestido[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="insertarVestido", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
     public partial class insertarVestidoRequest {
         
@@ -2341,6 +2241,42 @@ namespace WearDropWA.PackagePrendas {
         }
         
         public insertarVestidoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarVestido", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarVestidoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idVestido;
+        
+        public eliminarVestidoRequest() {
+        }
+        
+        public eliminarVestidoRequest(int idVestido) {
+            this.idVestido = idVestido;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarVestidoResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarVestidoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarVestidoResponse() {
+        }
+        
+        public eliminarVestidoResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2416,6 +2352,70 @@ namespace WearDropWA.PackagePrendas {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarVestidos", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarVestidosRequest {
+        
+        public listarVestidosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarVestidosResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarVestidosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.vestido[] @return;
+        
+        public listarVestidosResponse() {
+        }
+        
+        public listarVestidosResponse(WearDropWA.PackagePrendas.vestido[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerVestidoPorId", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerVestidoPorIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idVestido;
+        
+        public obtenerVestidoPorIdRequest() {
+        }
+        
+        public obtenerVestidoPorIdRequest(int idVestido) {
+            this.idVestido = idVestido;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerVestidoPorIdResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerVestidoPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.vestido @return;
+        
+        public obtenerVestidoPorIdResponse() {
+        }
+        
+        public obtenerVestidoPorIdResponse(WearDropWA.PackagePrendas.vestido @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface VestidoWSChannel : WearDropWA.PackagePrendas.VestidoWS, System.ServiceModel.IClientChannel {
     }
@@ -2467,73 +2467,6 @@ namespace WearDropWA.PackagePrendas {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.eliminarVestidoResponse WearDropWA.PackagePrendas.VestidoWS.eliminarVestido(WearDropWA.PackagePrendas.eliminarVestidoRequest request) {
-            return base.Channel.eliminarVestido(request);
-        }
-        
-        public int eliminarVestido(int idVestido) {
-            WearDropWA.PackagePrendas.eliminarVestidoRequest inValue = new WearDropWA.PackagePrendas.eliminarVestidoRequest();
-            inValue.idVestido = idVestido;
-            WearDropWA.PackagePrendas.eliminarVestidoResponse retVal = ((WearDropWA.PackagePrendas.VestidoWS)(this)).eliminarVestido(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarVestidoResponse> WearDropWA.PackagePrendas.VestidoWS.eliminarVestidoAsync(WearDropWA.PackagePrendas.eliminarVestidoRequest request) {
-            return base.Channel.eliminarVestidoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarVestidoResponse> eliminarVestidoAsync(int idVestido) {
-            WearDropWA.PackagePrendas.eliminarVestidoRequest inValue = new WearDropWA.PackagePrendas.eliminarVestidoRequest();
-            inValue.idVestido = idVestido;
-            return ((WearDropWA.PackagePrendas.VestidoWS)(this)).eliminarVestidoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.obtenerVestidoPorIdResponse WearDropWA.PackagePrendas.VestidoWS.obtenerVestidoPorId(WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest request) {
-            return base.Channel.obtenerVestidoPorId(request);
-        }
-        
-        public WearDropWA.PackagePrendas.vestido obtenerVestidoPorId(int idVestido) {
-            WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest();
-            inValue.idVestido = idVestido;
-            WearDropWA.PackagePrendas.obtenerVestidoPorIdResponse retVal = ((WearDropWA.PackagePrendas.VestidoWS)(this)).obtenerVestidoPorId(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerVestidoPorIdResponse> WearDropWA.PackagePrendas.VestidoWS.obtenerVestidoPorIdAsync(WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest request) {
-            return base.Channel.obtenerVestidoPorIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerVestidoPorIdResponse> obtenerVestidoPorIdAsync(int idVestido) {
-            WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest();
-            inValue.idVestido = idVestido;
-            return ((WearDropWA.PackagePrendas.VestidoWS)(this)).obtenerVestidoPorIdAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.listarVestidosResponse WearDropWA.PackagePrendas.VestidoWS.listarVestidos(WearDropWA.PackagePrendas.listarVestidosRequest request) {
-            return base.Channel.listarVestidos(request);
-        }
-        
-        public WearDropWA.PackagePrendas.vestido[] listarVestidos() {
-            WearDropWA.PackagePrendas.listarVestidosRequest inValue = new WearDropWA.PackagePrendas.listarVestidosRequest();
-            WearDropWA.PackagePrendas.listarVestidosResponse retVal = ((WearDropWA.PackagePrendas.VestidoWS)(this)).listarVestidos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarVestidosResponse> WearDropWA.PackagePrendas.VestidoWS.listarVestidosAsync(WearDropWA.PackagePrendas.listarVestidosRequest request) {
-            return base.Channel.listarVestidosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarVestidosResponse> listarVestidosAsync() {
-            WearDropWA.PackagePrendas.listarVestidosRequest inValue = new WearDropWA.PackagePrendas.listarVestidosRequest();
-            return ((WearDropWA.PackagePrendas.VestidoWS)(this)).listarVestidosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WearDropWA.PackagePrendas.insertarVestidoResponse WearDropWA.PackagePrendas.VestidoWS.insertarVestido(WearDropWA.PackagePrendas.insertarVestidoRequest request) {
             return base.Channel.insertarVestido(request);
         }
@@ -2554,6 +2487,29 @@ namespace WearDropWA.PackagePrendas {
             WearDropWA.PackagePrendas.insertarVestidoRequest inValue = new WearDropWA.PackagePrendas.insertarVestidoRequest();
             inValue.vestido = vestido;
             return ((WearDropWA.PackagePrendas.VestidoWS)(this)).insertarVestidoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.eliminarVestidoResponse WearDropWA.PackagePrendas.VestidoWS.eliminarVestido(WearDropWA.PackagePrendas.eliminarVestidoRequest request) {
+            return base.Channel.eliminarVestido(request);
+        }
+        
+        public int eliminarVestido(int idVestido) {
+            WearDropWA.PackagePrendas.eliminarVestidoRequest inValue = new WearDropWA.PackagePrendas.eliminarVestidoRequest();
+            inValue.idVestido = idVestido;
+            WearDropWA.PackagePrendas.eliminarVestidoResponse retVal = ((WearDropWA.PackagePrendas.VestidoWS)(this)).eliminarVestido(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarVestidoResponse> WearDropWA.PackagePrendas.VestidoWS.eliminarVestidoAsync(WearDropWA.PackagePrendas.eliminarVestidoRequest request) {
+            return base.Channel.eliminarVestidoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarVestidoResponse> eliminarVestidoAsync(int idVestido) {
+            WearDropWA.PackagePrendas.eliminarVestidoRequest inValue = new WearDropWA.PackagePrendas.eliminarVestidoRequest();
+            inValue.idVestido = idVestido;
+            return ((WearDropWA.PackagePrendas.VestidoWS)(this)).eliminarVestidoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2592,6 +2548,50 @@ namespace WearDropWA.PackagePrendas {
             inValue.soloActivos = soloActivos;
             return ((WearDropWA.PackagePrendas.VestidoWS)(this)).filtrarVestidosAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.listarVestidosResponse WearDropWA.PackagePrendas.VestidoWS.listarVestidos(WearDropWA.PackagePrendas.listarVestidosRequest request) {
+            return base.Channel.listarVestidos(request);
+        }
+        
+        public WearDropWA.PackagePrendas.vestido[] listarVestidos() {
+            WearDropWA.PackagePrendas.listarVestidosRequest inValue = new WearDropWA.PackagePrendas.listarVestidosRequest();
+            WearDropWA.PackagePrendas.listarVestidosResponse retVal = ((WearDropWA.PackagePrendas.VestidoWS)(this)).listarVestidos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarVestidosResponse> WearDropWA.PackagePrendas.VestidoWS.listarVestidosAsync(WearDropWA.PackagePrendas.listarVestidosRequest request) {
+            return base.Channel.listarVestidosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarVestidosResponse> listarVestidosAsync() {
+            WearDropWA.PackagePrendas.listarVestidosRequest inValue = new WearDropWA.PackagePrendas.listarVestidosRequest();
+            return ((WearDropWA.PackagePrendas.VestidoWS)(this)).listarVestidosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.obtenerVestidoPorIdResponse WearDropWA.PackagePrendas.VestidoWS.obtenerVestidoPorId(WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest request) {
+            return base.Channel.obtenerVestidoPorId(request);
+        }
+        
+        public WearDropWA.PackagePrendas.vestido obtenerVestidoPorId(int idVestido) {
+            WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest();
+            inValue.idVestido = idVestido;
+            WearDropWA.PackagePrendas.obtenerVestidoPorIdResponse retVal = ((WearDropWA.PackagePrendas.VestidoWS)(this)).obtenerVestidoPorId(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerVestidoPorIdResponse> WearDropWA.PackagePrendas.VestidoWS.obtenerVestidoPorIdAsync(WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest request) {
+            return base.Channel.obtenerVestidoPorIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerVestidoPorIdResponse> obtenerVestidoPorIdAsync(int idVestido) {
+            WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerVestidoPorIdRequest();
+            inValue.idVestido = idVestido;
+            return ((WearDropWA.PackagePrendas.VestidoWS)(this)).obtenerVestidoPorIdAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2606,24 +2606,6 @@ namespace WearDropWA.PackagePrendas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/eliminarCasacaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/eliminarCasacaResponse")]
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarCasacaResponse> eliminarCasacaAsync(WearDropWA.PackagePrendas.eliminarCasacaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/listarCasacasRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/listarCasacasResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.listarCasacasResponse listarCasacas(WearDropWA.PackagePrendas.listarCasacasRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/listarCasacasRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/listarCasacasResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarCasacasResponse> listarCasacasAsync(WearDropWA.PackagePrendas.listarCasacasRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/modificarCasacaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/modificarCasacaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.modificarCasacaResponse modificarCasaca(WearDropWA.PackagePrendas.modificarCasacaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/modificarCasacaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/modificarCasacaResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarCasacaResponse> modificarCasacaAsync(WearDropWA.PackagePrendas.modificarCasacaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/insertarCasacaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/insertarCasacaResponse")]
@@ -2651,6 +2633,24 @@ namespace WearDropWA.PackagePrendas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/obtenerCasacaPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/obtenerCasacaPorIdResponse")]
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerCasacaPorIdResponse> obtenerCasacaPorIdAsync(WearDropWA.PackagePrendas.obtenerCasacaPorIdRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/listarCasacasRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/listarCasacasResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.listarCasacasResponse listarCasacas(WearDropWA.PackagePrendas.listarCasacasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/listarCasacasRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/listarCasacasResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarCasacasResponse> listarCasacasAsync(WearDropWA.PackagePrendas.listarCasacasRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/modificarCasacaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/modificarCasacaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.modificarCasacaResponse modificarCasaca(WearDropWA.PackagePrendas.modificarCasacaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/modificarCasacaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/CasacaWS/modificarCasacaResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarCasacaResponse> modificarCasacaAsync(WearDropWA.PackagePrendas.modificarCasacaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2685,70 +2685,6 @@ namespace WearDropWA.PackagePrendas {
         }
         
         public eliminarCasacaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCasacas", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarCasacasRequest {
-        
-        public listarCasacasRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCasacasResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarCasacasResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.casaca[] @return;
-        
-        public listarCasacasResponse() {
-        }
-        
-        public listarCasacasResponse(WearDropWA.PackagePrendas.casaca[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCasaca", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarCasacaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.casaca casaca;
-        
-        public modificarCasacaRequest() {
-        }
-        
-        public modificarCasacaRequest(WearDropWA.PackagePrendas.casaca casaca) {
-            this.casaca = casaca;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCasacaResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarCasacaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarCasacaResponse() {
-        }
-        
-        public modificarCasacaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2896,6 +2832,70 @@ namespace WearDropWA.PackagePrendas {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCasacas", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarCasacasRequest {
+        
+        public listarCasacasRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCasacasResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarCasacasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.casaca[] @return;
+        
+        public listarCasacasResponse() {
+        }
+        
+        public listarCasacasResponse(WearDropWA.PackagePrendas.casaca[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCasaca", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarCasacaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.casaca casaca;
+        
+        public modificarCasacaRequest() {
+        }
+        
+        public modificarCasacaRequest(WearDropWA.PackagePrendas.casaca casaca) {
+            this.casaca = casaca;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCasacaResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarCasacaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarCasacaResponse() {
+        }
+        
+        public modificarCasacaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface CasacaWSChannel : WearDropWA.PackagePrendas.CasacaWS, System.ServiceModel.IClientChannel {
     }
@@ -2944,50 +2944,6 @@ namespace WearDropWA.PackagePrendas {
             WearDropWA.PackagePrendas.eliminarCasacaRequest inValue = new WearDropWA.PackagePrendas.eliminarCasacaRequest();
             inValue.idCasaca = idCasaca;
             return ((WearDropWA.PackagePrendas.CasacaWS)(this)).eliminarCasacaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.listarCasacasResponse WearDropWA.PackagePrendas.CasacaWS.listarCasacas(WearDropWA.PackagePrendas.listarCasacasRequest request) {
-            return base.Channel.listarCasacas(request);
-        }
-        
-        public WearDropWA.PackagePrendas.casaca[] listarCasacas() {
-            WearDropWA.PackagePrendas.listarCasacasRequest inValue = new WearDropWA.PackagePrendas.listarCasacasRequest();
-            WearDropWA.PackagePrendas.listarCasacasResponse retVal = ((WearDropWA.PackagePrendas.CasacaWS)(this)).listarCasacas(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarCasacasResponse> WearDropWA.PackagePrendas.CasacaWS.listarCasacasAsync(WearDropWA.PackagePrendas.listarCasacasRequest request) {
-            return base.Channel.listarCasacasAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarCasacasResponse> listarCasacasAsync() {
-            WearDropWA.PackagePrendas.listarCasacasRequest inValue = new WearDropWA.PackagePrendas.listarCasacasRequest();
-            return ((WearDropWA.PackagePrendas.CasacaWS)(this)).listarCasacasAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.modificarCasacaResponse WearDropWA.PackagePrendas.CasacaWS.modificarCasaca(WearDropWA.PackagePrendas.modificarCasacaRequest request) {
-            return base.Channel.modificarCasaca(request);
-        }
-        
-        public int modificarCasaca(WearDropWA.PackagePrendas.casaca casaca) {
-            WearDropWA.PackagePrendas.modificarCasacaRequest inValue = new WearDropWA.PackagePrendas.modificarCasacaRequest();
-            inValue.casaca = casaca;
-            WearDropWA.PackagePrendas.modificarCasacaResponse retVal = ((WearDropWA.PackagePrendas.CasacaWS)(this)).modificarCasaca(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarCasacaResponse> WearDropWA.PackagePrendas.CasacaWS.modificarCasacaAsync(WearDropWA.PackagePrendas.modificarCasacaRequest request) {
-            return base.Channel.modificarCasacaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarCasacaResponse> modificarCasacaAsync(WearDropWA.PackagePrendas.casaca casaca) {
-            WearDropWA.PackagePrendas.modificarCasacaRequest inValue = new WearDropWA.PackagePrendas.modificarCasacaRequest();
-            inValue.casaca = casaca;
-            return ((WearDropWA.PackagePrendas.CasacaWS)(this)).modificarCasacaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3072,6 +3028,50 @@ namespace WearDropWA.PackagePrendas {
             inValue.idCasaca = idCasaca;
             return ((WearDropWA.PackagePrendas.CasacaWS)(this)).obtenerCasacaPorIdAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.listarCasacasResponse WearDropWA.PackagePrendas.CasacaWS.listarCasacas(WearDropWA.PackagePrendas.listarCasacasRequest request) {
+            return base.Channel.listarCasacas(request);
+        }
+        
+        public WearDropWA.PackagePrendas.casaca[] listarCasacas() {
+            WearDropWA.PackagePrendas.listarCasacasRequest inValue = new WearDropWA.PackagePrendas.listarCasacasRequest();
+            WearDropWA.PackagePrendas.listarCasacasResponse retVal = ((WearDropWA.PackagePrendas.CasacaWS)(this)).listarCasacas(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarCasacasResponse> WearDropWA.PackagePrendas.CasacaWS.listarCasacasAsync(WearDropWA.PackagePrendas.listarCasacasRequest request) {
+            return base.Channel.listarCasacasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarCasacasResponse> listarCasacasAsync() {
+            WearDropWA.PackagePrendas.listarCasacasRequest inValue = new WearDropWA.PackagePrendas.listarCasacasRequest();
+            return ((WearDropWA.PackagePrendas.CasacaWS)(this)).listarCasacasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.modificarCasacaResponse WearDropWA.PackagePrendas.CasacaWS.modificarCasaca(WearDropWA.PackagePrendas.modificarCasacaRequest request) {
+            return base.Channel.modificarCasaca(request);
+        }
+        
+        public int modificarCasaca(WearDropWA.PackagePrendas.casaca casaca) {
+            WearDropWA.PackagePrendas.modificarCasacaRequest inValue = new WearDropWA.PackagePrendas.modificarCasacaRequest();
+            inValue.casaca = casaca;
+            WearDropWA.PackagePrendas.modificarCasacaResponse retVal = ((WearDropWA.PackagePrendas.CasacaWS)(this)).modificarCasaca(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarCasacaResponse> WearDropWA.PackagePrendas.CasacaWS.modificarCasacaAsync(WearDropWA.PackagePrendas.modificarCasacaRequest request) {
+            return base.Channel.modificarCasacaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarCasacaResponse> modificarCasacaAsync(WearDropWA.PackagePrendas.casaca casaca) {
+            WearDropWA.PackagePrendas.modificarCasacaRequest inValue = new WearDropWA.PackagePrendas.modificarCasacaRequest();
+            inValue.casaca = casaca;
+            return ((WearDropWA.PackagePrendas.CasacaWS)(this)).modificarCasacaAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3090,19 +3090,6 @@ namespace WearDropWA.PackagePrendas {
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.filtrarPantalonesResponse> filtrarPantalonesAsync(WearDropWA.PackagePrendas.filtrarPantalonesRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/obtenerPantalonPorIdReque" +
-            "st", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/obtenerPantalonPorIdRespo" +
-            "nse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse obtenerPantalonPorId(WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/obtenerPantalonPorIdReque" +
-            "st", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/obtenerPantalonPorIdRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse> obtenerPantalonPorIdAsync(WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/insertarPantalonRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/insertarPantalonResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -3110,15 +3097,6 @@ namespace WearDropWA.PackagePrendas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/insertarPantalonRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/insertarPantalonResponse")]
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPantalonResponse> insertarPantalonAsync(WearDropWA.PackagePrendas.insertarPantalonRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/listarPantalonesRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/listarPantalonesResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.listarPantalonesResponse listarPantalones(WearDropWA.PackagePrendas.listarPantalonesRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/listarPantalonesRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/listarPantalonesResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPantalonesResponse> listarPantalonesAsync(WearDropWA.PackagePrendas.listarPantalonesRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/modificarPantalonRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/modificarPantalonResponse" +
@@ -3139,6 +3117,28 @@ namespace WearDropWA.PackagePrendas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/eliminarPantalonRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/eliminarPantalonResponse")]
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarPantalonResponse> eliminarPantalonAsync(WearDropWA.PackagePrendas.eliminarPantalonRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/listarPantalonesRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/listarPantalonesResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.listarPantalonesResponse listarPantalones(WearDropWA.PackagePrendas.listarPantalonesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/listarPantalonesRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/listarPantalonesResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPantalonesResponse> listarPantalonesAsync(WearDropWA.PackagePrendas.listarPantalonesRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/obtenerPantalonPorIdReque" +
+            "st", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/obtenerPantalonPorIdRespo" +
+            "nse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse obtenerPantalonPorId(WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/obtenerPantalonPorIdReque" +
+            "st", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/obtenerPantalonPorIdRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse> obtenerPantalonPorIdAsync(WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3235,42 +3235,6 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPantalonPorId", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class obtenerPantalonPorIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPantalon;
-        
-        public obtenerPantalonPorIdRequest() {
-        }
-        
-        public obtenerPantalonPorIdRequest(int idPantalon) {
-            this.idPantalon = idPantalon;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPantalonPorIdResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class obtenerPantalonPorIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.pantalon @return;
-        
-        public obtenerPantalonPorIdResponse() {
-        }
-        
-        public obtenerPantalonPorIdResponse(WearDropWA.PackagePrendas.pantalon @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPantalon", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
     public partial class insertarPantalonRequest {
         
@@ -3300,34 +3264,6 @@ namespace WearDropWA.PackagePrendas {
         }
         
         public insertarPantalonResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPantalones", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPantalonesRequest {
-        
-        public listarPantalonesRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPantalonesResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPantalonesResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.pantalon[] @return;
-        
-        public listarPantalonesResponse() {
-        }
-        
-        public listarPantalonesResponse(WearDropWA.PackagePrendas.pantalon[] @return) {
             this.@return = @return;
         }
     }
@@ -3400,6 +3336,70 @@ namespace WearDropWA.PackagePrendas {
         }
         
         public eliminarPantalonResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPantalones", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPantalonesRequest {
+        
+        public listarPantalonesRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPantalonesResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPantalonesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.pantalon[] @return;
+        
+        public listarPantalonesResponse() {
+        }
+        
+        public listarPantalonesResponse(WearDropWA.PackagePrendas.pantalon[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPantalonPorId", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerPantalonPorIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idPantalon;
+        
+        public obtenerPantalonPorIdRequest() {
+        }
+        
+        public obtenerPantalonPorIdRequest(int idPantalon) {
+            this.idPantalon = idPantalon;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPantalonPorIdResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerPantalonPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.pantalon @return;
+        
+        public obtenerPantalonPorIdResponse() {
+        }
+        
+        public obtenerPantalonPorIdResponse(WearDropWA.PackagePrendas.pantalon @return) {
             this.@return = @return;
         }
     }
@@ -3477,29 +3477,6 @@ namespace WearDropWA.PackagePrendas {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse WearDropWA.PackagePrendas.PantalonWS.obtenerPantalonPorId(WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest request) {
-            return base.Channel.obtenerPantalonPorId(request);
-        }
-        
-        public WearDropWA.PackagePrendas.pantalon obtenerPantalonPorId(int idPantalon) {
-            WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest();
-            inValue.idPantalon = idPantalon;
-            WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse retVal = ((WearDropWA.PackagePrendas.PantalonWS)(this)).obtenerPantalonPorId(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse> WearDropWA.PackagePrendas.PantalonWS.obtenerPantalonPorIdAsync(WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest request) {
-            return base.Channel.obtenerPantalonPorIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse> obtenerPantalonPorIdAsync(int idPantalon) {
-            WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest();
-            inValue.idPantalon = idPantalon;
-            return ((WearDropWA.PackagePrendas.PantalonWS)(this)).obtenerPantalonPorIdAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WearDropWA.PackagePrendas.insertarPantalonResponse WearDropWA.PackagePrendas.PantalonWS.insertarPantalon(WearDropWA.PackagePrendas.insertarPantalonRequest request) {
             return base.Channel.insertarPantalon(request);
         }
@@ -3520,27 +3497,6 @@ namespace WearDropWA.PackagePrendas {
             WearDropWA.PackagePrendas.insertarPantalonRequest inValue = new WearDropWA.PackagePrendas.insertarPantalonRequest();
             inValue.pantalon = pantalon;
             return ((WearDropWA.PackagePrendas.PantalonWS)(this)).insertarPantalonAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.listarPantalonesResponse WearDropWA.PackagePrendas.PantalonWS.listarPantalones(WearDropWA.PackagePrendas.listarPantalonesRequest request) {
-            return base.Channel.listarPantalones(request);
-        }
-        
-        public WearDropWA.PackagePrendas.pantalon[] listarPantalones() {
-            WearDropWA.PackagePrendas.listarPantalonesRequest inValue = new WearDropWA.PackagePrendas.listarPantalonesRequest();
-            WearDropWA.PackagePrendas.listarPantalonesResponse retVal = ((WearDropWA.PackagePrendas.PantalonWS)(this)).listarPantalones(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPantalonesResponse> WearDropWA.PackagePrendas.PantalonWS.listarPantalonesAsync(WearDropWA.PackagePrendas.listarPantalonesRequest request) {
-            return base.Channel.listarPantalonesAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPantalonesResponse> listarPantalonesAsync() {
-            WearDropWA.PackagePrendas.listarPantalonesRequest inValue = new WearDropWA.PackagePrendas.listarPantalonesRequest();
-            return ((WearDropWA.PackagePrendas.PantalonWS)(this)).listarPantalonesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3588,154 +3544,55 @@ namespace WearDropWA.PackagePrendas {
             inValue.idPantalon = idPantalon;
             return ((WearDropWA.PackagePrendas.PantalonWS)(this)).eliminarPantalonAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.listarPantalonesResponse WearDropWA.PackagePrendas.PantalonWS.listarPantalones(WearDropWA.PackagePrendas.listarPantalonesRequest request) {
+            return base.Channel.listarPantalones(request);
+        }
+        
+        public WearDropWA.PackagePrendas.pantalon[] listarPantalones() {
+            WearDropWA.PackagePrendas.listarPantalonesRequest inValue = new WearDropWA.PackagePrendas.listarPantalonesRequest();
+            WearDropWA.PackagePrendas.listarPantalonesResponse retVal = ((WearDropWA.PackagePrendas.PantalonWS)(this)).listarPantalones(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPantalonesResponse> WearDropWA.PackagePrendas.PantalonWS.listarPantalonesAsync(WearDropWA.PackagePrendas.listarPantalonesRequest request) {
+            return base.Channel.listarPantalonesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPantalonesResponse> listarPantalonesAsync() {
+            WearDropWA.PackagePrendas.listarPantalonesRequest inValue = new WearDropWA.PackagePrendas.listarPantalonesRequest();
+            return ((WearDropWA.PackagePrendas.PantalonWS)(this)).listarPantalonesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse WearDropWA.PackagePrendas.PantalonWS.obtenerPantalonPorId(WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest request) {
+            return base.Channel.obtenerPantalonPorId(request);
+        }
+        
+        public WearDropWA.PackagePrendas.pantalon obtenerPantalonPorId(int idPantalon) {
+            WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest();
+            inValue.idPantalon = idPantalon;
+            WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse retVal = ((WearDropWA.PackagePrendas.PantalonWS)(this)).obtenerPantalonPorId(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse> WearDropWA.PackagePrendas.PantalonWS.obtenerPantalonPorIdAsync(WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest request) {
+            return base.Channel.obtenerPantalonPorIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPantalonPorIdResponse> obtenerPantalonPorIdAsync(int idPantalon) {
+            WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerPantalonPorIdRequest();
+            inValue.idPantalon = idPantalon;
+            return ((WearDropWA.PackagePrendas.PantalonWS)(this)).obtenerPantalonPorIdAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", ConfigurationName="PackagePrendas.PrendaLoteWS")]
     public interface PrendaLoteWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/existePrendaTallaEnLote" +
-            "Request", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/existePrendaTallaEnLote" +
-            "Response")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse existePrendaTallaEnLote(WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/existePrendaTallaEnLote" +
-            "Request", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/existePrendaTallaEnLote" +
-            "Response")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse> existePrendaTallaEnLoteAsync(WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerStockPorTallaReq" +
-            "uest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerStockPorTallaRes" +
-            "ponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.obtenerStockPorTallaResponse obtenerStockPorTalla(WearDropWA.PackagePrendas.obtenerStockPorTallaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerStockPorTallaReq" +
-            "uest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerStockPorTallaRes" +
-            "ponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerStockPorTallaResponse> obtenerStockPorTallaAsync(WearDropWA.PackagePrendas.obtenerStockPorTallaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarTodasPrendasLoteR" +
-            "equest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarTodasPrendasLoteR" +
-            "esponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse listarTodasPrendasLote(WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarTodasPrendasLoteR" +
-            "equest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarTodasPrendasLoteR" +
-            "esponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse> listarTodasPrendasLoteAsync(WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarColoresDistintosR" +
-            "equest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarColoresDistintosR" +
-            "esponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.listarColoresDistintosResponse listarColoresDistintos(WearDropWA.PackagePrendas.listarColoresDistintosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarColoresDistintosR" +
-            "equest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarColoresDistintosR" +
-            "esponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarColoresDistintosResponse> listarColoresDistintosAsync(WearDropWA.PackagePrendas.listarColoresDistintosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarMaterialesDistint" +
-            "osRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarMaterialesDistint" +
-            "osResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.listarMaterialesDistintosResponse listarMaterialesDistintos(WearDropWA.PackagePrendas.listarMaterialesDistintosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarMaterialesDistint" +
-            "osRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarMaterialesDistint" +
-            "osResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarMaterialesDistintosResponse> listarMaterialesDistintosAsync(WearDropWA.PackagePrendas.listarMaterialesDistintosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/eliminarPrendaLoteReque" +
-            "st", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/eliminarPrendaLoteRespo" +
-            "nse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.eliminarPrendaLoteResponse eliminarPrendaLote(WearDropWA.PackagePrendas.eliminarPrendaLoteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/eliminarPrendaLoteReque" +
-            "st", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/eliminarPrendaLoteRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarPrendaLoteResponse> eliminarPrendaLoteAsync(WearDropWA.PackagePrendas.eliminarPrendaLoteRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/insertarPrendaLoteReque" +
-            "st", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/insertarPrendaLoteRespo" +
-            "nse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.insertarPrendaLoteResponse insertarPrendaLote(WearDropWA.PackagePrendas.insertarPrendaLoteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/insertarPrendaLoteReque" +
-            "st", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/insertarPrendaLoteRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPrendaLoteResponse> insertarPrendaLoteAsync(WearDropWA.PackagePrendas.insertarPrendaLoteRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorAtributo" +
-            "sRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorAtributo" +
-            "sResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.buscarPrendaPorAtributosResponse buscarPrendaPorAtributos(WearDropWA.PackagePrendas.buscarPrendaPorAtributosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorAtributo" +
-            "sRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorAtributo" +
-            "sResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.buscarPrendaPorAtributosResponse> buscarPrendaPorAtributosAsync(WearDropWA.PackagePrendas.buscarPrendaPorAtributosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarNombresDistintosR" +
-            "equest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarNombresDistintosR" +
-            "esponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.listarNombresDistintosResponse listarNombresDistintos(WearDropWA.PackagePrendas.listarNombresDistintosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarNombresDistintosR" +
-            "equest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarNombresDistintosR" +
-            "esponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarNombresDistintosResponse> listarNombresDistintosAsync(WearDropWA.PackagePrendas.listarNombresDistintosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarPrendasPorLoteReq" +
-            "uest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarPrendasPorLoteRes" +
-            "ponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.listarPrendasPorLoteResponse listarPrendasPorLote(WearDropWA.PackagePrendas.listarPrendasPorLoteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarPrendasPorLoteReq" +
-            "uest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarPrendasPorLoteRes" +
-            "ponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPrendasPorLoteResponse> listarPrendasPorLoteAsync(WearDropWA.PackagePrendas.listarPrendasPorLoteRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/modificarPrendaLoteRequ" +
-            "est", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/modificarPrendaLoteResp" +
-            "onse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.modificarPrendaLoteResponse modificarPrendaLote(WearDropWA.PackagePrendas.modificarPrendaLoteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/modificarPrendaLoteRequ" +
-            "est", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/modificarPrendaLoteResp" +
-            "onse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarPrendaLoteResponse> modificarPrendaLoteAsync(WearDropWA.PackagePrendas.modificarPrendaLoteRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerPrendaLotePorIdR" +
@@ -3751,6 +3608,32 @@ namespace WearDropWA.PackagePrendas {
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPrendaLotePorIdResponse> obtenerPrendaLotePorIdAsync(WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorAtributo" +
+            "sRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorAtributo" +
+            "sResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.buscarPrendaPorAtributosResponse buscarPrendaPorAtributos(WearDropWA.PackagePrendas.buscarPrendaPorAtributosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorAtributo" +
+            "sRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorAtributo" +
+            "sResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.buscarPrendaPorAtributosResponse> buscarPrendaPorAtributosAsync(WearDropWA.PackagePrendas.buscarPrendaPorAtributosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarColoresDistintosR" +
+            "equest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarColoresDistintosR" +
+            "esponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.listarColoresDistintosResponse listarColoresDistintos(WearDropWA.PackagePrendas.listarColoresDistintosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarColoresDistintosR" +
+            "equest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarColoresDistintosR" +
+            "esponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarColoresDistintosResponse> listarColoresDistintosAsync(WearDropWA.PackagePrendas.listarColoresDistintosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorIdReques" +
             "t", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorIdRespon" +
             "se")]
@@ -3762,193 +3645,139 @@ namespace WearDropWA.PackagePrendas {
             "t", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorIdRespon" +
             "se")]
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.buscarPrendaPorIdResponse> buscarPrendaPorIdAsync(WearDropWA.PackagePrendas.buscarPrendaPorIdRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarTodasPrendasLoteR" +
+            "equest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarTodasPrendasLoteR" +
+            "esponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse listarTodasPrendasLote(WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarTodasPrendasLoteR" +
+            "equest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarTodasPrendasLoteR" +
+            "esponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse> listarTodasPrendasLoteAsync(WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarMaterialesDistint" +
+            "osRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarMaterialesDistint" +
+            "osResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.listarMaterialesDistintosResponse listarMaterialesDistintos(WearDropWA.PackagePrendas.listarMaterialesDistintosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarMaterialesDistint" +
+            "osRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarMaterialesDistint" +
+            "osResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarMaterialesDistintosResponse> listarMaterialesDistintosAsync(WearDropWA.PackagePrendas.listarMaterialesDistintosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/insertarPrendaLoteReque" +
+            "st", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/insertarPrendaLoteRespo" +
+            "nse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.insertarPrendaLoteResponse insertarPrendaLote(WearDropWA.PackagePrendas.insertarPrendaLoteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/insertarPrendaLoteReque" +
+            "st", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/insertarPrendaLoteRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPrendaLoteResponse> insertarPrendaLoteAsync(WearDropWA.PackagePrendas.insertarPrendaLoteRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerStockPorTallaReq" +
+            "uest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerStockPorTallaRes" +
+            "ponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.obtenerStockPorTallaResponse obtenerStockPorTalla(WearDropWA.PackagePrendas.obtenerStockPorTallaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerStockPorTallaReq" +
+            "uest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerStockPorTallaRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerStockPorTallaResponse> obtenerStockPorTallaAsync(WearDropWA.PackagePrendas.obtenerStockPorTallaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/modificarPrendaLoteRequ" +
+            "est", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/modificarPrendaLoteResp" +
+            "onse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.modificarPrendaLoteResponse modificarPrendaLote(WearDropWA.PackagePrendas.modificarPrendaLoteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/modificarPrendaLoteRequ" +
+            "est", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/modificarPrendaLoteResp" +
+            "onse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarPrendaLoteResponse> modificarPrendaLoteAsync(WearDropWA.PackagePrendas.modificarPrendaLoteRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarPrendasPorLoteReq" +
+            "uest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarPrendasPorLoteRes" +
+            "ponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.listarPrendasPorLoteResponse listarPrendasPorLote(WearDropWA.PackagePrendas.listarPrendasPorLoteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarPrendasPorLoteReq" +
+            "uest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarPrendasPorLoteRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPrendasPorLoteResponse> listarPrendasPorLoteAsync(WearDropWA.PackagePrendas.listarPrendasPorLoteRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/existePrendaTallaEnLote" +
+            "Request", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/existePrendaTallaEnLote" +
+            "Response")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse existePrendaTallaEnLote(WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/existePrendaTallaEnLote" +
+            "Request", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/existePrendaTallaEnLote" +
+            "Response")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse> existePrendaTallaEnLoteAsync(WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarNombresDistintosR" +
+            "equest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarNombresDistintosR" +
+            "esponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.listarNombresDistintosResponse listarNombresDistintos(WearDropWA.PackagePrendas.listarNombresDistintosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarNombresDistintosR" +
+            "equest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarNombresDistintosR" +
+            "esponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarNombresDistintosResponse> listarNombresDistintosAsync(WearDropWA.PackagePrendas.listarNombresDistintosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/eliminarPrendaLoteReque" +
+            "st", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/eliminarPrendaLoteRespo" +
+            "nse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.eliminarPrendaLoteResponse eliminarPrendaLote(WearDropWA.PackagePrendas.eliminarPrendaLoteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/eliminarPrendaLoteReque" +
+            "st", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/eliminarPrendaLoteRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarPrendaLoteResponse> eliminarPrendaLoteAsync(WearDropWA.PackagePrendas.eliminarPrendaLoteRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="existePrendaTallaEnLote", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class existePrendaTallaEnLoteRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPrenda;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string talla;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idLote;
-        
-        public existePrendaTallaEnLoteRequest() {
-        }
-        
-        public existePrendaTallaEnLoteRequest(int idPrenda, string talla, int idLote) {
-            this.idPrenda = idPrenda;
-            this.talla = talla;
-            this.idLote = idLote;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="existePrendaTallaEnLoteResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class existePrendaTallaEnLoteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool @return;
-        
-        public existePrendaTallaEnLoteResponse() {
-        }
-        
-        public existePrendaTallaEnLoteResponse(bool @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerStockPorTalla", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class obtenerStockPorTallaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPrenda;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string talla;
-        
-        public obtenerStockPorTallaRequest() {
-        }
-        
-        public obtenerStockPorTallaRequest(int idPrenda, string talla) {
-            this.idPrenda = idPrenda;
-            this.talla = talla;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerStockPorTallaResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class obtenerStockPorTallaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public obtenerStockPorTallaResponse() {
-        }
-        
-        public obtenerStockPorTallaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodasPrendasLote", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTodasPrendasLoteRequest {
-        
-        public listarTodasPrendasLoteRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodasPrendasLoteResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTodasPrendasLoteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.prendaLote[] @return;
-        
-        public listarTodasPrendasLoteResponse() {
-        }
-        
-        public listarTodasPrendasLoteResponse(WearDropWA.PackagePrendas.prendaLote[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarColoresDistintos", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarColoresDistintosRequest {
-        
-        public listarColoresDistintosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarColoresDistintosResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarColoresDistintosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string[] @return;
-        
-        public listarColoresDistintosResponse() {
-        }
-        
-        public listarColoresDistintosResponse(string[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMaterialesDistintos", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarMaterialesDistintosRequest {
-        
-        public listarMaterialesDistintosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMaterialesDistintosResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarMaterialesDistintosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string[] @return;
-        
-        public listarMaterialesDistintosResponse() {
-        }
-        
-        public listarMaterialesDistintosResponse(string[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPrendaLote", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarPrendaLoteRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPrendaLotePorId", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerPrendaLotePorIdRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int idPrendaLote;
         
-        public eliminarPrendaLoteRequest() {
+        public obtenerPrendaLotePorIdRequest() {
         }
         
-        public eliminarPrendaLoteRequest(int idPrendaLote) {
+        public obtenerPrendaLotePorIdRequest(int idPrendaLote) {
             this.idPrendaLote = idPrendaLote;
         }
     }
@@ -3956,53 +3785,17 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPrendaLoteResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarPrendaLoteResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPrendaLotePorIdResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerPrendaLotePorIdResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        public WearDropWA.PackagePrendas.prendaLote @return;
         
-        public eliminarPrendaLoteResponse() {
+        public obtenerPrendaLotePorIdResponse() {
         }
         
-        public eliminarPrendaLoteResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPrendaLote", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarPrendaLoteRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.prendaLote prendaLote;
-        
-        public insertarPrendaLoteRequest() {
-        }
-        
-        public insertarPrendaLoteRequest(WearDropWA.PackagePrendas.prendaLote prendaLote) {
-            this.prendaLote = prendaLote;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPrendaLoteResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarPrendaLoteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarPrendaLoteResponse() {
-        }
-        
-        public insertarPrendaLoteResponse(int @return) {
+        public obtenerPrendaLotePorIdResponse(WearDropWA.PackagePrendas.prendaLote @return) {
             this.@return = @return;
         }
     }
@@ -4056,27 +3849,27 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarNombresDistintos", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarNombresDistintosRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarColoresDistintos", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarColoresDistintosRequest {
         
-        public listarNombresDistintosRequest() {
+        public listarColoresDistintosRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarNombresDistintosResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarNombresDistintosResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarColoresDistintosResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarColoresDistintosResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string[] @return;
         
-        public listarNombresDistintosResponse() {
+        public listarColoresDistintosResponse() {
         }
         
-        public listarNombresDistintosResponse(string[] @return) {
+        public listarColoresDistintosResponse(string[] @return) {
             this.@return = @return;
         }
     }
@@ -4084,35 +3877,168 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPrendasPorLote", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPrendasPorLoteRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPrendaPorId", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class buscarPrendaPorIdRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idLote;
+        public int idPrenda;
         
-        public listarPrendasPorLoteRequest() {
+        public buscarPrendaPorIdRequest() {
         }
         
-        public listarPrendasPorLoteRequest(int idLote) {
-            this.idLote = idLote;
+        public buscarPrendaPorIdRequest(int idPrenda) {
+            this.idPrenda = idPrenda;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPrendasPorLoteResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPrendasPorLoteResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPrendaPorIdResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class buscarPrendaPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.prenda @return;
+        
+        public buscarPrendaPorIdResponse() {
+        }
+        
+        public buscarPrendaPorIdResponse(WearDropWA.PackagePrendas.prenda @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodasPrendasLote", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodasPrendasLoteRequest {
+        
+        public listarTodasPrendasLoteRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodasPrendasLoteResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodasPrendasLoteResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public WearDropWA.PackagePrendas.prendaLote[] @return;
         
-        public listarPrendasPorLoteResponse() {
+        public listarTodasPrendasLoteResponse() {
         }
         
-        public listarPrendasPorLoteResponse(WearDropWA.PackagePrendas.prendaLote[] @return) {
+        public listarTodasPrendasLoteResponse(WearDropWA.PackagePrendas.prendaLote[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMaterialesDistintos", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarMaterialesDistintosRequest {
+        
+        public listarMaterialesDistintosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarMaterialesDistintosResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarMaterialesDistintosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string[] @return;
+        
+        public listarMaterialesDistintosResponse() {
+        }
+        
+        public listarMaterialesDistintosResponse(string[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPrendaLote", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarPrendaLoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.prendaLote prendaLote;
+        
+        public insertarPrendaLoteRequest() {
+        }
+        
+        public insertarPrendaLoteRequest(WearDropWA.PackagePrendas.prendaLote prendaLote) {
+            this.prendaLote = prendaLote;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPrendaLoteResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarPrendaLoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarPrendaLoteResponse() {
+        }
+        
+        public insertarPrendaLoteResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerStockPorTalla", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerStockPorTallaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idPrenda;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string talla;
+        
+        public obtenerStockPorTallaRequest() {
+        }
+        
+        public obtenerStockPorTallaRequest(int idPrenda, string talla) {
+            this.idPrenda = idPrenda;
+            this.talla = talla;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerStockPorTallaResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class obtenerStockPorTallaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public obtenerStockPorTallaResponse() {
+        }
+        
+        public obtenerStockPorTallaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -4156,35 +4082,35 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPrendaLotePorId", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class obtenerPrendaLotePorIdRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPrendasPorLote", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPrendasPorLoteRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPrendaLote;
+        public int idLote;
         
-        public obtenerPrendaLotePorIdRequest() {
+        public listarPrendasPorLoteRequest() {
         }
         
-        public obtenerPrendaLotePorIdRequest(int idPrendaLote) {
-            this.idPrendaLote = idPrendaLote;
+        public listarPrendasPorLoteRequest(int idLote) {
+            this.idLote = idLote;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPrendaLotePorIdResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class obtenerPrendaLotePorIdResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPrendasPorLoteResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPrendasPorLoteResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.prendaLote @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.prendaLote[] @return;
         
-        public obtenerPrendaLotePorIdResponse() {
+        public listarPrendasPorLoteResponse() {
         }
         
-        public obtenerPrendaLotePorIdResponse(WearDropWA.PackagePrendas.prendaLote @return) {
+        public listarPrendasPorLoteResponse(WearDropWA.PackagePrendas.prendaLote[] @return) {
             this.@return = @return;
         }
     }
@@ -4192,35 +4118,109 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPrendaPorId", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class buscarPrendaPorIdRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="existePrendaTallaEnLote", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class existePrendaTallaEnLoteRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int idPrenda;
         
-        public buscarPrendaPorIdRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string talla;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idLote;
+        
+        public existePrendaTallaEnLoteRequest() {
         }
         
-        public buscarPrendaPorIdRequest(int idPrenda) {
+        public existePrendaTallaEnLoteRequest(int idPrenda, string talla, int idLote) {
             this.idPrenda = idPrenda;
+            this.talla = talla;
+            this.idLote = idLote;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPrendaPorIdResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class buscarPrendaPorIdResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="existePrendaTallaEnLoteResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class existePrendaTallaEnLoteResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.prenda @return;
+        public bool @return;
         
-        public buscarPrendaPorIdResponse() {
+        public existePrendaTallaEnLoteResponse() {
         }
         
-        public buscarPrendaPorIdResponse(WearDropWA.PackagePrendas.prenda @return) {
+        public existePrendaTallaEnLoteResponse(bool @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarNombresDistintos", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarNombresDistintosRequest {
+        
+        public listarNombresDistintosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarNombresDistintosResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarNombresDistintosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string[] @return;
+        
+        public listarNombresDistintosResponse() {
+        }
+        
+        public listarNombresDistintosResponse(string[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPrendaLote", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarPrendaLoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idPrendaLote;
+        
+        public eliminarPrendaLoteRequest() {
+        }
+        
+        public eliminarPrendaLoteRequest(int idPrendaLote) {
+            this.idPrendaLote = idPrendaLote;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPrendaLoteResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarPrendaLoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarPrendaLoteResponse() {
+        }
+        
+        public eliminarPrendaLoteResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -4253,164 +4253,26 @@ namespace WearDropWA.PackagePrendas {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse WearDropWA.PackagePrendas.PrendaLoteWS.existePrendaTallaEnLote(WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest request) {
-            return base.Channel.existePrendaTallaEnLote(request);
+        WearDropWA.PackagePrendas.obtenerPrendaLotePorIdResponse WearDropWA.PackagePrendas.PrendaLoteWS.obtenerPrendaLotePorId(WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest request) {
+            return base.Channel.obtenerPrendaLotePorId(request);
         }
         
-        public bool existePrendaTallaEnLote(int idPrenda, string talla, int idLote) {
-            WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest inValue = new WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest();
-            inValue.idPrenda = idPrenda;
-            inValue.talla = talla;
-            inValue.idLote = idLote;
-            WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).existePrendaTallaEnLote(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse> WearDropWA.PackagePrendas.PrendaLoteWS.existePrendaTallaEnLoteAsync(WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest request) {
-            return base.Channel.existePrendaTallaEnLoteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse> existePrendaTallaEnLoteAsync(int idPrenda, string talla, int idLote) {
-            WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest inValue = new WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest();
-            inValue.idPrenda = idPrenda;
-            inValue.talla = talla;
-            inValue.idLote = idLote;
-            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).existePrendaTallaEnLoteAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.obtenerStockPorTallaResponse WearDropWA.PackagePrendas.PrendaLoteWS.obtenerStockPorTalla(WearDropWA.PackagePrendas.obtenerStockPorTallaRequest request) {
-            return base.Channel.obtenerStockPorTalla(request);
-        }
-        
-        public int obtenerStockPorTalla(int idPrenda, string talla) {
-            WearDropWA.PackagePrendas.obtenerStockPorTallaRequest inValue = new WearDropWA.PackagePrendas.obtenerStockPorTallaRequest();
-            inValue.idPrenda = idPrenda;
-            inValue.talla = talla;
-            WearDropWA.PackagePrendas.obtenerStockPorTallaResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).obtenerStockPorTalla(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerStockPorTallaResponse> WearDropWA.PackagePrendas.PrendaLoteWS.obtenerStockPorTallaAsync(WearDropWA.PackagePrendas.obtenerStockPorTallaRequest request) {
-            return base.Channel.obtenerStockPorTallaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerStockPorTallaResponse> obtenerStockPorTallaAsync(int idPrenda, string talla) {
-            WearDropWA.PackagePrendas.obtenerStockPorTallaRequest inValue = new WearDropWA.PackagePrendas.obtenerStockPorTallaRequest();
-            inValue.idPrenda = idPrenda;
-            inValue.talla = talla;
-            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).obtenerStockPorTallaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse WearDropWA.PackagePrendas.PrendaLoteWS.listarTodasPrendasLote(WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest request) {
-            return base.Channel.listarTodasPrendasLote(request);
-        }
-        
-        public WearDropWA.PackagePrendas.prendaLote[] listarTodasPrendasLote() {
-            WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest inValue = new WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest();
-            WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarTodasPrendasLote(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse> WearDropWA.PackagePrendas.PrendaLoteWS.listarTodasPrendasLoteAsync(WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest request) {
-            return base.Channel.listarTodasPrendasLoteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse> listarTodasPrendasLoteAsync() {
-            WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest inValue = new WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest();
-            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarTodasPrendasLoteAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.listarColoresDistintosResponse WearDropWA.PackagePrendas.PrendaLoteWS.listarColoresDistintos(WearDropWA.PackagePrendas.listarColoresDistintosRequest request) {
-            return base.Channel.listarColoresDistintos(request);
-        }
-        
-        public string[] listarColoresDistintos() {
-            WearDropWA.PackagePrendas.listarColoresDistintosRequest inValue = new WearDropWA.PackagePrendas.listarColoresDistintosRequest();
-            WearDropWA.PackagePrendas.listarColoresDistintosResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarColoresDistintos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarColoresDistintosResponse> WearDropWA.PackagePrendas.PrendaLoteWS.listarColoresDistintosAsync(WearDropWA.PackagePrendas.listarColoresDistintosRequest request) {
-            return base.Channel.listarColoresDistintosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarColoresDistintosResponse> listarColoresDistintosAsync() {
-            WearDropWA.PackagePrendas.listarColoresDistintosRequest inValue = new WearDropWA.PackagePrendas.listarColoresDistintosRequest();
-            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarColoresDistintosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.listarMaterialesDistintosResponse WearDropWA.PackagePrendas.PrendaLoteWS.listarMaterialesDistintos(WearDropWA.PackagePrendas.listarMaterialesDistintosRequest request) {
-            return base.Channel.listarMaterialesDistintos(request);
-        }
-        
-        public string[] listarMaterialesDistintos() {
-            WearDropWA.PackagePrendas.listarMaterialesDistintosRequest inValue = new WearDropWA.PackagePrendas.listarMaterialesDistintosRequest();
-            WearDropWA.PackagePrendas.listarMaterialesDistintosResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarMaterialesDistintos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarMaterialesDistintosResponse> WearDropWA.PackagePrendas.PrendaLoteWS.listarMaterialesDistintosAsync(WearDropWA.PackagePrendas.listarMaterialesDistintosRequest request) {
-            return base.Channel.listarMaterialesDistintosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarMaterialesDistintosResponse> listarMaterialesDistintosAsync() {
-            WearDropWA.PackagePrendas.listarMaterialesDistintosRequest inValue = new WearDropWA.PackagePrendas.listarMaterialesDistintosRequest();
-            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarMaterialesDistintosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.eliminarPrendaLoteResponse WearDropWA.PackagePrendas.PrendaLoteWS.eliminarPrendaLote(WearDropWA.PackagePrendas.eliminarPrendaLoteRequest request) {
-            return base.Channel.eliminarPrendaLote(request);
-        }
-        
-        public int eliminarPrendaLote(int idPrendaLote) {
-            WearDropWA.PackagePrendas.eliminarPrendaLoteRequest inValue = new WearDropWA.PackagePrendas.eliminarPrendaLoteRequest();
+        public WearDropWA.PackagePrendas.prendaLote obtenerPrendaLotePorId(int idPrendaLote) {
+            WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest();
             inValue.idPrendaLote = idPrendaLote;
-            WearDropWA.PackagePrendas.eliminarPrendaLoteResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).eliminarPrendaLote(inValue);
+            WearDropWA.PackagePrendas.obtenerPrendaLotePorIdResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).obtenerPrendaLotePorId(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarPrendaLoteResponse> WearDropWA.PackagePrendas.PrendaLoteWS.eliminarPrendaLoteAsync(WearDropWA.PackagePrendas.eliminarPrendaLoteRequest request) {
-            return base.Channel.eliminarPrendaLoteAsync(request);
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPrendaLotePorIdResponse> WearDropWA.PackagePrendas.PrendaLoteWS.obtenerPrendaLotePorIdAsync(WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest request) {
+            return base.Channel.obtenerPrendaLotePorIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarPrendaLoteResponse> eliminarPrendaLoteAsync(int idPrendaLote) {
-            WearDropWA.PackagePrendas.eliminarPrendaLoteRequest inValue = new WearDropWA.PackagePrendas.eliminarPrendaLoteRequest();
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPrendaLotePorIdResponse> obtenerPrendaLotePorIdAsync(int idPrendaLote) {
+            WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest();
             inValue.idPrendaLote = idPrendaLote;
-            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).eliminarPrendaLoteAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.insertarPrendaLoteResponse WearDropWA.PackagePrendas.PrendaLoteWS.insertarPrendaLote(WearDropWA.PackagePrendas.insertarPrendaLoteRequest request) {
-            return base.Channel.insertarPrendaLote(request);
-        }
-        
-        public int insertarPrendaLote(WearDropWA.PackagePrendas.prendaLote prendaLote) {
-            WearDropWA.PackagePrendas.insertarPrendaLoteRequest inValue = new WearDropWA.PackagePrendas.insertarPrendaLoteRequest();
-            inValue.prendaLote = prendaLote;
-            WearDropWA.PackagePrendas.insertarPrendaLoteResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).insertarPrendaLote(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPrendaLoteResponse> WearDropWA.PackagePrendas.PrendaLoteWS.insertarPrendaLoteAsync(WearDropWA.PackagePrendas.insertarPrendaLoteRequest request) {
-            return base.Channel.insertarPrendaLoteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPrendaLoteResponse> insertarPrendaLoteAsync(WearDropWA.PackagePrendas.prendaLote prendaLote) {
-            WearDropWA.PackagePrendas.insertarPrendaLoteRequest inValue = new WearDropWA.PackagePrendas.insertarPrendaLoteRequest();
-            inValue.prendaLote = prendaLote;
-            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).insertarPrendaLoteAsync(inValue);
+            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).obtenerPrendaLotePorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4441,47 +4303,137 @@ namespace WearDropWA.PackagePrendas {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.listarNombresDistintosResponse WearDropWA.PackagePrendas.PrendaLoteWS.listarNombresDistintos(WearDropWA.PackagePrendas.listarNombresDistintosRequest request) {
-            return base.Channel.listarNombresDistintos(request);
+        WearDropWA.PackagePrendas.listarColoresDistintosResponse WearDropWA.PackagePrendas.PrendaLoteWS.listarColoresDistintos(WearDropWA.PackagePrendas.listarColoresDistintosRequest request) {
+            return base.Channel.listarColoresDistintos(request);
         }
         
-        public string[] listarNombresDistintos() {
-            WearDropWA.PackagePrendas.listarNombresDistintosRequest inValue = new WearDropWA.PackagePrendas.listarNombresDistintosRequest();
-            WearDropWA.PackagePrendas.listarNombresDistintosResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarNombresDistintos(inValue);
+        public string[] listarColoresDistintos() {
+            WearDropWA.PackagePrendas.listarColoresDistintosRequest inValue = new WearDropWA.PackagePrendas.listarColoresDistintosRequest();
+            WearDropWA.PackagePrendas.listarColoresDistintosResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarColoresDistintos(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarNombresDistintosResponse> WearDropWA.PackagePrendas.PrendaLoteWS.listarNombresDistintosAsync(WearDropWA.PackagePrendas.listarNombresDistintosRequest request) {
-            return base.Channel.listarNombresDistintosAsync(request);
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarColoresDistintosResponse> WearDropWA.PackagePrendas.PrendaLoteWS.listarColoresDistintosAsync(WearDropWA.PackagePrendas.listarColoresDistintosRequest request) {
+            return base.Channel.listarColoresDistintosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarNombresDistintosResponse> listarNombresDistintosAsync() {
-            WearDropWA.PackagePrendas.listarNombresDistintosRequest inValue = new WearDropWA.PackagePrendas.listarNombresDistintosRequest();
-            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarNombresDistintosAsync(inValue);
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarColoresDistintosResponse> listarColoresDistintosAsync() {
+            WearDropWA.PackagePrendas.listarColoresDistintosRequest inValue = new WearDropWA.PackagePrendas.listarColoresDistintosRequest();
+            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarColoresDistintosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.listarPrendasPorLoteResponse WearDropWA.PackagePrendas.PrendaLoteWS.listarPrendasPorLote(WearDropWA.PackagePrendas.listarPrendasPorLoteRequest request) {
-            return base.Channel.listarPrendasPorLote(request);
+        WearDropWA.PackagePrendas.buscarPrendaPorIdResponse WearDropWA.PackagePrendas.PrendaLoteWS.buscarPrendaPorId(WearDropWA.PackagePrendas.buscarPrendaPorIdRequest request) {
+            return base.Channel.buscarPrendaPorId(request);
         }
         
-        public WearDropWA.PackagePrendas.prendaLote[] listarPrendasPorLote(int idLote) {
-            WearDropWA.PackagePrendas.listarPrendasPorLoteRequest inValue = new WearDropWA.PackagePrendas.listarPrendasPorLoteRequest();
-            inValue.idLote = idLote;
-            WearDropWA.PackagePrendas.listarPrendasPorLoteResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarPrendasPorLote(inValue);
+        public WearDropWA.PackagePrendas.prenda buscarPrendaPorId(int idPrenda) {
+            WearDropWA.PackagePrendas.buscarPrendaPorIdRequest inValue = new WearDropWA.PackagePrendas.buscarPrendaPorIdRequest();
+            inValue.idPrenda = idPrenda;
+            WearDropWA.PackagePrendas.buscarPrendaPorIdResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).buscarPrendaPorId(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPrendasPorLoteResponse> WearDropWA.PackagePrendas.PrendaLoteWS.listarPrendasPorLoteAsync(WearDropWA.PackagePrendas.listarPrendasPorLoteRequest request) {
-            return base.Channel.listarPrendasPorLoteAsync(request);
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.buscarPrendaPorIdResponse> WearDropWA.PackagePrendas.PrendaLoteWS.buscarPrendaPorIdAsync(WearDropWA.PackagePrendas.buscarPrendaPorIdRequest request) {
+            return base.Channel.buscarPrendaPorIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPrendasPorLoteResponse> listarPrendasPorLoteAsync(int idLote) {
-            WearDropWA.PackagePrendas.listarPrendasPorLoteRequest inValue = new WearDropWA.PackagePrendas.listarPrendasPorLoteRequest();
-            inValue.idLote = idLote;
-            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarPrendasPorLoteAsync(inValue);
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.buscarPrendaPorIdResponse> buscarPrendaPorIdAsync(int idPrenda) {
+            WearDropWA.PackagePrendas.buscarPrendaPorIdRequest inValue = new WearDropWA.PackagePrendas.buscarPrendaPorIdRequest();
+            inValue.idPrenda = idPrenda;
+            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).buscarPrendaPorIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse WearDropWA.PackagePrendas.PrendaLoteWS.listarTodasPrendasLote(WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest request) {
+            return base.Channel.listarTodasPrendasLote(request);
+        }
+        
+        public WearDropWA.PackagePrendas.prendaLote[] listarTodasPrendasLote() {
+            WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest inValue = new WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest();
+            WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarTodasPrendasLote(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse> WearDropWA.PackagePrendas.PrendaLoteWS.listarTodasPrendasLoteAsync(WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest request) {
+            return base.Channel.listarTodasPrendasLoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarTodasPrendasLoteResponse> listarTodasPrendasLoteAsync() {
+            WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest inValue = new WearDropWA.PackagePrendas.listarTodasPrendasLoteRequest();
+            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarTodasPrendasLoteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.listarMaterialesDistintosResponse WearDropWA.PackagePrendas.PrendaLoteWS.listarMaterialesDistintos(WearDropWA.PackagePrendas.listarMaterialesDistintosRequest request) {
+            return base.Channel.listarMaterialesDistintos(request);
+        }
+        
+        public string[] listarMaterialesDistintos() {
+            WearDropWA.PackagePrendas.listarMaterialesDistintosRequest inValue = new WearDropWA.PackagePrendas.listarMaterialesDistintosRequest();
+            WearDropWA.PackagePrendas.listarMaterialesDistintosResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarMaterialesDistintos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarMaterialesDistintosResponse> WearDropWA.PackagePrendas.PrendaLoteWS.listarMaterialesDistintosAsync(WearDropWA.PackagePrendas.listarMaterialesDistintosRequest request) {
+            return base.Channel.listarMaterialesDistintosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarMaterialesDistintosResponse> listarMaterialesDistintosAsync() {
+            WearDropWA.PackagePrendas.listarMaterialesDistintosRequest inValue = new WearDropWA.PackagePrendas.listarMaterialesDistintosRequest();
+            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarMaterialesDistintosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.insertarPrendaLoteResponse WearDropWA.PackagePrendas.PrendaLoteWS.insertarPrendaLote(WearDropWA.PackagePrendas.insertarPrendaLoteRequest request) {
+            return base.Channel.insertarPrendaLote(request);
+        }
+        
+        public int insertarPrendaLote(WearDropWA.PackagePrendas.prendaLote prendaLote) {
+            WearDropWA.PackagePrendas.insertarPrendaLoteRequest inValue = new WearDropWA.PackagePrendas.insertarPrendaLoteRequest();
+            inValue.prendaLote = prendaLote;
+            WearDropWA.PackagePrendas.insertarPrendaLoteResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).insertarPrendaLote(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPrendaLoteResponse> WearDropWA.PackagePrendas.PrendaLoteWS.insertarPrendaLoteAsync(WearDropWA.PackagePrendas.insertarPrendaLoteRequest request) {
+            return base.Channel.insertarPrendaLoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPrendaLoteResponse> insertarPrendaLoteAsync(WearDropWA.PackagePrendas.prendaLote prendaLote) {
+            WearDropWA.PackagePrendas.insertarPrendaLoteRequest inValue = new WearDropWA.PackagePrendas.insertarPrendaLoteRequest();
+            inValue.prendaLote = prendaLote;
+            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).insertarPrendaLoteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.obtenerStockPorTallaResponse WearDropWA.PackagePrendas.PrendaLoteWS.obtenerStockPorTalla(WearDropWA.PackagePrendas.obtenerStockPorTallaRequest request) {
+            return base.Channel.obtenerStockPorTalla(request);
+        }
+        
+        public int obtenerStockPorTalla(int idPrenda, string talla) {
+            WearDropWA.PackagePrendas.obtenerStockPorTallaRequest inValue = new WearDropWA.PackagePrendas.obtenerStockPorTallaRequest();
+            inValue.idPrenda = idPrenda;
+            inValue.talla = talla;
+            WearDropWA.PackagePrendas.obtenerStockPorTallaResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).obtenerStockPorTalla(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerStockPorTallaResponse> WearDropWA.PackagePrendas.PrendaLoteWS.obtenerStockPorTallaAsync(WearDropWA.PackagePrendas.obtenerStockPorTallaRequest request) {
+            return base.Channel.obtenerStockPorTallaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerStockPorTallaResponse> obtenerStockPorTallaAsync(int idPrenda, string talla) {
+            WearDropWA.PackagePrendas.obtenerStockPorTallaRequest inValue = new WearDropWA.PackagePrendas.obtenerStockPorTallaRequest();
+            inValue.idPrenda = idPrenda;
+            inValue.talla = talla;
+            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).obtenerStockPorTallaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4508,49 +4460,97 @@ namespace WearDropWA.PackagePrendas {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.obtenerPrendaLotePorIdResponse WearDropWA.PackagePrendas.PrendaLoteWS.obtenerPrendaLotePorId(WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest request) {
-            return base.Channel.obtenerPrendaLotePorId(request);
+        WearDropWA.PackagePrendas.listarPrendasPorLoteResponse WearDropWA.PackagePrendas.PrendaLoteWS.listarPrendasPorLote(WearDropWA.PackagePrendas.listarPrendasPorLoteRequest request) {
+            return base.Channel.listarPrendasPorLote(request);
         }
         
-        public WearDropWA.PackagePrendas.prendaLote obtenerPrendaLotePorId(int idPrendaLote) {
-            WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest();
-            inValue.idPrendaLote = idPrendaLote;
-            WearDropWA.PackagePrendas.obtenerPrendaLotePorIdResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).obtenerPrendaLotePorId(inValue);
+        public WearDropWA.PackagePrendas.prendaLote[] listarPrendasPorLote(int idLote) {
+            WearDropWA.PackagePrendas.listarPrendasPorLoteRequest inValue = new WearDropWA.PackagePrendas.listarPrendasPorLoteRequest();
+            inValue.idLote = idLote;
+            WearDropWA.PackagePrendas.listarPrendasPorLoteResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarPrendasPorLote(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPrendaLotePorIdResponse> WearDropWA.PackagePrendas.PrendaLoteWS.obtenerPrendaLotePorIdAsync(WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest request) {
-            return base.Channel.obtenerPrendaLotePorIdAsync(request);
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPrendasPorLoteResponse> WearDropWA.PackagePrendas.PrendaLoteWS.listarPrendasPorLoteAsync(WearDropWA.PackagePrendas.listarPrendasPorLoteRequest request) {
+            return base.Channel.listarPrendasPorLoteAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPrendaLotePorIdResponse> obtenerPrendaLotePorIdAsync(int idPrendaLote) {
-            WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerPrendaLotePorIdRequest();
-            inValue.idPrendaLote = idPrendaLote;
-            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).obtenerPrendaLotePorIdAsync(inValue);
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPrendasPorLoteResponse> listarPrendasPorLoteAsync(int idLote) {
+            WearDropWA.PackagePrendas.listarPrendasPorLoteRequest inValue = new WearDropWA.PackagePrendas.listarPrendasPorLoteRequest();
+            inValue.idLote = idLote;
+            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarPrendasPorLoteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.buscarPrendaPorIdResponse WearDropWA.PackagePrendas.PrendaLoteWS.buscarPrendaPorId(WearDropWA.PackagePrendas.buscarPrendaPorIdRequest request) {
-            return base.Channel.buscarPrendaPorId(request);
+        WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse WearDropWA.PackagePrendas.PrendaLoteWS.existePrendaTallaEnLote(WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest request) {
+            return base.Channel.existePrendaTallaEnLote(request);
         }
         
-        public WearDropWA.PackagePrendas.prenda buscarPrendaPorId(int idPrenda) {
-            WearDropWA.PackagePrendas.buscarPrendaPorIdRequest inValue = new WearDropWA.PackagePrendas.buscarPrendaPorIdRequest();
+        public bool existePrendaTallaEnLote(int idPrenda, string talla, int idLote) {
+            WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest inValue = new WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest();
             inValue.idPrenda = idPrenda;
-            WearDropWA.PackagePrendas.buscarPrendaPorIdResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).buscarPrendaPorId(inValue);
+            inValue.talla = talla;
+            inValue.idLote = idLote;
+            WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).existePrendaTallaEnLote(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.buscarPrendaPorIdResponse> WearDropWA.PackagePrendas.PrendaLoteWS.buscarPrendaPorIdAsync(WearDropWA.PackagePrendas.buscarPrendaPorIdRequest request) {
-            return base.Channel.buscarPrendaPorIdAsync(request);
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse> WearDropWA.PackagePrendas.PrendaLoteWS.existePrendaTallaEnLoteAsync(WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest request) {
+            return base.Channel.existePrendaTallaEnLoteAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.buscarPrendaPorIdResponse> buscarPrendaPorIdAsync(int idPrenda) {
-            WearDropWA.PackagePrendas.buscarPrendaPorIdRequest inValue = new WearDropWA.PackagePrendas.buscarPrendaPorIdRequest();
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.existePrendaTallaEnLoteResponse> existePrendaTallaEnLoteAsync(int idPrenda, string talla, int idLote) {
+            WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest inValue = new WearDropWA.PackagePrendas.existePrendaTallaEnLoteRequest();
             inValue.idPrenda = idPrenda;
-            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).buscarPrendaPorIdAsync(inValue);
+            inValue.talla = talla;
+            inValue.idLote = idLote;
+            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).existePrendaTallaEnLoteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.listarNombresDistintosResponse WearDropWA.PackagePrendas.PrendaLoteWS.listarNombresDistintos(WearDropWA.PackagePrendas.listarNombresDistintosRequest request) {
+            return base.Channel.listarNombresDistintos(request);
+        }
+        
+        public string[] listarNombresDistintos() {
+            WearDropWA.PackagePrendas.listarNombresDistintosRequest inValue = new WearDropWA.PackagePrendas.listarNombresDistintosRequest();
+            WearDropWA.PackagePrendas.listarNombresDistintosResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarNombresDistintos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarNombresDistintosResponse> WearDropWA.PackagePrendas.PrendaLoteWS.listarNombresDistintosAsync(WearDropWA.PackagePrendas.listarNombresDistintosRequest request) {
+            return base.Channel.listarNombresDistintosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarNombresDistintosResponse> listarNombresDistintosAsync() {
+            WearDropWA.PackagePrendas.listarNombresDistintosRequest inValue = new WearDropWA.PackagePrendas.listarNombresDistintosRequest();
+            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).listarNombresDistintosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.eliminarPrendaLoteResponse WearDropWA.PackagePrendas.PrendaLoteWS.eliminarPrendaLote(WearDropWA.PackagePrendas.eliminarPrendaLoteRequest request) {
+            return base.Channel.eliminarPrendaLote(request);
+        }
+        
+        public int eliminarPrendaLote(int idPrendaLote) {
+            WearDropWA.PackagePrendas.eliminarPrendaLoteRequest inValue = new WearDropWA.PackagePrendas.eliminarPrendaLoteRequest();
+            inValue.idPrendaLote = idPrendaLote;
+            WearDropWA.PackagePrendas.eliminarPrendaLoteResponse retVal = ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).eliminarPrendaLote(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarPrendaLoteResponse> WearDropWA.PackagePrendas.PrendaLoteWS.eliminarPrendaLoteAsync(WearDropWA.PackagePrendas.eliminarPrendaLoteRequest request) {
+            return base.Channel.eliminarPrendaLoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarPrendaLoteResponse> eliminarPrendaLoteAsync(int idPrendaLote) {
+            WearDropWA.PackagePrendas.eliminarPrendaLoteRequest inValue = new WearDropWA.PackagePrendas.eliminarPrendaLoteRequest();
+            inValue.idPrendaLote = idPrendaLote;
+            return ((WearDropWA.PackagePrendas.PrendaLoteWS)(this)).eliminarPrendaLoteAsync(inValue);
         }
     }
     
@@ -4577,13 +4577,13 @@ namespace WearDropWA.PackagePrendas {
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarPoloResponse> eliminarPoloAsync(WearDropWA.PackagePrendas.eliminarPoloRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/insertarPoloRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/insertarPoloResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/obtenerPoloPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/obtenerPoloPorIdResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.insertarPoloResponse insertarPolo(WearDropWA.PackagePrendas.insertarPoloRequest request);
+        WearDropWA.PackagePrendas.obtenerPoloPorIdResponse obtenerPoloPorId(WearDropWA.PackagePrendas.obtenerPoloPorIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/insertarPoloRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/insertarPoloResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPoloResponse> insertarPoloAsync(WearDropWA.PackagePrendas.insertarPoloRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/obtenerPoloPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/obtenerPoloPorIdResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPoloPorIdResponse> obtenerPoloPorIdAsync(WearDropWA.PackagePrendas.obtenerPoloPorIdRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/listarPolosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/listarPolosResponse")]
@@ -4595,15 +4595,6 @@ namespace WearDropWA.PackagePrendas {
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPolosResponse> listarPolosAsync(WearDropWA.PackagePrendas.listarPolosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/obtenerPoloPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/obtenerPoloPorIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.obtenerPoloPorIdResponse obtenerPoloPorId(WearDropWA.PackagePrendas.obtenerPoloPorIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/obtenerPoloPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/obtenerPoloPorIdResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPoloPorIdResponse> obtenerPoloPorIdAsync(WearDropWA.PackagePrendas.obtenerPoloPorIdRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/filtrarPolosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/filtrarPolosResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -4611,6 +4602,15 @@ namespace WearDropWA.PackagePrendas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/filtrarPolosRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/filtrarPolosResponse")]
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.filtrarPolosResponse> filtrarPolosAsync(WearDropWA.PackagePrendas.filtrarPolosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/insertarPoloRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/insertarPoloResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.insertarPoloResponse insertarPolo(WearDropWA.PackagePrendas.insertarPoloRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/insertarPoloRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/PoloWS/insertarPoloResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPoloResponse> insertarPoloAsync(WearDropWA.PackagePrendas.insertarPoloRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4688,70 +4688,6 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPolo", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarPoloRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.polo polo;
-        
-        public insertarPoloRequest() {
-        }
-        
-        public insertarPoloRequest(WearDropWA.PackagePrendas.polo polo) {
-            this.polo = polo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPoloResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarPoloResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarPoloResponse() {
-        }
-        
-        public insertarPoloResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPolos", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPolosRequest {
-        
-        public listarPolosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPolosResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPolosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.polo[] @return;
-        
-        public listarPolosResponse() {
-        }
-        
-        public listarPolosResponse(WearDropWA.PackagePrendas.polo[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPoloPorId", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
     public partial class obtenerPoloPorIdRequest {
         
@@ -4781,6 +4717,34 @@ namespace WearDropWA.PackagePrendas {
         }
         
         public obtenerPoloPorIdResponse(WearDropWA.PackagePrendas.polo @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPolos", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPolosRequest {
+        
+        public listarPolosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPolosResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPolosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.polo[] @return;
+        
+        public listarPolosResponse() {
+        }
+        
+        public listarPolosResponse(WearDropWA.PackagePrendas.polo[] @return) {
             this.@return = @return;
         }
     }
@@ -4852,6 +4816,42 @@ namespace WearDropWA.PackagePrendas {
         }
         
         public filtrarPolosResponse(WearDropWA.PackagePrendas.polo[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPolo", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarPoloRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.polo polo;
+        
+        public insertarPoloRequest() {
+        }
+        
+        public insertarPoloRequest(WearDropWA.PackagePrendas.polo polo) {
+            this.polo = polo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPoloResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarPoloResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarPoloResponse() {
+        }
+        
+        public insertarPoloResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -4930,26 +4930,26 @@ namespace WearDropWA.PackagePrendas {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.insertarPoloResponse WearDropWA.PackagePrendas.PoloWS.insertarPolo(WearDropWA.PackagePrendas.insertarPoloRequest request) {
-            return base.Channel.insertarPolo(request);
+        WearDropWA.PackagePrendas.obtenerPoloPorIdResponse WearDropWA.PackagePrendas.PoloWS.obtenerPoloPorId(WearDropWA.PackagePrendas.obtenerPoloPorIdRequest request) {
+            return base.Channel.obtenerPoloPorId(request);
         }
         
-        public int insertarPolo(WearDropWA.PackagePrendas.polo polo) {
-            WearDropWA.PackagePrendas.insertarPoloRequest inValue = new WearDropWA.PackagePrendas.insertarPoloRequest();
-            inValue.polo = polo;
-            WearDropWA.PackagePrendas.insertarPoloResponse retVal = ((WearDropWA.PackagePrendas.PoloWS)(this)).insertarPolo(inValue);
+        public WearDropWA.PackagePrendas.polo obtenerPoloPorId(int idPolo) {
+            WearDropWA.PackagePrendas.obtenerPoloPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerPoloPorIdRequest();
+            inValue.idPolo = idPolo;
+            WearDropWA.PackagePrendas.obtenerPoloPorIdResponse retVal = ((WearDropWA.PackagePrendas.PoloWS)(this)).obtenerPoloPorId(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPoloResponse> WearDropWA.PackagePrendas.PoloWS.insertarPoloAsync(WearDropWA.PackagePrendas.insertarPoloRequest request) {
-            return base.Channel.insertarPoloAsync(request);
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPoloPorIdResponse> WearDropWA.PackagePrendas.PoloWS.obtenerPoloPorIdAsync(WearDropWA.PackagePrendas.obtenerPoloPorIdRequest request) {
+            return base.Channel.obtenerPoloPorIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPoloResponse> insertarPoloAsync(WearDropWA.PackagePrendas.polo polo) {
-            WearDropWA.PackagePrendas.insertarPoloRequest inValue = new WearDropWA.PackagePrendas.insertarPoloRequest();
-            inValue.polo = polo;
-            return ((WearDropWA.PackagePrendas.PoloWS)(this)).insertarPoloAsync(inValue);
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPoloPorIdResponse> obtenerPoloPorIdAsync(int idPolo) {
+            WearDropWA.PackagePrendas.obtenerPoloPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerPoloPorIdRequest();
+            inValue.idPolo = idPolo;
+            return ((WearDropWA.PackagePrendas.PoloWS)(this)).obtenerPoloPorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4971,29 +4971,6 @@ namespace WearDropWA.PackagePrendas {
         public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarPolosResponse> listarPolosAsync() {
             WearDropWA.PackagePrendas.listarPolosRequest inValue = new WearDropWA.PackagePrendas.listarPolosRequest();
             return ((WearDropWA.PackagePrendas.PoloWS)(this)).listarPolosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.obtenerPoloPorIdResponse WearDropWA.PackagePrendas.PoloWS.obtenerPoloPorId(WearDropWA.PackagePrendas.obtenerPoloPorIdRequest request) {
-            return base.Channel.obtenerPoloPorId(request);
-        }
-        
-        public WearDropWA.PackagePrendas.polo obtenerPoloPorId(int idPolo) {
-            WearDropWA.PackagePrendas.obtenerPoloPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerPoloPorIdRequest();
-            inValue.idPolo = idPolo;
-            WearDropWA.PackagePrendas.obtenerPoloPorIdResponse retVal = ((WearDropWA.PackagePrendas.PoloWS)(this)).obtenerPoloPorId(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPoloPorIdResponse> WearDropWA.PackagePrendas.PoloWS.obtenerPoloPorIdAsync(WearDropWA.PackagePrendas.obtenerPoloPorIdRequest request) {
-            return base.Channel.obtenerPoloPorIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerPoloPorIdResponse> obtenerPoloPorIdAsync(int idPolo) {
-            WearDropWA.PackagePrendas.obtenerPoloPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerPoloPorIdRequest();
-            inValue.idPolo = idPolo;
-            return ((WearDropWA.PackagePrendas.PoloWS)(this)).obtenerPoloPorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5032,11 +5009,43 @@ namespace WearDropWA.PackagePrendas {
             inValue.soloActivos = soloActivos;
             return ((WearDropWA.PackagePrendas.PoloWS)(this)).filtrarPolosAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.insertarPoloResponse WearDropWA.PackagePrendas.PoloWS.insertarPolo(WearDropWA.PackagePrendas.insertarPoloRequest request) {
+            return base.Channel.insertarPolo(request);
+        }
+        
+        public int insertarPolo(WearDropWA.PackagePrendas.polo polo) {
+            WearDropWA.PackagePrendas.insertarPoloRequest inValue = new WearDropWA.PackagePrendas.insertarPoloRequest();
+            inValue.polo = polo;
+            WearDropWA.PackagePrendas.insertarPoloResponse retVal = ((WearDropWA.PackagePrendas.PoloWS)(this)).insertarPolo(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPoloResponse> WearDropWA.PackagePrendas.PoloWS.insertarPoloAsync(WearDropWA.PackagePrendas.insertarPoloRequest request) {
+            return base.Channel.insertarPoloAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarPoloResponse> insertarPoloAsync(WearDropWA.PackagePrendas.polo polo) {
+            WearDropWA.PackagePrendas.insertarPoloRequest inValue = new WearDropWA.PackagePrendas.insertarPoloRequest();
+            inValue.polo = polo;
+            return ((WearDropWA.PackagePrendas.PoloWS)(this)).insertarPoloAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", ConfigurationName="PackagePrendas.BlusaWS")]
     public interface BlusaWS {
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/modificarBlusaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/modificarBlusaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.modificarBlusaResponse modificarBlusa(WearDropWA.PackagePrendas.modificarBlusaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/modificarBlusaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/modificarBlusaResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarBlusaResponse> modificarBlusaAsync(WearDropWA.PackagePrendas.modificarBlusaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/filtrarBlusasRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/filtrarBlusasResponse")]
@@ -5048,22 +5057,13 @@ namespace WearDropWA.PackagePrendas {
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.filtrarBlusasResponse> filtrarBlusasAsync(WearDropWA.PackagePrendas.filtrarBlusasRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/insertarBlusaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/insertarBlusaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/eliminarBlusaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/eliminarBlusaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.insertarBlusaResponse insertarBlusa(WearDropWA.PackagePrendas.insertarBlusaRequest request);
+        WearDropWA.PackagePrendas.eliminarBlusaResponse eliminarBlusa(WearDropWA.PackagePrendas.eliminarBlusaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/insertarBlusaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/insertarBlusaResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarBlusaResponse> insertarBlusaAsync(WearDropWA.PackagePrendas.insertarBlusaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/modificarBlusaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/modificarBlusaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.modificarBlusaResponse modificarBlusa(WearDropWA.PackagePrendas.modificarBlusaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/modificarBlusaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/modificarBlusaResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarBlusaResponse> modificarBlusaAsync(WearDropWA.PackagePrendas.modificarBlusaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/eliminarBlusaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/eliminarBlusaResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarBlusaResponse> eliminarBlusaAsync(WearDropWA.PackagePrendas.eliminarBlusaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/obtenerBlusaPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/obtenerBlusaPorIdResponse")]
@@ -5084,13 +5084,49 @@ namespace WearDropWA.PackagePrendas {
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarBlusasResponse> listarBlusasAsync(WearDropWA.PackagePrendas.listarBlusasRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/eliminarBlusaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/eliminarBlusaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/insertarBlusaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/insertarBlusaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.eliminarBlusaResponse eliminarBlusa(WearDropWA.PackagePrendas.eliminarBlusaRequest request);
+        WearDropWA.PackagePrendas.insertarBlusaResponse insertarBlusa(WearDropWA.PackagePrendas.insertarBlusaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/eliminarBlusaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/eliminarBlusaResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarBlusaResponse> eliminarBlusaAsync(WearDropWA.PackagePrendas.eliminarBlusaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/insertarBlusaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/BlusaWS/insertarBlusaResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarBlusaResponse> insertarBlusaAsync(WearDropWA.PackagePrendas.insertarBlusaRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarBlusa", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarBlusaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.blusa blusa;
+        
+        public modificarBlusaRequest() {
+        }
+        
+        public modificarBlusaRequest(WearDropWA.PackagePrendas.blusa blusa) {
+            this.blusa = blusa;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarBlusaResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarBlusaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarBlusaResponse() {
+        }
+        
+        public modificarBlusaResponse(int @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5167,71 +5203,35 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarBlusa", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarBlusaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarBlusa", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarBlusaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.blusa blusa;
+        public int idBlusa;
         
-        public insertarBlusaRequest() {
+        public eliminarBlusaRequest() {
         }
         
-        public insertarBlusaRequest(WearDropWA.PackagePrendas.blusa blusa) {
-            this.blusa = blusa;
+        public eliminarBlusaRequest(int idBlusa) {
+            this.idBlusa = idBlusa;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarBlusaResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarBlusaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarBlusaResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarBlusaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public insertarBlusaResponse() {
+        public eliminarBlusaResponse() {
         }
         
-        public insertarBlusaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarBlusa", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarBlusaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.blusa blusa;
-        
-        public modificarBlusaRequest() {
-        }
-        
-        public modificarBlusaRequest(WearDropWA.PackagePrendas.blusa blusa) {
-            this.blusa = blusa;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarBlusaResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarBlusaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarBlusaResponse() {
-        }
-        
-        public modificarBlusaResponse(int @return) {
+        public eliminarBlusaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -5303,35 +5303,35 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarBlusa", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarBlusaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarBlusa", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarBlusaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idBlusa;
+        public WearDropWA.PackagePrendas.blusa blusa;
         
-        public eliminarBlusaRequest() {
+        public insertarBlusaRequest() {
         }
         
-        public eliminarBlusaRequest(int idBlusa) {
-            this.idBlusa = idBlusa;
+        public insertarBlusaRequest(WearDropWA.PackagePrendas.blusa blusa) {
+            this.blusa = blusa;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarBlusaResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarBlusaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarBlusaResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarBlusaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public eliminarBlusaResponse() {
+        public insertarBlusaResponse() {
         }
         
-        public eliminarBlusaResponse(int @return) {
+        public insertarBlusaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -5361,6 +5361,29 @@ namespace WearDropWA.PackagePrendas {
         
         public BlusaWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.modificarBlusaResponse WearDropWA.PackagePrendas.BlusaWS.modificarBlusa(WearDropWA.PackagePrendas.modificarBlusaRequest request) {
+            return base.Channel.modificarBlusa(request);
+        }
+        
+        public int modificarBlusa(WearDropWA.PackagePrendas.blusa blusa) {
+            WearDropWA.PackagePrendas.modificarBlusaRequest inValue = new WearDropWA.PackagePrendas.modificarBlusaRequest();
+            inValue.blusa = blusa;
+            WearDropWA.PackagePrendas.modificarBlusaResponse retVal = ((WearDropWA.PackagePrendas.BlusaWS)(this)).modificarBlusa(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarBlusaResponse> WearDropWA.PackagePrendas.BlusaWS.modificarBlusaAsync(WearDropWA.PackagePrendas.modificarBlusaRequest request) {
+            return base.Channel.modificarBlusaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarBlusaResponse> modificarBlusaAsync(WearDropWA.PackagePrendas.blusa blusa) {
+            WearDropWA.PackagePrendas.modificarBlusaRequest inValue = new WearDropWA.PackagePrendas.modificarBlusaRequest();
+            inValue.blusa = blusa;
+            return ((WearDropWA.PackagePrendas.BlusaWS)(this)).modificarBlusaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5401,49 +5424,26 @@ namespace WearDropWA.PackagePrendas {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.insertarBlusaResponse WearDropWA.PackagePrendas.BlusaWS.insertarBlusa(WearDropWA.PackagePrendas.insertarBlusaRequest request) {
-            return base.Channel.insertarBlusa(request);
+        WearDropWA.PackagePrendas.eliminarBlusaResponse WearDropWA.PackagePrendas.BlusaWS.eliminarBlusa(WearDropWA.PackagePrendas.eliminarBlusaRequest request) {
+            return base.Channel.eliminarBlusa(request);
         }
         
-        public int insertarBlusa(WearDropWA.PackagePrendas.blusa blusa) {
-            WearDropWA.PackagePrendas.insertarBlusaRequest inValue = new WearDropWA.PackagePrendas.insertarBlusaRequest();
-            inValue.blusa = blusa;
-            WearDropWA.PackagePrendas.insertarBlusaResponse retVal = ((WearDropWA.PackagePrendas.BlusaWS)(this)).insertarBlusa(inValue);
+        public int eliminarBlusa(int idBlusa) {
+            WearDropWA.PackagePrendas.eliminarBlusaRequest inValue = new WearDropWA.PackagePrendas.eliminarBlusaRequest();
+            inValue.idBlusa = idBlusa;
+            WearDropWA.PackagePrendas.eliminarBlusaResponse retVal = ((WearDropWA.PackagePrendas.BlusaWS)(this)).eliminarBlusa(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarBlusaResponse> WearDropWA.PackagePrendas.BlusaWS.insertarBlusaAsync(WearDropWA.PackagePrendas.insertarBlusaRequest request) {
-            return base.Channel.insertarBlusaAsync(request);
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarBlusaResponse> WearDropWA.PackagePrendas.BlusaWS.eliminarBlusaAsync(WearDropWA.PackagePrendas.eliminarBlusaRequest request) {
+            return base.Channel.eliminarBlusaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarBlusaResponse> insertarBlusaAsync(WearDropWA.PackagePrendas.blusa blusa) {
-            WearDropWA.PackagePrendas.insertarBlusaRequest inValue = new WearDropWA.PackagePrendas.insertarBlusaRequest();
-            inValue.blusa = blusa;
-            return ((WearDropWA.PackagePrendas.BlusaWS)(this)).insertarBlusaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.modificarBlusaResponse WearDropWA.PackagePrendas.BlusaWS.modificarBlusa(WearDropWA.PackagePrendas.modificarBlusaRequest request) {
-            return base.Channel.modificarBlusa(request);
-        }
-        
-        public int modificarBlusa(WearDropWA.PackagePrendas.blusa blusa) {
-            WearDropWA.PackagePrendas.modificarBlusaRequest inValue = new WearDropWA.PackagePrendas.modificarBlusaRequest();
-            inValue.blusa = blusa;
-            WearDropWA.PackagePrendas.modificarBlusaResponse retVal = ((WearDropWA.PackagePrendas.BlusaWS)(this)).modificarBlusa(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarBlusaResponse> WearDropWA.PackagePrendas.BlusaWS.modificarBlusaAsync(WearDropWA.PackagePrendas.modificarBlusaRequest request) {
-            return base.Channel.modificarBlusaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.modificarBlusaResponse> modificarBlusaAsync(WearDropWA.PackagePrendas.blusa blusa) {
-            WearDropWA.PackagePrendas.modificarBlusaRequest inValue = new WearDropWA.PackagePrendas.modificarBlusaRequest();
-            inValue.blusa = blusa;
-            return ((WearDropWA.PackagePrendas.BlusaWS)(this)).modificarBlusaAsync(inValue);
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarBlusaResponse> eliminarBlusaAsync(int idBlusa) {
+            WearDropWA.PackagePrendas.eliminarBlusaRequest inValue = new WearDropWA.PackagePrendas.eliminarBlusaRequest();
+            inValue.idBlusa = idBlusa;
+            return ((WearDropWA.PackagePrendas.BlusaWS)(this)).eliminarBlusaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5491,26 +5491,26 @@ namespace WearDropWA.PackagePrendas {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.eliminarBlusaResponse WearDropWA.PackagePrendas.BlusaWS.eliminarBlusa(WearDropWA.PackagePrendas.eliminarBlusaRequest request) {
-            return base.Channel.eliminarBlusa(request);
+        WearDropWA.PackagePrendas.insertarBlusaResponse WearDropWA.PackagePrendas.BlusaWS.insertarBlusa(WearDropWA.PackagePrendas.insertarBlusaRequest request) {
+            return base.Channel.insertarBlusa(request);
         }
         
-        public int eliminarBlusa(int idBlusa) {
-            WearDropWA.PackagePrendas.eliminarBlusaRequest inValue = new WearDropWA.PackagePrendas.eliminarBlusaRequest();
-            inValue.idBlusa = idBlusa;
-            WearDropWA.PackagePrendas.eliminarBlusaResponse retVal = ((WearDropWA.PackagePrendas.BlusaWS)(this)).eliminarBlusa(inValue);
+        public int insertarBlusa(WearDropWA.PackagePrendas.blusa blusa) {
+            WearDropWA.PackagePrendas.insertarBlusaRequest inValue = new WearDropWA.PackagePrendas.insertarBlusaRequest();
+            inValue.blusa = blusa;
+            WearDropWA.PackagePrendas.insertarBlusaResponse retVal = ((WearDropWA.PackagePrendas.BlusaWS)(this)).insertarBlusa(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarBlusaResponse> WearDropWA.PackagePrendas.BlusaWS.eliminarBlusaAsync(WearDropWA.PackagePrendas.eliminarBlusaRequest request) {
-            return base.Channel.eliminarBlusaAsync(request);
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarBlusaResponse> WearDropWA.PackagePrendas.BlusaWS.insertarBlusaAsync(WearDropWA.PackagePrendas.insertarBlusaRequest request) {
+            return base.Channel.insertarBlusaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarBlusaResponse> eliminarBlusaAsync(int idBlusa) {
-            WearDropWA.PackagePrendas.eliminarBlusaRequest inValue = new WearDropWA.PackagePrendas.eliminarBlusaRequest();
-            inValue.idBlusa = idBlusa;
-            return ((WearDropWA.PackagePrendas.BlusaWS)(this)).eliminarBlusaAsync(inValue);
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarBlusaResponse> insertarBlusaAsync(WearDropWA.PackagePrendas.blusa blusa) {
+            WearDropWA.PackagePrendas.insertarBlusaRequest inValue = new WearDropWA.PackagePrendas.insertarBlusaRequest();
+            inValue.blusa = blusa;
+            return ((WearDropWA.PackagePrendas.BlusaWS)(this)).insertarBlusaAsync(inValue);
         }
     }
     
@@ -5526,6 +5526,15 @@ namespace WearDropWA.PackagePrendas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/filtrarFaldasRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/filtrarFaldasResponse")]
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.filtrarFaldasResponse> filtrarFaldasAsync(WearDropWA.PackagePrendas.filtrarFaldasRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/insertarFaldaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/insertarFaldaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WearDropWA.PackagePrendas.insertarFaldaResponse insertarFalda(WearDropWA.PackagePrendas.insertarFaldaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/insertarFaldaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/insertarFaldaResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarFaldaResponse> insertarFaldaAsync(WearDropWA.PackagePrendas.insertarFaldaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/modificarFaldaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/modificarFaldaResponse")]
@@ -5546,15 +5555,6 @@ namespace WearDropWA.PackagePrendas {
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.eliminarFaldaResponse> eliminarFaldaAsync(WearDropWA.PackagePrendas.eliminarFaldaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/obtenerFaldaPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/obtenerFaldaPorIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse obtenerFaldaPorId(WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/obtenerFaldaPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/obtenerFaldaPorIdResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse> obtenerFaldaPorIdAsync(WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/listarFaldasRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/listarFaldasResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -5564,13 +5564,13 @@ namespace WearDropWA.PackagePrendas {
         System.Threading.Tasks.Task<WearDropWA.PackagePrendas.listarFaldasResponse> listarFaldasAsync(WearDropWA.PackagePrendas.listarFaldasRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/insertarFaldaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/insertarFaldaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/obtenerFaldaPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/obtenerFaldaPorIdResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WearDropWA.PackagePrendas.insertarFaldaResponse insertarFalda(WearDropWA.PackagePrendas.insertarFaldaRequest request);
+        WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse obtenerFaldaPorId(WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/insertarFaldaRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/insertarFaldaResponse")]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarFaldaResponse> insertarFaldaAsync(WearDropWA.PackagePrendas.insertarFaldaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/obtenerFaldaPorIdRequest", ReplyAction="http://prendas.services.weardrop.pucp.edu.pe/FaldaWS/obtenerFaldaPorIdResponse")]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse> obtenerFaldaPorIdAsync(WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5662,6 +5662,42 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarFalda", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarFaldaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.falda falda;
+        
+        public insertarFaldaRequest() {
+        }
+        
+        public insertarFaldaRequest(WearDropWA.PackagePrendas.falda falda) {
+            this.falda = falda;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarFaldaResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarFaldaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarFaldaResponse() {
+        }
+        
+        public insertarFaldaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="modificarFalda", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
     public partial class modificarFaldaRequest {
         
@@ -5734,6 +5770,34 @@ namespace WearDropWA.PackagePrendas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarFaldas", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarFaldasRequest {
+        
+        public listarFaldasRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarFaldasResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarFaldasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WearDropWA.PackagePrendas.falda[] @return;
+        
+        public listarFaldasResponse() {
+        }
+        
+        public listarFaldasResponse(WearDropWA.PackagePrendas.falda[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerFaldaPorId", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
     public partial class obtenerFaldaPorIdRequest {
         
@@ -5763,70 +5827,6 @@ namespace WearDropWA.PackagePrendas {
         }
         
         public obtenerFaldaPorIdResponse(WearDropWA.PackagePrendas.falda @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarFaldas", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarFaldasRequest {
-        
-        public listarFaldasRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarFaldasResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarFaldasResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.falda[] @return;
-        
-        public listarFaldasResponse() {
-        }
-        
-        public listarFaldasResponse(WearDropWA.PackagePrendas.falda[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarFalda", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarFaldaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WearDropWA.PackagePrendas.falda falda;
-        
-        public insertarFaldaRequest() {
-        }
-        
-        public insertarFaldaRequest(WearDropWA.PackagePrendas.falda falda) {
-            this.falda = falda;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarFaldaResponse", WrapperNamespace="http://prendas.services.weardrop.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarFaldaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://prendas.services.weardrop.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarFaldaResponse() {
-        }
-        
-        public insertarFaldaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -5902,6 +5902,29 @@ namespace WearDropWA.PackagePrendas {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WearDropWA.PackagePrendas.insertarFaldaResponse WearDropWA.PackagePrendas.FaldaWS.insertarFalda(WearDropWA.PackagePrendas.insertarFaldaRequest request) {
+            return base.Channel.insertarFalda(request);
+        }
+        
+        public int insertarFalda(WearDropWA.PackagePrendas.falda falda) {
+            WearDropWA.PackagePrendas.insertarFaldaRequest inValue = new WearDropWA.PackagePrendas.insertarFaldaRequest();
+            inValue.falda = falda;
+            WearDropWA.PackagePrendas.insertarFaldaResponse retVal = ((WearDropWA.PackagePrendas.FaldaWS)(this)).insertarFalda(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarFaldaResponse> WearDropWA.PackagePrendas.FaldaWS.insertarFaldaAsync(WearDropWA.PackagePrendas.insertarFaldaRequest request) {
+            return base.Channel.insertarFaldaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarFaldaResponse> insertarFaldaAsync(WearDropWA.PackagePrendas.falda falda) {
+            WearDropWA.PackagePrendas.insertarFaldaRequest inValue = new WearDropWA.PackagePrendas.insertarFaldaRequest();
+            inValue.falda = falda;
+            return ((WearDropWA.PackagePrendas.FaldaWS)(this)).insertarFaldaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WearDropWA.PackagePrendas.modificarFaldaResponse WearDropWA.PackagePrendas.FaldaWS.modificarFalda(WearDropWA.PackagePrendas.modificarFaldaRequest request) {
             return base.Channel.modificarFalda(request);
         }
@@ -5948,29 +5971,6 @@ namespace WearDropWA.PackagePrendas {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse WearDropWA.PackagePrendas.FaldaWS.obtenerFaldaPorId(WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest request) {
-            return base.Channel.obtenerFaldaPorId(request);
-        }
-        
-        public WearDropWA.PackagePrendas.falda obtenerFaldaPorId(int idFalda) {
-            WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest();
-            inValue.idFalda = idFalda;
-            WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse retVal = ((WearDropWA.PackagePrendas.FaldaWS)(this)).obtenerFaldaPorId(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse> WearDropWA.PackagePrendas.FaldaWS.obtenerFaldaPorIdAsync(WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest request) {
-            return base.Channel.obtenerFaldaPorIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse> obtenerFaldaPorIdAsync(int idFalda) {
-            WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest();
-            inValue.idFalda = idFalda;
-            return ((WearDropWA.PackagePrendas.FaldaWS)(this)).obtenerFaldaPorIdAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WearDropWA.PackagePrendas.listarFaldasResponse WearDropWA.PackagePrendas.FaldaWS.listarFaldas(WearDropWA.PackagePrendas.listarFaldasRequest request) {
             return base.Channel.listarFaldas(request);
         }
@@ -5992,26 +5992,26 @@ namespace WearDropWA.PackagePrendas {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WearDropWA.PackagePrendas.insertarFaldaResponse WearDropWA.PackagePrendas.FaldaWS.insertarFalda(WearDropWA.PackagePrendas.insertarFaldaRequest request) {
-            return base.Channel.insertarFalda(request);
+        WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse WearDropWA.PackagePrendas.FaldaWS.obtenerFaldaPorId(WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest request) {
+            return base.Channel.obtenerFaldaPorId(request);
         }
         
-        public int insertarFalda(WearDropWA.PackagePrendas.falda falda) {
-            WearDropWA.PackagePrendas.insertarFaldaRequest inValue = new WearDropWA.PackagePrendas.insertarFaldaRequest();
-            inValue.falda = falda;
-            WearDropWA.PackagePrendas.insertarFaldaResponse retVal = ((WearDropWA.PackagePrendas.FaldaWS)(this)).insertarFalda(inValue);
+        public WearDropWA.PackagePrendas.falda obtenerFaldaPorId(int idFalda) {
+            WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest();
+            inValue.idFalda = idFalda;
+            WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse retVal = ((WearDropWA.PackagePrendas.FaldaWS)(this)).obtenerFaldaPorId(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarFaldaResponse> WearDropWA.PackagePrendas.FaldaWS.insertarFaldaAsync(WearDropWA.PackagePrendas.insertarFaldaRequest request) {
-            return base.Channel.insertarFaldaAsync(request);
+        System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse> WearDropWA.PackagePrendas.FaldaWS.obtenerFaldaPorIdAsync(WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest request) {
+            return base.Channel.obtenerFaldaPorIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.insertarFaldaResponse> insertarFaldaAsync(WearDropWA.PackagePrendas.falda falda) {
-            WearDropWA.PackagePrendas.insertarFaldaRequest inValue = new WearDropWA.PackagePrendas.insertarFaldaRequest();
-            inValue.falda = falda;
-            return ((WearDropWA.PackagePrendas.FaldaWS)(this)).insertarFaldaAsync(inValue);
+        public System.Threading.Tasks.Task<WearDropWA.PackagePrendas.obtenerFaldaPorIdResponse> obtenerFaldaPorIdAsync(int idFalda) {
+            WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest inValue = new WearDropWA.PackagePrendas.obtenerFaldaPorIdRequest();
+            inValue.idFalda = idFalda;
+            return ((WearDropWA.PackagePrendas.FaldaWS)(this)).obtenerFaldaPorIdAsync(inValue);
         }
     }
 }

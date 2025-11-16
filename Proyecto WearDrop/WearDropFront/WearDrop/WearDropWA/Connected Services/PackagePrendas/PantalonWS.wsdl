@@ -11,23 +11,11 @@
   <message name="filtrarPantalonesResponse">
     <part name="parameters" element="tns:filtrarPantalonesResponse" />
   </message>
-  <message name="obtenerPantalonPorId">
-    <part name="parameters" element="tns:obtenerPantalonPorId" />
-  </message>
-  <message name="obtenerPantalonPorIdResponse">
-    <part name="parameters" element="tns:obtenerPantalonPorIdResponse" />
-  </message>
   <message name="insertarPantalon">
     <part name="parameters" element="tns:insertarPantalon" />
   </message>
   <message name="insertarPantalonResponse">
     <part name="parameters" element="tns:insertarPantalonResponse" />
-  </message>
-  <message name="listarPantalones">
-    <part name="parameters" element="tns:listarPantalones" />
-  </message>
-  <message name="listarPantalonesResponse">
-    <part name="parameters" element="tns:listarPantalonesResponse" />
   </message>
   <message name="modificarPantalon">
     <part name="parameters" element="tns:modificarPantalon" />
@@ -41,22 +29,26 @@
   <message name="eliminarPantalonResponse">
     <part name="parameters" element="tns:eliminarPantalonResponse" />
   </message>
+  <message name="listarPantalones">
+    <part name="parameters" element="tns:listarPantalones" />
+  </message>
+  <message name="listarPantalonesResponse">
+    <part name="parameters" element="tns:listarPantalonesResponse" />
+  </message>
+  <message name="obtenerPantalonPorId">
+    <part name="parameters" element="tns:obtenerPantalonPorId" />
+  </message>
+  <message name="obtenerPantalonPorIdResponse">
+    <part name="parameters" element="tns:obtenerPantalonPorIdResponse" />
+  </message>
   <portType name="PantalonWS">
     <operation name="filtrarPantalones">
       <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/filtrarPantalonesRequest" message="tns:filtrarPantalones" />
       <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/filtrarPantalonesResponse" message="tns:filtrarPantalonesResponse" />
     </operation>
-    <operation name="obtenerPantalonPorId">
-      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/obtenerPantalonPorIdRequest" message="tns:obtenerPantalonPorId" />
-      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/obtenerPantalonPorIdResponse" message="tns:obtenerPantalonPorIdResponse" />
-    </operation>
     <operation name="insertarPantalon">
       <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/insertarPantalonRequest" message="tns:insertarPantalon" />
       <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/insertarPantalonResponse" message="tns:insertarPantalonResponse" />
-    </operation>
-    <operation name="listarPantalones">
-      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/listarPantalonesRequest" message="tns:listarPantalones" />
-      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/listarPantalonesResponse" message="tns:listarPantalonesResponse" />
     </operation>
     <operation name="modificarPantalon">
       <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/modificarPantalonRequest" message="tns:modificarPantalon" />
@@ -65,6 +57,14 @@
     <operation name="eliminarPantalon">
       <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/eliminarPantalonRequest" message="tns:eliminarPantalon" />
       <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/eliminarPantalonResponse" message="tns:eliminarPantalonResponse" />
+    </operation>
+    <operation name="listarPantalones">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/listarPantalonesRequest" message="tns:listarPantalones" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/listarPantalonesResponse" message="tns:listarPantalonesResponse" />
+    </operation>
+    <operation name="obtenerPantalonPorId">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/obtenerPantalonPorIdRequest" message="tns:obtenerPantalonPorId" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PantalonWS/obtenerPantalonPorIdResponse" message="tns:obtenerPantalonPorIdResponse" />
     </operation>
   </portType>
   <binding name="PantalonWSPortBinding" type="tns:PantalonWS">
@@ -78,25 +78,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerPantalonPorId">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="insertarPantalon">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarPantalones">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -115,6 +97,24 @@
       </output>
     </operation>
     <operation name="eliminarPantalon">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPantalones">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPantalonPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
