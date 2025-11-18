@@ -90,8 +90,8 @@ public class FacturaImpl implements FacturaDAO {
                 }
                 factura.setIdComprobante(rs.getInt("idComprobante"));
                 factura.setFecha(rs.getDate("fecha"));
-                factura.setIGV(rs.getDouble("total"));
-                factura.setMetodoDePago(rs.getString("IGV"));
+                factura.setTotal(rs.getDouble("total"));  
+                factura.setIGV(rs.getDouble("IGV"));  
                 factura.setMetodoDePago(rs.getString("metodoDePago"));
                 factura.setCorrelativo(rs.getString("correlativo"));
                 factura.setRUC(rs.getString("RUC"));

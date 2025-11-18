@@ -51,7 +51,7 @@ public class NotaDeDebitoImpl implements NotaDeDebitoDAO {
     @Override
     public int modificar(NotaDeDebito notaDeDebito) {
         Map<Integer,Object> parametrosEntrada = new HashMap<>();
-        parametrosEntrada.put(1, Types.INTEGER);
+        parametrosEntrada.put(1, notaDeDebito.getIdComprobante());
         parametrosEntrada.put(2, new Date(notaDeDebito.getFecha().getTime()));
         parametrosEntrada.put(3, notaDeDebito.getTotal());
         parametrosEntrada.put(4, notaDeDebito.getIGV());

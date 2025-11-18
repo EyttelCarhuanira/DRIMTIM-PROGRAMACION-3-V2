@@ -15,30 +15,39 @@ namespace WearDropWA
     {
 
         /// <summary>
-        /// Control themeWrap.
+        /// Control btnBoleta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl themeWrap;
+        protected global::System.Web.UI.WebControls.LinkButton btnBoleta;
 
         /// <summary>
-        /// Control btnIrARegistrar.
+        /// Control btnFactura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnIrARegistrar;
+        protected global::System.Web.UI.WebControls.LinkButton btnFactura;
 
         /// <summary>
-        /// Control gvComprobantes.
+        /// Control btnNotaCredito.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvComprobantes;
+        protected global::System.Web.UI.WebControls.LinkButton btnNotaCredito;
+
+        /// <summary>
+        /// Control btnNotaDebito.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnNotaDebito;
     }
 }

@@ -5,101 +5,107 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import pe.edu.pucp.weardrop.comprobantes.Boleta;  // Cambié el paquete aquí
 import pe.edu.pucp.weardrop.comprobantes.dao.BoletaDAO;  // Cambié el paquete aquí
 import pe.edu.pucp.weardrop.config.DBManager;
 
-
 public class BoletaImpl implements BoletaDAO {
+
     private Connection con;
 //    private Statement st;
     private ResultSet rs;
     private CallableStatement cs; //Permite llamar a SProcedures
 
-    @Override
-    public int insertar(Boleta boleta) {
-        int resultado =0;
-        try{
-            con=DBManager.getInstance().getConnexion();
-            cs = con.prepareCall("{call insertar_boleta"+ 
-                    "(?,?,?,?,?,?)");
-            //para int cs.registerOutParameter(1, java.sql.Types.INTEGER);
-            //Fecha |
-            cs.setDate(1, new java.sql.Date(boleta.getFecha().getTime()));
-            cs.setDouble(2, boleta.getTotal());
-            cs.setDouble(3, boleta.getIGV());
-            cs.setString(4, boleta.getMetodoDePago());
-            cs.setString(5, boleta.getCorrelativo());
-            cs.setString(6, boleta.getDNI());
-            //Enum se envía como String
-            //cs.setString(8,boleta.getCategoria().toString())
-            cs.executeUpdate(); //PARA EJECUTAR INSERTS
-            cs.getInt(1); //para recuperar el out
-            resultado = boleta.getIdComprobante();
-        }catch(Exception ex){
-            System.out.println("Error al insertar " + ex.getMessage());
-        }finally{
-           DBManager.getInstance().cerrarConexion();
-        }
-        return resultado;
+  @Override
+  public int insertar(Boleta boleta) {
+    Map<Integer, Object> parametrosSalida = new HashMap<>();
+    Map<Integer, Object> parametrosEntrada = new HashMap<>();
+    
+    // 1. Registrar el parámetro OUT (Este es el parámetro 1)
+    parametrosSalida.put(1, java.sql.Types.INTEGER); 
+    
+    // 2. Registrar los 6 parámetros IN (del 2 al 7)
+    parametrosEntrada.put(2, new java.sql.Date(boleta.getFecha().getTime()));
+    parametrosEntrada.put(3, boleta.getTotal());
+    parametrosEntrada.put(4, boleta.getIGV());
+    parametrosEntrada.put(5, boleta.getMetodoDePago());
+    parametrosEntrada.put(6, boleta.getCorrelativo());
+    parametrosEntrada.put(7, boleta.getDNI());
+
+    // 3. Llamar al DBManager (que sí sabe manejar los 7 parámetros)
+    try {
+        DBManager.getInstance().ejecutarProcedimiento("insertar_boleta", parametrosEntrada, parametrosSalida);
+        
+        // 4. Recuperar el ID del parámetro OUT (el parámetro 1)
+        int idGenerado = (int) parametrosSalida.get(1);
+        boleta.setIdComprobante(idGenerado);
+        
+        System.out.println("Se ha realizado el registro de la BOLETA con ID: " + idGenerado);
+        return idGenerado;
+        
+    } catch (Exception ex) {
+        System.out.println("Error al insertar boleta (con DBManager): " + ex.getMessage());
+        return 0; // Devuelve 0 en caso de error
     }
+}
 
     @Override
     public int modificar(Boleta boleta) {
+        // (Refactorizado con DBManager)
         int resultado = 0;
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+
         try {
-            con=DBManager.getInstance().getConnexion();
+            parametrosEntrada.put(1, boleta.getIdComprobante());
+            // Usamos Timestamp para asegurar que la hora se guarde en la columna DATETIME
+            parametrosEntrada.put(2, new java.sql.Timestamp(boleta.getFecha().getTime()));
+            parametrosEntrada.put(3, boleta.getTotal());
+            parametrosEntrada.put(4, boleta.getIGV());
+            parametrosEntrada.put(5, boleta.getMetodoDePago());
+            parametrosEntrada.put(6, boleta.getCorrelativo());
+            parametrosEntrada.put(7, boleta.getDNI());
 
-            cs = con.prepareCall("{ call modificar_boleta(?, ?, ?, ?, ?, ?, ?) }");
-            cs.setInt(1, boleta.getIdComprobante());
-            cs.setTimestamp(2, new java.sql.Timestamp(boleta.getFecha().getTime()));
-            cs.setDouble(3, boleta.getTotal());
-            cs.setDouble(4, boleta.getIGV());
-            cs.setString(5, boleta.getMetodoDePago());
-            cs.setString(6, boleta.getCorrelativo());
-            cs.setString(7, boleta.getDNI());
+            resultado = DBManager.getInstance().ejecutarProcedimiento("modificar_boleta", parametrosEntrada, null);
+            System.out.println("Se ha realizado la modificación de la boleta");
 
-            resultado = cs.executeUpdate();
         } catch (Exception ex) {
             System.out.println("Error al modificar boleta: " + ex.getMessage());
-        } finally {
-            DBManager.getInstance().cerrarConexion();
-            try { if (cs != null) cs.close(); } catch (Exception e) {}
         }
+        // DBManager.ejecutarProcedimiento maneja su propia conexión
         return resultado;
     }
 
-    
     @Override
     public int eliminar(int idBoleta) {
+        // (Refactorizado con DBManager)
         int resultado = 0;
-        try {
-            con=DBManager.getInstance().getConnexion();
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
 
-            // Baja lógica: se marca como inactiva en la tabla padre
-            cs = con.prepareCall("{ call eliminar_boleta(?) }");
-            cs.setInt(1, idBoleta);
-            resultado = cs.executeUpdate();
+        try {
+            parametrosEntrada.put(1, idBoleta);
+            resultado = DBManager.getInstance().ejecutarProcedimiento("eliminar_boleta", parametrosEntrada, null);
+            System.out.println("Se ha desactivado (baja lógica) la boleta ID: " + idBoleta);
 
         } catch (Exception ex) {
             System.out.println("Error al desactivar boleta: " + ex.getMessage());
-        } finally {
-            DBManager.getInstance().cerrarConexion();
-            try { if (cs != null) cs.close(); } catch (Exception e) {}
         }
         return resultado;
     }
 
     @Override
     public Boleta obtenerPorId(int idBoleta) {
+        // (Refactorizado con DBManager)
         Boleta boleta = null;
-        try{
-            con=DBManager.getInstance().getConnexion();
-            cs = con.prepareCall("{call obtener_boleta_x_id"+ 
-                    "(?)");
-            cs.setInt(1, idBoleta);
-            rs = cs.executeQuery();
-            if(rs.next()){
+        Map<Integer, Object> parametrosEntrada = new HashMap<>();
+
+        try {
+            parametrosEntrada.put(1, idBoleta);
+            rs = DBManager.getInstance().ejecutarProcedimientoLectura("obtener_boleta_x_id", parametrosEntrada);
+
+            if (rs.next()) {
                 boleta = new Boleta();
                 boleta.setIdComprobante(rs.getInt("idComprobante"));
                 boleta.setCorrelativo(rs.getString("Correlativo"));
@@ -107,12 +113,13 @@ public class BoletaImpl implements BoletaDAO {
                 boleta.setIGV(rs.getDouble("IGV"));
                 boleta.setMetodoDePago(rs.getString("metodoDePago"));
                 boleta.setTotal(rs.getDouble("total"));
-                
                 boleta.setDNI(rs.getString("DNI"));
             }
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }finally{
+        } catch (Exception ex) {
+            System.out.println("Error al obtener boleta por ID: " + ex.getMessage());
+        } finally {
+            // Los procedimientos de LECTURA (con ResultSet)
+            // requieren cerrar la conexión manualmente.
             DBManager.getInstance().cerrarConexion();
         }
         return boleta;
@@ -120,12 +127,17 @@ public class BoletaImpl implements BoletaDAO {
 
     @Override
     public ArrayList<Boleta> listarTodos() {
+        // (Tu código original ya era correcto)
         ArrayList<Boleta> boletas = null;
-        rs = DBManager.getInstance().ejecutarProcedimientoLectura("listar_boletas_todas", null);
-        System.out.println("Lectura de todas las boletas");
-        try{
-            while(rs.next()){
-                if(boletas==null) boletas = new ArrayList<>();
+
+        try {
+            rs = DBManager.getInstance().ejecutarProcedimientoLectura("listar_boletas_todas", null);
+            System.out.println("Lectura de todas las boletas");
+
+            while (rs.next()) {
+                if (boletas == null) {
+                    boletas = new ArrayList<>();
+                }
                 Boleta boleta = new Boleta();
                 boleta.setIdComprobante(rs.getInt("idComprobante"));
                 boleta.setCorrelativo(rs.getString("Correlativo"));
@@ -136,13 +148,12 @@ public class BoletaImpl implements BoletaDAO {
                 boleta.setDNI(rs.getString("DNI"));
                 boletas.add(boleta);
             }
-        }catch(SQLException ex){
-            System.out.println("ERROR "+ex.getMessage());
-        }finally{
+        } catch (SQLException ex) {
+            System.out.println("ERROR al listar boletas: " + ex.getMessage());
+        } finally {
             DBManager.getInstance().cerrarConexion();
         }
         return boletas;
     }
-
 
 }

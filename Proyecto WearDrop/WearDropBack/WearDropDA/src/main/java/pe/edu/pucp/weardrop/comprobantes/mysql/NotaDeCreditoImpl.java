@@ -100,7 +100,7 @@ public class NotaDeCreditoImpl implements NotaDeCreditoDAO {
                 notaDeCredito.setIdComprobante(rs.getInt("idComprobante"));
                 notaDeCredito.setFecha(rs.getDate("fecha"));
                 notaDeCredito.setTotal(rs.getDouble("total"));
-                notaDeCredito.setTotal(rs.getDouble("IGV"));
+                notaDeCredito.setIGV(rs.getDouble("IGV"));
                 notaDeCredito.setMetodoDePago(rs.getString("metodoDePago"));
                 notaDeCredito.setCorrelativo(rs.getString("correlativo"));
                 notaDeCredito.setDetalleModificacion(rs.getString("detalleModificacion"));
