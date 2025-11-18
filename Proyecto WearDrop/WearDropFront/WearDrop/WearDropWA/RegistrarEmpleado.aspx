@@ -134,7 +134,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <asp:Label ID="Label1" runat="server" CssClass="form-text text-danger"
+                    <asp:Label ID="lblModalError" runat="server" CssClass="form-text text-danger"
                         Text="Ha ocurrido un error de validación."></asp:Label>
                 </div>
                 <div class="modal-footer">

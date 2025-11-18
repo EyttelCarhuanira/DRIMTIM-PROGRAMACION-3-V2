@@ -105,6 +105,7 @@
         <label class="form-label">DNI<span class="req">*</span></label>
         <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" MaxLength="8" placeholder="Documento Nacional de Identidad" />
       </div>
+
       <div class="col-md-6">
         <label class="form-label">Género<span class="req">*</span></label>
         <div class="radio-wrap">
@@ -118,17 +119,13 @@
         <label class="form-label">Teléfono<span class="req">*</span></label>
         <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" placeholder="Número de teléfono" />
       </div>
-      <div class="col-md-6">
-        <label class="form-label">Tipo de Cliente<span class="req">*</span></label>
-        <asp:DropDownList ID="ddlTipoCliente" runat="server" CssClass="form-select">
-          <asp:ListItem Text="Seleccionar" Value="" />
-          <asp:ListItem Text="Minorista" Value="MIN" />
-          <asp:ListItem Text="Mayorista" Value="MAY" />
-        </asp:DropDownList>
-      </div>
-    </div>
 
-    <!-- Botones -->
+        <div class="col-md-6">
+            <label class="form-label">Tipo Cliente<span class="req">*</span></label>
+            <asp:TextBox ID="txtTipoCliente" runat="server" CssClass="form-control" MaxLength="8" placeholder="Tipo de Cliente" />
+        </div>
+
+        <!-- Botones -->
     <div class="row mt-4 col-lg-10">
       <div class="col-12 d-flex justify-content-between">
         <asp:LinkButton ID="btnCancelar" runat="server" CssClass="btn-ghost no-underline" OnClick="btnCancelar_Click">Cancelar</asp:LinkButton>

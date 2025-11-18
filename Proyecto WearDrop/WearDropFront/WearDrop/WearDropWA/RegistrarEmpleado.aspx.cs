@@ -67,9 +67,7 @@ namespace WearDropWA
 
             if(!rbFemenino.Checked && !rbMasculino.Checked)
             {
-                string script = "mostrarModalError();";
-                ScriptManager.RegisterStartupScript(
-                    this, GetType(), "modalError", script, true);
+                mostrarModal("Debe seleccionar un sexo");
                 return;
             }
             if (rbMasculino.Checked) empleado.genero = 'M';
@@ -81,9 +79,7 @@ namespace WearDropWA
             }
             catch (Exception ex)
             {
-                string script = "mostrarModalError();";
-                ScriptManager.RegisterStartupScript(
-                    this, GetType(), "modalError", script, true);
+                mostrarModal("Debe colocar un sueldo adecuado");
                 return;
             }
 
@@ -97,12 +93,19 @@ namespace WearDropWA
             }
             catch (Exception ex)
             {
-                string script = "mostrarModalError();";
-                ScriptManager.RegisterStartupScript(
-                    this, GetType(), "modalError", script, true);
+                mostrarModal(ex.Message);
+                return;
             }
 
              Response.Redirect("ListarEmpleados.aspx");
+        }
+
+        public void mostrarModal(String message)
+        {
+            lblModalError.Text = message;
+            string script = "mostrarModalError();";
+            ScriptManager.RegisterStartupScript(
+                this, GetType(), "modalError", script, true);
         }
     }
 }
