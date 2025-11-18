@@ -24,12 +24,18 @@ namespace WearDropWA
 
         protected void btnVisualizar_Click(object sender, EventArgs e)
         {
+            int idCliente = Int32.Parse(((LinkButton)sender).CommandArgument);
+            cliente cliSelect = clientes.Single(x => x.idPersona == idCliente);
+            Session["cliente"] = cliSelect;
             Response.Redirect("VerCliente.aspx");
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-
+            int idCliente = Int32.Parse(((LinkButton)sender).CommandArgument);
+            cliente cliSelect = clientes.Single(x => x.idPersona == idCliente);
+            Session["cliente"] = cliSelect;
+            Response.Redirect("RegistrarClientes.aspx?accion=modificar");
         }
 
         protected void lkRegistrar_Click(object sender, EventArgs e)
@@ -46,6 +52,13 @@ namespace WearDropWA
         {
             gvClientes.PageIndex = e.NewPageIndex;
             gvClientes.DataBind();
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int idCliente = Int32.Parse(((LinkButton)sender).CommandArgument);
+            boCliente.eliminarCliente(idCliente);
+            Response.Redirect("ListarClientes.aspx");
         }
     }
 }

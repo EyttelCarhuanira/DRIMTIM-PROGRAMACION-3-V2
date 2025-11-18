@@ -163,7 +163,7 @@
                                     CssClass="btn btn-sm btn-outline-danger"
                                     CommandArgument='<%# Eval("IdCliente") %>'
                                     OnClientClick="return confirm('¿Está seguro de eliminar este registro?');"
-                                    ToolTip="Eliminar">
+                                    ToolTip="Eliminar" OnClick="btnEliminar_Click">
                                     <i class="fa fa-trash"></i>
                                 </asp:LinkButton>
 
