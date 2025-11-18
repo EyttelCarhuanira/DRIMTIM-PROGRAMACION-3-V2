@@ -257,99 +257,21 @@
             width: 100% !important;
         }
 
-        /* ========================================
-           🔹 ESTILOS DE PAGINACIÓN (SI SE AGREGAN GRIDVIEWS)
-           ======================================== */
-        
-        /* Si agregas un GridView con paginación, descomenta estos estilos: */
-        
-        /*
-        .custom-grid tr.pager-row td {
-            padding: 20px 0;
-            text-align: left;
-            background-color: transparent !important;
-            border: none !important;
-        }
-
-        .custom-grid .pager-row table {
-            margin: 0;
-            border-spacing: 5px;
-            background-color: transparent !important;
-        }
-
-        .custom-grid .pager-row td a,
-        .custom-grid .pager-row td span {
-            display: inline-block;
-            padding: 12px 16px;
-            margin: 0 3px;
-            border: 2px solid #95B88F;
-            border-radius: 6px;
-            background-color: #fff;
-            color: #73866D;
-            font-weight: 500;
+        /* 🔹 Nota informativa sobre tipo automático */
+        .info-box {
+            background-color: #E8F4E5;
+            border-left: 4px solid #95B88F;
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
             font-size: 14px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            width: 50px;
-            height: 46px;
-            text-align: center;
-            box-sizing: border-box;
-            line-height: 22px;
+            color: #333;
         }
 
-        .custom-grid .pager-row td a:hover {
-            background-color: #fff !important;
+        .info-box i {
             color: #73866D;
-            border-color: #73866D;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(115, 134, 109, 0.3);
+            margin-right: 8px;
         }
-
-        .custom-grid .pager-row td span {
-            background-color: #73866D !important;
-            color: #fff !important;
-            border-color: #73866D;
-            font-weight: 600;
-            box-shadow: 0 2px 6px rgba(115, 134, 109, 0.4);
-        }
-
-        .custom-grid .pager-row td a:first-child,
-        .custom-grid .pager-row td a:last-child {
-            background-color: #fff !important;
-            color: #73866D;
-            border-color: #95B88F;
-            font-weight: 600;
-            width: 80px;
-            height: 46px;
-            padding: 12px 10px;
-        }
-
-        .custom-grid .pager-row td a:first-child:hover,
-        .custom-grid .pager-row td a:last-child:hover {
-            background-color: #fff !important;
-            color: #73866D;
-            border-color: #73866D;
-            box-shadow: 0 4px 8px rgba(115, 134, 109, 0.3);
-        }
-
-        .custom-grid .pager-row td a:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(115, 134, 109, 0.2);
-        }
-
-        .custom-grid .pager-row td a:first-child::before,
-        .custom-grid .pager-row td a:last-child::after {
-            content: "";
-        }
-
-        .custom-grid tr.pager-row {
-            background-color: transparent !important;
-        }
-
-        .custom-grid tr.pager-row:hover {
-            background-color: transparent !important;
-        }
-        */
     </style>
 </asp:Content>
 
@@ -374,6 +296,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-container">
+                    <!-- 🔹 Nota informativa -->
+                    <div class="info-box">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <strong>Tipo de movimiento automático:</strong> El sistema determinará automáticamente el tipo según los lugares seleccionados.
+                    </div>
+
                     <!-- Fila 1: Lugar Destino y Lugar Origen -->
                     <div class="row mb-4">
                         <div class="col-md-6">
@@ -406,7 +334,7 @@
                         </div>
                     </div>
 
-                    <!-- Fila 2: Fecha del Traslado y Tipo -->
+                    <!-- Fila 2: Fecha del Traslado y Tipo (solo lectura) -->
                     <div class="row mb-4">
                         <div class="col-md-6">
                             <label class="form-label">
@@ -425,21 +353,13 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">
-                                Tipo <span class="required">(*)</span>
+                                Tipo (automático)
                             </label>
-                            <asp:DropDownList ID="ddlTipo" runat="server" CssClass="form-select-tipo">
-                                <asp:ListItem Value="0">-- Seleccione un tipo --</asp:ListItem>
-                                <asp:ListItem Value="Entrada">Entrada</asp:ListItem>
-                                <asp:ListItem Value="Salida">Salida</asp:ListItem>
-                                <asp:ListItem Value="Mov.Interno">Mov. Interno</asp:ListItem>
-                            </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="rfvTipo" runat="server"
-                                ControlToValidate="ddlTipo"
-                                InitialValue="0"
-                                ErrorMessage="Debe seleccionar un tipo"
-                                CssClass="text-danger"
-                                Display="Dynamic">
-                            </asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txtTipo" runat="server"
+                                CssClass="form-control form-control-short tipo-readonly"
+                                ReadOnly="true"
+                                placeholder="Se determinará automáticamente">
+                            </asp:TextBox>
                         </div>
                     </div>
 
@@ -493,19 +413,6 @@
                 placeholder: "-- Seleccione lugar de origen --",
                 allowClear: false,
                 width: '100%',
-                language: {
-                    noResults: function() {
-                        return "No se encontraron resultados";
-                    }
-                }
-            });
-
-            // Inicializar Select2 en Tipo (también con scroll)
-            $('#<%= ddlTipo.ClientID %>').select2({
-                placeholder: "-- Seleccione un tipo --",
-                allowClear: false,
-                width: '100%',
-                minimumResultsForSearch: Infinity, // Deshabilitar búsqueda para pocos elementos
                 language: {
                     noResults: function () {
                         return "No se encontraron resultados";

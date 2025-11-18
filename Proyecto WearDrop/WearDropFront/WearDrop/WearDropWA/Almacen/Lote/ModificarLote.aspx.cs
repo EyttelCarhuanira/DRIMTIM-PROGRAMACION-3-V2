@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WearDropWA.PackageAlmacen;
+using WearDropWA.PackagePrendas;
 
 namespace WearDropWA
 {
@@ -12,13 +14,15 @@ namespace WearDropWA
         private int idAlmacen;
         private int idLote;
         private LoteWSClient boLote;
-        private AlmacenWSClient boAlmacen; // 🔹 Añadido
-        private lote datLote;
+        private AlmacenWSClient boAlmacen;
+        private PrendaLoteWSClient wsPrendaLote;
+        private PackageAlmacen.lote datLote;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             boLote = new LoteWSClient();
-            boAlmacen = new AlmacenWSClient(); // 🔹 Inicializar servicio de almacén
+            boAlmacen = new AlmacenWSClient();
+            wsPrendaLote = new PrendaLoteWSClient();
 
             if (!IsPostBack)
             {
@@ -30,8 +34,8 @@ namespace WearDropWA
                     ViewState["IdLote"] = idLote;
                     ViewState["IdAlmacen"] = idAlmacen;
 
-                    CargarDatosAlmacen(); // 🔹 Cargar nombre del almacén
-                    CargarDatosLote();     // 🔹 Cargar datos del lote
+                    CargarDatosAlmacen();
+                    CargarDatosLote();
                     CargarPrendas();
                 }
                 else
@@ -46,12 +50,11 @@ namespace WearDropWA
             }
         }
 
-        // 🔹 Método para cargar el nombre del almacén desde el servicio
         private void CargarDatosAlmacen()
         {
             try
             {
-                almacen datAlmacen = boAlmacen.obtenerPorId(idAlmacen);
+                PackageAlmacen.almacen datAlmacen = boAlmacen.obtenerPorId(idAlmacen);
 
                 if (datAlmacen != null)
                 {
@@ -70,20 +73,15 @@ namespace WearDropWA
             }
         }
 
-        // 🔹 Método modificado para cargar los datos del lote desde el servicio
         private void CargarDatosLote()
         {
             try
             {
-                // Obtener el lote del servicio
                 datLote = boLote.obtenerLotePorID(idLote);
 
                 if (datLote != null)
                 {
-                    // 🔹 Cargar la descripción en el TextBox
                     txtDescripcionLote.Text = datLote.descripcion ?? "";
-
-                    // 🔹 Guardar el lote completo en ViewState para usarlo después
                     ViewState["DatLote"] = datLote;
                 }
                 else
@@ -102,28 +100,231 @@ namespace WearDropWA
 
         private void CargarPrendas()
         {
-            // Datos de prueba - prendas del lote
-            var prendasTest = new List<dynamic>
+            try
             {
-                new { IdPrenda = 1, NombrePrenda = "Camiseta Básica Blanca", Color = "Blanco", Material = "Algodón", Stock = 50, Talla = "M" },
-                new { IdPrenda = 2, NombrePrenda = "Camiseta Básica Negra", Color = "Negro", Material = "Algodón", Stock = 45, Talla = "M" },
-                new { IdPrenda = 3, NombrePrenda = "Camiseta Básica Azul", Color = "Azul", Material = "Algodón", Stock = 40, Talla = "L" },
-                new { IdPrenda = 4, NombrePrenda = "Camiseta Básica Roja", Color = "Rojo", Material = "Algodón", Stock = 35, Talla = "S" },
-                new { IdPrenda = 5, NombrePrenda = "Camiseta Básica Verde", Color = "Verde", Material = "Algodón", Stock = 30, Talla = "M" },
-                new { IdPrenda = 6, NombrePrenda = "Camiseta Básica Gris", Color = "Gris", Material = "Algodón", Stock = 25, Talla = "L" },
-                new { IdPrenda = 7, NombrePrenda = "Camiseta Básica Amarilla", Color = "Amarillo", Material = "Algodón", Stock = 20, Talla = "XL" }
-            };
+                if (idLote == 0)
+                {
+                    return;
+                }
 
-            gvPrendas.DataSource = prendasTest;
-            gvPrendas.DataBind();
+                prendaLote[] prendasLote = wsPrendaLote.listarPrendasPorLote(idLote);
+
+                if (prendasLote != null && prendasLote.Length > 0)
+                {
+                    var prendasFormateadas = new List<dynamic>();
+
+                    foreach (var pl in prendasLote)
+                    {
+                        polo prendaCompleta = BuscarPrendaPorId(pl.idPrenda);
+
+                        if (prendaCompleta != null)
+                        {
+                            prendasFormateadas.Add(new
+                            {
+                                IdPrendaLote = pl.idPrendaLote,
+                                IdPrenda = pl.idPrenda,
+                                NombrePrenda = prendaCompleta.nombre,
+                                Color = prendaCompleta.color,
+                                Material = prendaCompleta.material.ToString(),
+                                Talla = pl.talla.ToString() ?? "-",
+                                Stock = pl.stock
+                            });
+                        }
+                    }
+
+                    gvPrendas.DataSource = prendasFormateadas;
+                    gvPrendas.DataBind();
+                }
+                else
+                {
+                    gvPrendas.DataSource = null;
+                    gvPrendas.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                    $"alert('Error al cargar prendas: {ex.Message}');", true);
+                gvPrendas.DataSource = null;
+                gvPrendas.DataBind();
+            }
         }
 
-        // Método para generar la paginación personalizada
+        private polo BuscarPrendaPorId(int idPrenda)
+        {
+            // 1. Intentar Polo
+            try
+            {
+                PoloWSClient poloWS = new PoloWSClient();
+                polo p = poloWS.obtenerPoloPorId(idPrenda);
+                poloWS.Close();
+                if (p != null) return p;
+            }
+            catch { }
+
+            // 2. Intentar Blusa
+            try
+            {
+                BlusaWSClient blusaWS = new BlusaWSClient();
+                blusa b = blusaWS.obtenerBlusaPorId(idPrenda);
+                blusaWS.Close();
+
+                if (b != null)
+                {
+                    return new polo
+                    {
+                        idPrenda = b.idPrenda,
+                        nombre = b.nombre,
+                        color = b.color,
+                        material = b.material,
+                        precioUnidad = b.precioUnidad,
+                        precioMayor = b.precioMayor,
+                        precioDocena = b.precioDocena,
+                        stockPrenda = b.stockPrenda,
+                        alertaMinStock = b.alertaMinStock,
+                        activo = b.activo
+                    };
+                }
+            }
+            catch { }
+
+            // 3. Intentar Vestido
+            try
+            {
+                VestidoWSClient vestidoWS = new VestidoWSClient();
+                vestido v = vestidoWS.obtenerVestidoPorId(idPrenda);
+                vestidoWS.Close();
+
+                if (v != null)
+                {
+                    return new polo
+                    {
+                        idPrenda = v.idPrenda,
+                        nombre = v.nombre,
+                        color = v.color,
+                        material = v.material,
+                        precioUnidad = v.precioUnidad,
+                        precioMayor = v.precioMayor,
+                        precioDocena = v.precioDocena,
+                        stockPrenda = v.stockPrenda,
+                        alertaMinStock = v.alertaMinStock,
+                        activo = v.activo
+                    };
+                }
+            }
+            catch { }
+
+            // 4. Intentar Falda
+            try
+            {
+                FaldaWSClient faldaWS = new FaldaWSClient();
+                falda f = faldaWS.obtenerFaldaPorId(idPrenda);
+                faldaWS.Close();
+
+                if (f != null)
+                {
+                    return new polo
+                    {
+                        idPrenda = f.idPrenda,
+                        nombre = f.nombre,
+                        color = f.color,
+                        material = f.material,
+                        precioUnidad = f.precioUnidad,
+                        precioMayor = f.precioMayor,
+                        precioDocena = f.precioDocena,
+                        stockPrenda = f.stockPrenda,
+                        alertaMinStock = f.alertaMinStock,
+                        activo = f.activo
+                    };
+                }
+            }
+            catch { }
+
+            // 5. Intentar Pantalon
+            try
+            {
+                PantalonWSClient pantalonWS = new PantalonWSClient();
+                pantalon p = pantalonWS.obtenerPantalonPorId(idPrenda);
+                pantalonWS.Close();
+
+                if (p != null)
+                {
+                    return new polo
+                    {
+                        idPrenda = p.idPrenda,
+                        nombre = p.nombre,
+                        color = p.color,
+                        material = p.material,
+                        precioUnidad = p.precioUnidad,
+                        precioMayor = p.precioMayor,
+                        precioDocena = p.precioDocena,
+                        stockPrenda = p.stockPrenda,
+                        alertaMinStock = p.alertaMinStock,
+                        activo = p.activo
+                    };
+                }
+            }
+            catch { }
+
+            // 6. Intentar Casaca
+            try
+            {
+                CasacaWSClient casacaWS = new CasacaWSClient();
+                casaca c = casacaWS.obtenerCasacaPorId(idPrenda);
+                casacaWS.Close();
+
+                if (c != null)
+                {
+                    return new polo
+                    {
+                        idPrenda = c.idPrenda,
+                        nombre = c.nombre,
+                        color = c.color,
+                        material = c.material,
+                        precioUnidad = c.precioUnidad,
+                        precioMayor = c.precioMayor,
+                        precioDocena = c.precioDocena,
+                        stockPrenda = c.stockPrenda,
+                        alertaMinStock = c.alertaMinStock,
+                        activo = c.activo
+                    };
+                }
+            }
+            catch { }
+
+            // 7. Intentar Gorro
+            try
+            {
+                GorroWSClient gorroWS = new GorroWSClient();
+                gorro g = gorroWS.obtenerGorroPorId(idPrenda);
+                gorroWS.Close();
+
+                if (g != null)
+                {
+                    return new polo
+                    {
+                        idPrenda = g.idPrenda,
+                        nombre = g.nombre,
+                        color = g.color,
+                        material = g.material,
+                        precioUnidad = g.precioUnidad,
+                        precioMayor = g.precioMayor,
+                        precioDocena = g.precioDocena,
+                        stockPrenda = g.stockPrenda,
+                        alertaMinStock = g.alertaMinStock,
+                        activo = g.activo
+                    };
+                }
+            }
+            catch { }
+
+            return null;
+        }
+
         protected string GenerarPaginacion(int currentPage, int totalPages)
         {
             StringBuilder sb = new StringBuilder();
 
-            // Mostrar solo 3 páginas alrededor de la actual
             int startPage = Math.Max(2, currentPage);
             int endPage = Math.Min(totalPages - 1, currentPage + 2);
 
@@ -151,41 +352,56 @@ namespace WearDropWA
 
         protected void btnAñadirPrenda_Click(object sender, EventArgs e)
         {
-            // Redirigir a página para añadir prenda al lote (Todavia no implementado)
-            //Response.Redirect($"~/Almacen/Lote/AgregarPrenda.aspx?idLote={idLote}&idAlmacen={idAlmacen}");
+            Response.Redirect($"~/Almacen/PrendaLote/RegistrarPrendaLote.aspx?idAlmacen={idAlmacen}&idLote={idLote}");
         }
 
         protected void btnFiltrarPrenda_Click(object sender, EventArgs e)
         {
-            // Implementar lógica de filtro
+            // Implementar filtro si es necesario
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             LinkButton btn = (LinkButton)sender;
-            int idPrenda = int.Parse(btn.CommandArgument);
+            int idPrendaLote = int.Parse(btn.CommandArgument);
 
-            // Redirigir a modificar prenda (Todavia no Implementado)
-            Response.Redirect($"~/Prenda/ModificarPrenda.aspx?id={idPrenda}&idLote={idLote}");
+            Response.Redirect($"~/Almacen/PrendaLote/ModificarPrendaLote.aspx?id={idPrendaLote}&idLote={idLote}&idAlmacen={idAlmacen}");
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            LinkButton btn = (LinkButton)sender;
-            int idPrenda = int.Parse(btn.CommandArgument);
+            try
+            {
+                LinkButton btn = (LinkButton)sender;
+                int idPrendaLote = int.Parse(btn.CommandArgument);
 
-            // Lógica para eliminar prenda del lote
-            CargarPrendas();
+                int resultado = wsPrendaLote.eliminarPrendaLote(idPrendaLote);
+
+                if (resultado > 0)
+                {
+                    CargarPrendas();
+                    ScriptManager.RegisterStartupScript(this, GetType(), "info",
+                        "alert('Prenda removida del lote');", true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "alert",
+                        "alert('Error al eliminar prenda');", true);
+                }
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                    $"alert('Error: {ex.Message}');", true);
+            }
         }
 
         protected void lkGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                // 🔹 Obtener la descripción del TextBox
                 string descripcion = txtDescripcionLote.Text.Trim();
 
-                // 🔹 Validar que no esté vacía
                 if (string.IsNullOrEmpty(descripcion))
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "alert",
@@ -193,22 +409,18 @@ namespace WearDropWA
                     return;
                 }
 
-                // 🔹 Recuperar el lote guardado en ViewState
-                datLote = (lote)ViewState["DatLote"];
+                datLote = (PackageAlmacen.lote)ViewState["DatLote"];
 
-                // 🔹 Si no existe en ViewState, crear uno nuevo (aunque no debería pasar)
                 if (datLote == null)
                 {
-                    datLote = new lote();
-                    datLote.datAlmacen = new almacen();
+                    datLote = new PackageAlmacen.lote();
+                    datLote.datAlmacen = new PackageAlmacen.almacen();
                     datLote.datAlmacen.id = idAlmacen;
                 }
 
-                // 🔹 Actualizar los campos que se pueden modificar
                 datLote.idLote = idLote;
                 datLote.descripcion = descripcion;
 
-                // 🔹 Llamar al servicio para modificar
                 int resultado = boLote.modificarLote(datLote);
 
                 if (resultado > 0)

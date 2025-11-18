@@ -69,22 +69,13 @@ namespace WearDropWA
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFechaTraslado;
 
         /// <summary>
-        /// Control ddlTipo.
+        /// Control txtTipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipo;
-
-        /// <summary>
-        /// Control rfvTipo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTipo;
+        protected global::System.Web.UI.WebControls.TextBox txtTipo;
 
         /// <summary>
         /// Control lkCancelar.

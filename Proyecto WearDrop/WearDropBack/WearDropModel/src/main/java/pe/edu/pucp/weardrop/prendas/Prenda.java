@@ -92,7 +92,16 @@ public abstract class Prenda {
         this.color = datPrenda.color;
         this.activo = datPrenda.activo;
     }
-
+    
+    public Prenda(int idPrenda, String nombre, String color, Material material, double precioMayor, double precioDocena) {
+        this.idPrenda = idPrenda;
+        this.nombre = nombre;
+        this.color = color;
+        this.material = material;
+        this.precioMayor = precioMayor;
+        this.precioDocena = precioDocena;
+        this.activo = true;
+    }
     // Getters y Setters
     // Cada uno es clave en la persistencia:
     // - Los getters permiten recuperar valores desde la BD

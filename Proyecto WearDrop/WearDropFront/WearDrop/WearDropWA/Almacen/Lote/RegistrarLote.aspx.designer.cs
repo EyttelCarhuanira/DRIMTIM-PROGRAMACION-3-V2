@@ -33,6 +33,15 @@ namespace WearDropWA
         protected global::System.Web.UI.WebControls.DropDownList ddlIdMovimiento;
 
         /// <summary>
+        /// Control rfvMovimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMovimiento;
+
+        /// <summary>
         /// Control lblLugarOrigen.
         /// </summary>
         /// <remarks>
@@ -60,40 +69,13 @@ namespace WearDropWA
         protected global::System.Web.UI.WebControls.TextBox txtDescripcionLote;
 
         /// <summary>
-        /// Control rfvDescripcionLote.
+        /// Control rfvDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcionLote;
-
-        /// <summary>
-        /// Control btnAñadirPrenda.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAñadirPrenda;
-
-        /// <summary>
-        /// Control btnFiltroPrenda.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFiltroPrenda;
-
-        /// <summary>
-        /// Control gvPrendas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPrendas;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
 
         /// <summary>
         /// Control lkCancelar.

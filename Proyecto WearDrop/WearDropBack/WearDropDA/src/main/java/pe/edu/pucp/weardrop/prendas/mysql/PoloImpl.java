@@ -86,39 +86,47 @@ public class PoloImpl implements PoloDAO {
     }
 
     @Override
-    public Polo obtenerPorId(int idPrenda) {
-        Polo datPolo = null; //No se pudo obtener por ID
-        
-        Map<Integer, Object> parametrosEntrada=new HashMap<>();
-        parametrosEntrada.put(1, idPrenda);
-        rs=DBManager.getInstance().ejecutarProcedimientoLectura("obtener_polo_X_id", parametrosEntrada);
-        System.out.println("Lectura de Prenda Polo...");
-        
-        try{
-            if(rs.next()){
-                datPolo=new Polo();
-                //Obtenemos los datos del SELECT y los colocamos en datAlmacen
-                datPolo.setIdPrenda(rs.getInt("idPrenda"));
-                datPolo.setNombre(rs.getString("nombre"));
-                datPolo.setStockPrenda(rs.getInt("stockPrenda"));
-                datPolo.setAlertaMinStock(rs.getInt("alertaMinStock"));
-                datPolo.setColor(rs.getString("color"));
-                datPolo.setMaterial(Material.valueOf(rs.getString("material")));
-                datPolo.setTipoManga(TipoManga.valueOf(rs.getString("tipo_manga")));
-                datPolo.setEstampado(rs.getString("estampado"));
-                datPolo.setTipoCuello(TipoCuello.valueOf(rs.getString("tipo_cuello")));
-                datPolo.setPrecioUnidad(rs.getDouble("precioUnidad"));
-                datPolo.setPrecioMayor(rs.getDouble("precioMayor"));
-                datPolo.setPrecioDocena(rs.getDouble("precioDocena"));
-                System.out.println("SE OBTUVO LA PRENDA POLO CORRECTAMENTE.");
-            }
-        }catch(SQLException ex){
-            System.out.println("ERROR al obtener por ID: "+ex.getMessage());
-        }finally{
-            DBManager.getInstance().cerrarConexion();
+public Polo obtenerPorId(int idPrenda) {
+    Polo datPolo = null;
+    
+    Map<Integer, Object> parametrosEntrada = new HashMap<>();
+    parametrosEntrada.put(1, idPrenda);
+    
+    rs = DBManager.getInstance().ejecutarProcedimientoLectura("obtener_polo_X_id", parametrosEntrada);
+    System.out.println("Lectura de Prenda Polo...");
+    
+    try {
+        if (rs.next()) {
+            datPolo = new Polo();
+            
+            // Datos de Prenda (tabla padre)
+            datPolo.setIdPrenda(rs.getInt("idPrenda"));
+            datPolo.setNombre(rs.getString("nombre"));
+            datPolo.setStockPrenda(rs.getInt("stockPrenda"));
+            datPolo.setAlertaMinStock(rs.getInt("alertaMinStock"));
+            datPolo.setColor(rs.getString("color"));
+            datPolo.setMaterial(Material.valueOf(rs.getString("material")));
+            datPolo.setPrecioUnidad(rs.getDouble("precioUnidad"));
+            datPolo.setPrecioMayor(rs.getDouble("precioMayor"));
+            datPolo.setPrecioDocena(rs.getDouble("precioDocena"));
+            datPolo.setActivo(rs.getBoolean("activo"));  // ✅ AGREGADO
+            
+            // Datos específicos de Polo (tabla hija)
+            datPolo.setTipoManga(TipoManga.valueOf(rs.getString("tipo_manga")));
+            datPolo.setEstampado(rs.getString("estampado"));
+            datPolo.setTipoCuello(TipoCuello.valueOf(rs.getString("tipo_cuello")));
+            
+            System.out.println("SE OBTUVO LA PRENDA POLO CORRECTAMENTE (Activo: " + datPolo.isActivo() + ")");
         }
-        return datPolo;
+    } catch (SQLException ex) {
+        System.out.println("ERROR al obtener por ID: " + ex.getMessage());
+        ex.printStackTrace();
+    } finally {
+        DBManager.getInstance().cerrarConexion();
     }
+    
+    return datPolo;
+}
 
     
     //Falta crear un método de listarTodosLosActivos

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WearDropWA.PackageAlmacen;
+using WearDropWA.ProveedorWS;
 
 namespace WearDropWA
 {
@@ -14,12 +15,14 @@ namespace WearDropWA
         private int idMovimiento;
         private MovimientoAlmacenWSClient boMovimiento;
         private AlmacenWSClient boAlmacen;
+        private ProveedorWSClient boProveedor;
         private movimientoAlmacen datMov;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             boMovimiento = new MovimientoAlmacenWSClient();
             boAlmacen = new AlmacenWSClient();
+            boProveedor = new ProveedorWSClient();
 
             if (!IsPostBack)
             {
@@ -31,10 +34,10 @@ namespace WearDropWA
                     ViewState["IdAlmacen"] = idAlmacen;
                     ViewState["IdMovimiento"] = idMovimiento;
 
-                    // 🔹 Cargar almacenes primero
-                    CargarAlmacenes();
+                    // Cargar almacenes y proveedores primero
+                    CargarAlmacenesYProveedores();
 
-                    // 🔹 Luego cargar los datos del movimiento
+                    // Luego cargar los datos del movimiento
                     CargarDatosMovimiento();
                 }
                 else
@@ -49,48 +52,91 @@ namespace WearDropWA
             }
         }
 
-        // 🔹 Método para cargar almacenes en ambos dropdowns
-        private void CargarAlmacenes()
+        // Método modificado para cargar almacenes Y proveedores (SIN UBICACIÓN)
+        private void CargarAlmacenesYProveedores()
         {
             try
             {
                 // Obtener lista de almacenes del backend
                 BindingList<almacen> listaAlmacenes = new BindingList<almacen>(boAlmacen.listarAlmacenesActivos());
 
-                // Crear lista formateada
-                var almacenesFormateados = listaAlmacenes.Select(a => new
-                {
-                    IdAlmacen = a.id,
-                    NombreCompleto = $"{a.nombre} - {a.ubicacion}"
-                }).ToList();
+                // Obtener lista de proveedores del backend
+                BindingList<proveedor> listaProveedores = new BindingList<proveedor>(boProveedor.listarTodosLosProveedores());
 
-                // 🔹 Cargar dropdown de Lugar de Origen
-                ddlLugarOrigen.DataSource = almacenesFormateados;
+                // Crear lista combinada con un formato unificado
+                var listaCompleta = new List<object>();
+
+                // Agregar almacenes con prefijo - SOLO NOMBRE (sin ubicación)
+                foreach (var a in listaAlmacenes)
+                {
+                    listaCompleta.Add(new
+                    {
+                        Id = "A-" + a.id,
+                        NombreCompleto = $"[ALMACÉN] {a.nombre}",
+                        NombreLimpio = a.nombre
+                    });
+                }
+
+                // Agregar proveedores con prefijo
+                foreach (var p in listaProveedores)
+                {
+                    listaCompleta.Add(new
+                    {
+                        Id = "P-" + p.idProveedor,
+                        NombreCompleto = $"[PROVEEDOR] {p.nombre}",
+                        NombreLimpio = p.nombre
+                    });
+                }
+
+                // Cargar dropdown de Lugar de Origen
+                ddlLugarOrigen.DataSource = listaCompleta;
                 ddlLugarOrigen.DataTextField = "NombreCompleto";
-                ddlLugarOrigen.DataValueField = "IdAlmacen";
+                ddlLugarOrigen.DataValueField = "Id";
                 ddlLugarOrigen.DataBind();
                 ddlLugarOrigen.Items.Insert(0, new ListItem("-- Seleccione lugar de origen --", "0"));
 
-                // 🔹 Cargar dropdown de Lugar de Destino
-                ddlLugarDestino.DataSource = almacenesFormateados;
+                // Cargar dropdown de Lugar de Destino
+                ddlLugarDestino.DataSource = listaCompleta.ToList();
                 ddlLugarDestino.DataTextField = "NombreCompleto";
-                ddlLugarDestino.DataValueField = "IdAlmacen";
+                ddlLugarDestino.DataValueField = "Id";
                 ddlLugarDestino.DataBind();
                 ddlLugarDestino.Items.Insert(0, new ListItem("-- Seleccione lugar de destino --", "0"));
+
+                // Mantener sin postback para que lo maneje JavaScript
+                ddlLugarOrigen.AutoPostBack = false;
+                ddlLugarDestino.AutoPostBack = false;
             }
             catch (Exception ex)
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                    $"alert('Error al cargar almacenes: {ex.Message}');", true);
+                    $"alert('Error al cargar almacenes y proveedores: {ex.Message}');", true);
+            }
+        }
+
+        // Método para determinar el tipo automáticamente
+        private string DeterminarTipoMovimiento(string idLugarOrigen, string idLugarDestino)
+        {
+            bool origenEsProveedor = idLugarOrigen.StartsWith("P-");
+            bool destinoEsProveedor = idLugarDestino.StartsWith("P-");
+
+            if (origenEsProveedor)
+            {
+                return "Entrada";
+            }
+            else if (destinoEsProveedor)
+            {
+                return "Salida";
+            }
+            else
+            {
+                // IMPORTANTE: Ajusta esto según tu enum en el backend
+                return "Mov.Interno";
             }
         }
 
         // Método para cargar los datos del movimiento existente
         private void CargarDatosMovimiento()
         {
-            /*OJO: aqui también va a listar a los proveedores... como opciones, por ahora solo estarán los movimientos
-             entre almacenes, pero después estarán también los proveedores. También se tendría que verificar que por lo menos en uno
-            de los parámetros sea el del almacén en donde se encuentra (Por cuestiones de tiempo ya no lo pude implementar)*/
             try
             {
                 datMov = boMovimiento.obtenerMovimientoPorId(idMovimiento);
@@ -100,14 +146,16 @@ namespace WearDropWA
                     // Cargar la fecha
                     txtFechaTraslado.Text = datMov.fecha.ToString("yyyy-MM-dd");
 
-                    // Seleccionar el tipo
-                    ddlTipo.SelectedValue = datMov.tipo.ToString();
+                    // El tipo se mostrará automáticamente con JavaScript cuando se carguen los lugares
 
                     // BUSCAR Y SELECCIONAR LUGAR DE ORIGEN
                     string idOrigenSeleccionado = "0";
                     foreach (ListItem item in ddlLugarOrigen.Items)
                     {
-                        if (item.Text.Contains(datMov.lugarOrigen))
+                        // Extraer el nombre del texto del item
+                        string nombreItem = ExtraerNombreLugar(item.Text);
+
+                        if (nombreItem.Equals(datMov.lugarOrigen, StringComparison.OrdinalIgnoreCase))
                         {
                             idOrigenSeleccionado = item.Value;
                             ddlLugarOrigen.SelectedValue = item.Value;
@@ -119,13 +167,17 @@ namespace WearDropWA
                     string idDestinoSeleccionado = "0";
                     foreach (ListItem item in ddlLugarDestino.Items)
                     {
-                        if (item.Text.Contains(datMov.lugarDestino))
+                        // Extraer el nombre del texto del item
+                        string nombreItem = ExtraerNombreLugar(item.Text);
+
+                        if (nombreItem.Equals(datMov.lugarDestino, StringComparison.OrdinalIgnoreCase))
                         {
                             idDestinoSeleccionado = item.Value;
                             ddlLugarDestino.SelectedValue = item.Value;
                             break;
                         }
                     }
+
                     string script = $@"
                 <script type='text/javascript'>
                     $(document).ready(function() {{
@@ -156,6 +208,20 @@ namespace WearDropWA
             }
         }
 
+        // Método simplificado ya que no hay ubicación que remover
+        private string ExtraerNombreLugar(string textoCompleto)
+        {
+            // Elimina "[ALMACÉN] " o "[PROVEEDOR] " del inicio
+            if (textoCompleto.StartsWith("[ALMACÉN] "))
+            {
+                return textoCompleto.Replace("[ALMACÉN] ", "").Trim();
+            }
+            else if (textoCompleto.StartsWith("[PROVEEDOR] "))
+            {
+                return textoCompleto.Replace("[PROVEEDOR] ", "").Trim();
+            }
+            return textoCompleto.Trim();
+        }
 
         protected void lkModificar_Click(object sender, EventArgs e)
         {
@@ -163,25 +229,25 @@ namespace WearDropWA
             {
                 try
                 {
-                    // 🔹 Validar que se hayan seleccionado los lugares
-                    int idLugarOrigen = Convert.ToInt32(ddlLugarOrigen.SelectedValue);
-                    int idLugarDestino = Convert.ToInt32(ddlLugarDestino.SelectedValue);
+                    // Validar que se hayan seleccionado los lugares
+                    string idLugarOrigen = ddlLugarOrigen.SelectedValue;
+                    string idLugarDestino = ddlLugarDestino.SelectedValue;
 
-                    if (idLugarOrigen == 0)
+                    if (idLugarOrigen == "0")
                     {
                         ClientScript.RegisterStartupScript(this.GetType(), "alert",
                             "alert('Debe seleccionar un lugar de origen');", true);
                         return;
                     }
 
-                    if (idLugarDestino == 0)
+                    if (idLugarDestino == "0")
                     {
                         ClientScript.RegisterStartupScript(this.GetType(), "alert",
                             "alert('Debe seleccionar un lugar de destino');", true);
                         return;
                     }
 
-                    // 🔹 Validar que no sean el mismo lugar
+                    // Validar que no sean el mismo lugar
                     if (idLugarOrigen == idLugarDestino)
                     {
                         ClientScript.RegisterStartupScript(this.GetType(), "alert",
@@ -189,16 +255,7 @@ namespace WearDropWA
                         return;
                     }
 
-                    // 🔹 Validar tipo
-                    string tipo = ddlTipo.SelectedValue;
-                    if (tipo == "0")
-                    {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                            "alert('Debe seleccionar un tipo de movimiento');", true);
-                        return;
-                    }
-
-                    // 🔹 Validar fecha
+                    // Validar fecha
                     if (string.IsNullOrEmpty(txtFechaTraslado.Text))
                     {
                         ClientScript.RegisterStartupScript(this.GetType(), "alert",
@@ -208,9 +265,32 @@ namespace WearDropWA
 
                     DateTime fechaTraslado = Convert.ToDateTime(txtFechaTraslado.Text);
 
-                    // 🔹 Obtener los textos seleccionados (nombres de los almacenes)
+                    // Obtener los textos seleccionados
                     string lugarOrigen = ddlLugarOrigen.SelectedItem.Text;
                     string lugarDestino = ddlLugarDestino.SelectedItem.Text;
+
+                    // 🔹 Extraer nombres limpios
+                    string nombreOrigen = ExtraerNombreLugar(lugarOrigen);
+                    string nombreDestino = ExtraerNombreLugar(lugarDestino);
+
+                    // 🔹 Verificar que uno de los lugares sea el almacén actual
+                    almacen almacenActual = boAlmacen.obtenerPorId(idAlmacen);
+                    string nombreAlmacenActual = almacenActual.nombre;
+
+                    bool origenEsAlmacenActual = idLugarOrigen.StartsWith("A-") &&
+                                                  idLugarOrigen == "A-" + idAlmacen;
+                    bool destinoEsAlmacenActual = idLugarDestino.StartsWith("A-") &&
+                                                   idLugarDestino == "A-" + idAlmacen;
+
+                    if (!origenEsAlmacenActual && !destinoEsAlmacenActual)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                            $"alert('Al menos uno de los lugares (origen o destino) debe ser el almacén actual: {nombreAlmacenActual}');", true);
+                        return;
+                    }
+
+                    // 🔹 DETERMINAR TIPO AUTOMÁTICAMENTE usando el método
+                    string tipo = DeterminarTipoMovimiento(idLugarOrigen, idLugarDestino);
 
                     // 🔹 Recuperar el movimiento desde ViewState
                     datMov = (movimientoAlmacen)ViewState["DatMovimiento"];
@@ -224,14 +304,24 @@ namespace WearDropWA
 
                     // 🔹 Actualizar los campos modificables
                     datMov.idMovimiento = idMovimiento;
-                    datMov.lugarOrigen = lugarOrigen;
-                    datMov.lugarDestino = lugarDestino;
+                    datMov.lugarOrigen = nombreOrigen;
+                    datMov.lugarDestino = nombreDestino;
 
                     datMov.fecha = fechaTraslado;
                     datMov.fechaSpecified = true;
 
-                    datMov.tipo = (tipoMovimiento)Enum.Parse(typeof(tipoMovimiento), tipo);
-                    datMov.tipoSpecified = true;
+                    // 🔹 Asignar tipo con manejo de errores mejorado
+                    try
+                    {
+                        datMov.tipo = (tipoMovimiento)Enum.Parse(typeof(tipoMovimiento), tipo);
+                        datMov.tipoSpecified = true;
+                    }
+                    catch (Exception exEnum)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                            $"alert('Error al asignar tipo de movimiento: {tipo}. Error: {exEnum.Message}');", true);
+                        return;
+                    }
 
                     // 🔹 Llamar al servicio para modificar
                     int resultado = boMovimiento.modificarMovimientoAlmacen(datMov);

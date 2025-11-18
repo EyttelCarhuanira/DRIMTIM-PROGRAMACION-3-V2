@@ -27,20 +27,10 @@
           background: #f6f6f6; 
       }
       
-      .top-strip { 
-          height: 28px;
-          background: #efefef;
-          font-size: .9rem;
-          color: #9aa0a6;
-          display: flex;
-          align-items: center;
-          padding: 0 12px;
-      }
-      
       /* 🔹 Layout flex para posicionar sidebar y content */
       .layout { 
           display: flex; 
-          height: calc(100vh - 28px); /* Altura completa menos top-strip */
+          height: 100vh; /* 🔹 CAMBIO: Altura completa de la pantalla */
           overflow: hidden; /* Previene scroll del layout */
       }
       
@@ -51,8 +41,8 @@
           border-right: 1px solid #eee;
           position: fixed; /* Fija el sidebar */
           left: 0;
-          top: 28px; /* Debajo del top-strip */
-          height: calc(100vh - 28px); /* Altura completa menos top-strip */
+          top: 0; /* 🔹 CAMBIO: Desde arriba de todo */
+          height: 100vh; /* 🔹 CAMBIO: Altura completa */
           overflow-y: auto; /* Scroll interno si el menú es muy largo */
           z-index: 100;
       }
@@ -90,7 +80,7 @@
           flex: 1; 
           background: #fafafa;
           margin-left: var(--sidebar-width); /* Espacio para el sidebar fijo */
-          height: calc(100vh - 28px); /* Altura completa menos top-strip */
+          height: 100vh; /* 🔹 CAMBIO: Altura completa */
           overflow-y: auto; /* Scroll independiente para el contenido */
           overflow-x: hidden;
       }
