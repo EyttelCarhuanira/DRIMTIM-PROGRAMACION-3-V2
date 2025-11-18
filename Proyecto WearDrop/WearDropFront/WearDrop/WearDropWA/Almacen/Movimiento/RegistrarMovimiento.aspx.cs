@@ -90,11 +90,35 @@ namespace WearDropWA
                 ddlLugarOrigen.DataValueField = "Id";
                 ddlLugarOrigen.DataBind();
                 ddlLugarOrigen.Items.Insert(0, new ListItem("-- Seleccione lugar de origen --", "0"));
+
+                // 🔹 Agregar eventos de cambio para actualizar el tipo automáticamente
+                ddlLugarOrigen.AutoPostBack = false; // Mantener sin postback para que lo maneje JavaScript
+                ddlLugarDestino.AutoPostBack = false;
             }
             catch (Exception ex)
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert",
                     $"alert('Error al cargar almacenes y proveedores: {ex.Message}');", true);
+            }
+        }
+
+        // 🔹 Método para determinar el tipo automáticamente
+        private string DeterminarTipoMovimiento(string idLugarOrigen, string idLugarDestino)
+        {
+            bool origenEsProveedor = idLugarOrigen.StartsWith("P-");
+            bool destinoEsProveedor = idLugarDestino.StartsWith("P-");
+
+            if (origenEsProveedor)
+            {
+                return "Entrada";
+            }
+            else if (destinoEsProveedor)
+            {
+                return "Salida";
+            }
+            else
+            {
+                return "Mov_Interno";
             }
         }
 
@@ -127,15 +151,6 @@ namespace WearDropWA
                     {
                         ClientScript.RegisterStartupScript(this.GetType(), "alert",
                             "alert('El lugar de origen y destino no pueden ser el mismo');", true);
-                        return;
-                    }
-
-                    // Validar tipo
-                    string tipo = ddlTipo.SelectedValue;
-                    if (tipo == "0")
-                    {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                            "alert('Debe seleccionar un tipo de movimiento');", true);
                         return;
                     }
 
@@ -173,6 +188,25 @@ namespace WearDropWA
                         return;
                     }
 
+                    // 🔹 DETERMINAR TIPO AUTOMÁTICAMENTE (¡ORDEN CORRECTO!)
+                    string tipo = DeterminarTipoMovimiento(idLugarOrigen, idLugarDestino);
+
+                    // Verificar que uno de los lugares sea el almacén actual
+                    almacenActual = boAlmacen.obtenerPorId(idAlmacen);
+                    nombreAlmacenActual = almacenActual.nombre;
+
+                    origenEsAlmacenActual = idLugarOrigen.StartsWith("A-") &&
+                                                  idLugarOrigen == "A-" + idAlmacen;
+                    destinoEsAlmacenActual = idLugarDestino.StartsWith("A-") &&
+                                                   idLugarDestino == "A-" + idAlmacen;
+
+                    if (!origenEsAlmacenActual && !destinoEsAlmacenActual)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                            $"alert('Al menos uno de los lugares (origen o destino) debe ser el almacén actual: {nombreAlmacenActual}');", true);
+                        return;
+                    }
+
                     // Crear el movimiento
                     movimientoAlmacen nuevoMovimiento = new movimientoAlmacen();
                     nuevoMovimiento.lugarOrigen = nombreOrigen;
@@ -180,8 +214,18 @@ namespace WearDropWA
                     nuevoMovimiento.fecha = fechaTraslado;
                     nuevoMovimiento.fechaSpecified = true;
 
-                    nuevoMovimiento.tipo = (tipoMovimiento)Enum.Parse(typeof(tipoMovimiento), tipo);
-                    nuevoMovimiento.tipoSpecified = true;
+                    // 🔹 Asignar tipo con manejo de errores mejorado
+                    try
+                    {
+                        nuevoMovimiento.tipo = (tipoMovimiento)Enum.Parse(typeof(tipoMovimiento), tipo);
+                        nuevoMovimiento.tipoSpecified = true;
+                    }
+                    catch (Exception exEnum)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                            $"alert('Error al asignar tipo de movimiento: {tipo}. Error: {exEnum.Message}');", true);
+                        return;
+                    }
 
                     // Asignar el almacén
                     nuevoMovimiento.datAlmacen = new almacen();

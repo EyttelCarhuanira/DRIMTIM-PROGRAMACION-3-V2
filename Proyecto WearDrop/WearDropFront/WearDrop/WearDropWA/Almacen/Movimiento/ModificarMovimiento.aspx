@@ -9,12 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     
     <style>
-        /* ------- Layout Base ------- */
         .header-title {
             display: flex;
             align-items: stretch;
             height: 60px;
-            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-top: 14px;
             border-radius: 10px;
             overflow: hidden;
@@ -22,7 +21,7 @@
         }
 
         .title-section {
-            background: #fff;
+            background-color: #FFFFFF;
             padding: 0 25px;
             display: flex;
             align-items: center;
@@ -58,7 +57,7 @@
             background: linear-gradient(90deg, #C5D9C0, #95B88F, #73866D);
         }
 
-        /* ------- Formulario ------- */
+        /* Formulario */
         .form-container {
             background-color: #FFFFFF;
             padding: 30px;
@@ -107,11 +106,7 @@
             display: block;
         }
 
-        /* ------- Botones ------- */
-        a, a:visited, a:hover, a:active {
-            text-decoration: none !important;
-        }
-
+        /* Botones */
         .btn-custom {
             background-color: #73866D;
             color: #FFFFFF;
@@ -168,6 +163,7 @@
 
         /* 🔹 ------- PERSONALIZACIÓN DE SELECT2 ------- */
         
+        /* Contenedor principal de Select2 */
         .select2-container--default .select2-selection--single {
             height: 42px;
             border: 1px solid #ddd;
@@ -183,6 +179,7 @@
             outline: none;
         }
 
+        /* Texto seleccionado */
         .select2-container--default .select2-selection--single .select2-selection__rendered {
             line-height: 40px;
             padding-left: 12px;
@@ -190,6 +187,7 @@
             font-size: 14px;
         }
 
+        /* Flecha del dropdown */
         .select2-container--default .select2-selection--single .select2-selection__arrow {
             height: 40px;
             right: 8px;
@@ -199,36 +197,43 @@
             border-color: #666 transparent transparent transparent;
         }
 
+        /* Placeholder */
         .select2-container--default .select2-selection--single .select2-selection__placeholder {
             color: #999;
         }
 
+        /* Dropdown desplegado */
         .select2-dropdown {
             border: 1px solid #95B88F;
             border-radius: 4px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
+        /* 🔹 ALTURA MÁXIMA Y SCROLL (4-5 opciones visibles) */
         .select2-results__options {
             max-height: 200px !important;
             overflow-y: auto;
         }
 
+        /* Opciones individuales */
         .select2-container--default .select2-results__option {
             padding: 10px 12px;
             font-size: 14px;
         }
 
+        /* Opción en hover */
         .select2-container--default .select2-results__option--highlighted[aria-selected] {
             background-color: #E8F4E5 !important;
             color: #333;
         }
 
+        /* Opción seleccionada */
         .select2-container--default .select2-results__option[aria-selected="true"] {
             background-color: #95B88F !important;
             color: #fff;
         }
 
+        /* Scrollbar personalizado */
         .select2-results__options::-webkit-scrollbar {
             width: 10px;
         }
@@ -247,8 +252,33 @@
             background: #73866D;
         }
 
+        /* Ancho del select2 */
         .select2-container {
             width: 100% !important;
+        }
+
+        /* 🔹 Campo tipo solo lectura */
+        .tipo-readonly {
+            background-color: #f8f9fa !important;
+            cursor: not-allowed;
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        /* 🔹 Nota informativa sobre tipo automático */
+        .info-box {
+            background-color: #E8F4E5;
+            border-left: 4px solid #95B88F;
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .info-box i {
+            color: #73866D;
+            margin-right: 8px;
         }
     </style>
 </asp:Content>
@@ -274,22 +304,14 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-container">
-                    <!-- Fila 1: Lugar Origen y Lugar Destino -->
+                    <!-- 🔹 Nota informativa -->
+                    <div class="info-box">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <strong>Tipo de movimiento automático:</strong> El sistema determinará automáticamente el tipo según los lugares seleccionados.
+                    </div>
+
+                    <!-- Fila 1: Lugar Destino y Lugar Origen -->
                     <div class="row mb-4">
-                        <div class="col-md-6">
-                            <label class="form-label">
-                                Lugar de Origen <span class="required">(*)</span>
-                            </label>
-                            <asp:DropDownList ID="ddlLugarOrigen" runat="server" CssClass="form-select">
-                            </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="rfvLugarOrigen" runat="server"
-                                ControlToValidate="ddlLugarOrigen"
-                                InitialValue="0"
-                                ErrorMessage="El lugar de origen es obligatorio"
-                                CssClass="text-danger"
-                                Display="Dynamic">
-                            </asp:RequiredFieldValidator>
-                        </div>
                         <div class="col-md-6">
                             <label class="form-label">
                                 Lugar de Destino <span class="required">(*)</span>
@@ -304,9 +326,23 @@
                                 Display="Dynamic">
                             </asp:RequiredFieldValidator>
                         </div>
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Lugar de Origen <span class="required">(*)</span>
+                            </label>
+                            <asp:DropDownList ID="ddlLugarOrigen" runat="server" CssClass="form-select">
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfvLugarOrigen" runat="server"
+                                ControlToValidate="ddlLugarOrigen"
+                                InitialValue="0"
+                                ErrorMessage="El lugar de origen es obligatorio"
+                                CssClass="text-danger"
+                                Display="Dynamic">
+                            </asp:RequiredFieldValidator>
+                        </div>
                     </div>
 
-                    <!-- Fila 2: Fecha del Traslado y Tipo -->
+                    <!-- Fila 2: Fecha del Traslado y Tipo (solo lectura) -->
                     <div class="row mb-4">
                         <div class="col-md-6">
                             <label class="form-label">
@@ -325,21 +361,14 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">
-                                Tipo <span class="required">(*)</span>
+                                Tipo (automático)
                             </label>
-                            <asp:DropDownList ID="ddlTipo" runat="server" CssClass="form-select-tipo">
-                                <asp:ListItem Value="0">-- Seleccione un tipo --</asp:ListItem>
-                                <asp:ListItem Value="Entrada">Entrada</asp:ListItem>
-                                <asp:ListItem Value="Salida">Salida</asp:ListItem>
-                                <asp:ListItem Value="Mov.Interno">Mov. Interno</asp:ListItem>
-                            </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="rfvTipo" runat="server"
-                                ControlToValidate="ddlTipo"
-                                InitialValue="0"
-                                ErrorMessage="Debe seleccionar un tipo"
-                                CssClass="text-danger"
-                                Display="Dynamic">
-                            </asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txtTipo" runat="server"
+                                CssClass="form-control form-control-short tipo-readonly"
+                                ReadOnly="true"
+                                Enabled="false"
+                                placeholder="Se determinará automáticamente">
+                            </asp:TextBox>
                         </div>
                     </div>
 
@@ -376,6 +405,18 @@
     
     <script type="text/javascript">
         $(document).ready(function () {
+            // Inicializar Select2 en Lugar de Destino
+            $('#<%= ddlLugarDestino.ClientID %>').select2({
+                placeholder: "-- Seleccione lugar de destino --",
+                allowClear: false,
+                width: '100%',
+                language: {
+                    noResults: function () {
+                        return "No se encontraron resultados";
+                    }
+                }
+            });
+
             // Inicializar Select2 en Lugar de Origen
             $('#<%= ddlLugarOrigen.ClientID %>').select2({
                 placeholder: "-- Seleccione lugar de origen --",
@@ -388,30 +429,35 @@
                 }
             });
 
-            // Inicializar Select2 en Lugar de Destino
-            $('#<%= ddlLugarDestino.ClientID %>').select2({
-                placeholder: "-- Seleccione lugar de destino --",
-                allowClear: false,
-                width: '100%',
-                language: {
-                    noResults: function() {
-                        return "No se encontraron resultados";
-                    }
-                }
-            });
+            // 🔹 Función para actualizar el tipo automáticamente
+            function actualizarTipo() {
+                var origenValue = $('#<%= ddlLugarOrigen.ClientID %>').val();
+                var destinoValue = $('#<%= ddlLugarDestino.ClientID %>').val();
+                var txtTipo = $('#<%= txtTipo.ClientID %>');
 
-            // Inicializar Select2 en Tipo
-            $('#<%= ddlTipo.ClientID %>').select2({
-                placeholder: "-- Seleccione un tipo --",
-                allowClear: false,
-                width: '100%',
-                minimumResultsForSearch: Infinity,
-                language: {
-                    noResults: function () {
-                        return "No se encontraron resultados";
+                // Si ambos están seleccionados
+                if (origenValue && origenValue !== '0' && destinoValue && destinoValue !== '0') {
+                    var origenEsProveedor = origenValue.startsWith('P-');
+                    var destinoEsProveedor = destinoValue.startsWith('P-');
+
+                    if (origenEsProveedor) {
+                        txtTipo.val('Entrada');
+                    } else if (destinoEsProveedor) {
+                        txtTipo.val('Salida');
+                    } else {
+                        txtTipo.val('Mov. Interno');
                     }
+                } else {
+                    txtTipo.val('');
                 }
-            });
+            }
+
+            // Detectar cambios en los dropdowns
+            $('#<%= ddlLugarOrigen.ClientID %>').on('change', actualizarTipo);
+            $('#<%= ddlLugarDestino.ClientID %>').on('change', actualizarTipo);
+
+            // 🔹 Actualizar tipo al cargar la página (para modo edición)
+            actualizarTipo();
         });
     </script>
 </asp:Content>

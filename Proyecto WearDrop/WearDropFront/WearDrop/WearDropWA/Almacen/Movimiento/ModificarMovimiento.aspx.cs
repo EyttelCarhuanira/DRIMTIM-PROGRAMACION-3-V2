@@ -101,11 +101,36 @@ namespace WearDropWA
                 ddlLugarDestino.DataValueField = "Id";
                 ddlLugarDestino.DataBind();
                 ddlLugarDestino.Items.Insert(0, new ListItem("-- Seleccione lugar de destino --", "0"));
+
+                // Mantener sin postback para que lo maneje JavaScript
+                ddlLugarOrigen.AutoPostBack = false;
+                ddlLugarDestino.AutoPostBack = false;
             }
             catch (Exception ex)
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert",
                     $"alert('Error al cargar almacenes y proveedores: {ex.Message}');", true);
+            }
+        }
+
+        // Método para determinar el tipo automáticamente
+        private string DeterminarTipoMovimiento(string idLugarOrigen, string idLugarDestino)
+        {
+            bool origenEsProveedor = idLugarOrigen.StartsWith("P-");
+            bool destinoEsProveedor = idLugarDestino.StartsWith("P-");
+
+            if (origenEsProveedor)
+            {
+                return "Entrada";
+            }
+            else if (destinoEsProveedor)
+            {
+                return "Salida";
+            }
+            else
+            {
+                // IMPORTANTE: Ajusta esto según tu enum en el backend
+                return "Mov.Interno";
             }
         }
 
@@ -121,8 +146,7 @@ namespace WearDropWA
                     // Cargar la fecha
                     txtFechaTraslado.Text = datMov.fecha.ToString("yyyy-MM-dd");
 
-                    // Seleccionar el tipo
-                    ddlTipo.SelectedValue = datMov.tipo.ToString();
+                    // El tipo se mostrará automáticamente con JavaScript cuando se carguen los lugares
 
                     // BUSCAR Y SELECCIONAR LUGAR DE ORIGEN
                     string idOrigenSeleccionado = "0";
@@ -231,15 +255,6 @@ namespace WearDropWA
                         return;
                     }
 
-                    // Validar tipo
-                    string tipo = ddlTipo.SelectedValue;
-                    if (tipo == "0")
-                    {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                            "alert('Debe seleccionar un tipo de movimiento');", true);
-                        return;
-                    }
-
                     // Validar fecha
                     if (string.IsNullOrEmpty(txtFechaTraslado.Text))
                     {
@@ -254,11 +269,11 @@ namespace WearDropWA
                     string lugarOrigen = ddlLugarOrigen.SelectedItem.Text;
                     string lugarDestino = ddlLugarDestino.SelectedItem.Text;
 
-                    // Extraer nombres limpios
+                    // 🔹 Extraer nombres limpios
                     string nombreOrigen = ExtraerNombreLugar(lugarOrigen);
                     string nombreDestino = ExtraerNombreLugar(lugarDestino);
 
-                    // Verificar que uno de los lugares sea el almacén actual
+                    // 🔹 Verificar que uno de los lugares sea el almacén actual
                     almacen almacenActual = boAlmacen.obtenerPorId(idAlmacen);
                     string nombreAlmacenActual = almacenActual.nombre;
 
@@ -274,17 +289,20 @@ namespace WearDropWA
                         return;
                     }
 
-                    // Recuperar el movimiento desde ViewState
+                    // 🔹 DETERMINAR TIPO AUTOMÁTICAMENTE usando el método
+                    string tipo = DeterminarTipoMovimiento(idLugarOrigen, idLugarDestino);
+
+                    // 🔹 Recuperar el movimiento desde ViewState
                     datMov = (movimientoAlmacen)ViewState["DatMovimiento"];
 
-                    // Si no existe en ViewState, crear uno nuevo (aunque no debería pasar)
+                    // 🔹 Si no existe en ViewState, crear uno nuevo (aunque no debería pasar)
                     if (datMov == null)
                     {
                         datMov = new movimientoAlmacen();
                         datMov.datAlmacen = new almacen { id = idAlmacen };
                     }
 
-                    // Actualizar los campos modificables
+                    // 🔹 Actualizar los campos modificables
                     datMov.idMovimiento = idMovimiento;
                     datMov.lugarOrigen = nombreOrigen;
                     datMov.lugarDestino = nombreDestino;
@@ -292,10 +310,20 @@ namespace WearDropWA
                     datMov.fecha = fechaTraslado;
                     datMov.fechaSpecified = true;
 
-                    datMov.tipo = (tipoMovimiento)Enum.Parse(typeof(tipoMovimiento), tipo);
-                    datMov.tipoSpecified = true;
+                    // 🔹 Asignar tipo con manejo de errores mejorado
+                    try
+                    {
+                        datMov.tipo = (tipoMovimiento)Enum.Parse(typeof(tipoMovimiento), tipo);
+                        datMov.tipoSpecified = true;
+                    }
+                    catch (Exception exEnum)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                            $"alert('Error al asignar tipo de movimiento: {tipo}. Error: {exEnum.Message}');", true);
+                        return;
+                    }
 
-                    // Llamar al servicio para modificar
+                    // 🔹 Llamar al servicio para modificar
                     int resultado = boMovimiento.modificarMovimientoAlmacen(datMov);
 
                     if (resultado > 0)
